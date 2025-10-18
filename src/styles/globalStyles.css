@@ -1,0 +1,141 @@
+:root {
+  --primary-background: #F5F5F5;
+  --primary-cta: #00BFFF;
+  --secondary-action: #008080;
+  --primary-text: #333333;
+
+  /* Common spacing values */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-xxl: 3rem;
+
+  /* Font sizes */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-xxl: 2rem;
+  --font-size-hero: 3rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Fix for browser extension injection */
+/* #extension-dpfof {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  overflow: hidden !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  flex: 0 0 0 !important;
+} */
+
+body {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--primary-background);
+  color: var(--primary-text);
+  line-height: 1.6;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body > * {
+  margin: auto;
+  width: 100%;
+}
+
+/* Target direct children of body to ensure proper layout */
+body > div#root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: var(--space-md);
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: var(--space-md);
+}
+
+a {
+  color: var(--secondary-action);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button, .button {
+  cursor: pointer;
+  padding: var(--space-sm) var(--space-md);
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.button-primary {
+  background-color: var(--primary-cta);
+  color: white;
+}
+
+.button-primary:hover {
+  background-color: #0099CC;
+}
+
+.button-secondary {
+  background-color: var(--secondary-action);
+  color: white;
+}
+
+.button-secondary:hover {
+  background-color: #006666;
+}
+
+section {
+  padding: var(--space-xxl) var(--space-xl);
+  margin-bottom: var(--space-xxl);
+}
+
+/* Container for sections */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: var(--space-xl) var(--space-md);
+  }
+}

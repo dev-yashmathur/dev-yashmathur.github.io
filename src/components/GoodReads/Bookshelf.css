@@ -1,0 +1,73 @@
+.goodreads-section {
+  padding: 5rem 0;
+  background-color: white;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--primary-text);
+  opacity: 0.8;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+
+.bookshelf-container {
+  perspective: 1000px;
+  margin-bottom: 3rem;
+}
+
+.bookshelf {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  min-height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 20px;
+  transform-style: preserve-3d;
+}
+
+.bookshelf-shelf {
+  position: absolute;
+  bottom: 0;
+  width: 80%;
+  height: 20px;
+  background: linear-gradient(to right, #8b4513, #d2691e, #8b4513);
+  border-radius: 5px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  transform: translateZ(-10px);
+}
+
+.bookshelf::before {
+  content: '';
+  position: absolute;
+  bottom: 20px;
+  width: 75%;
+  height: 40px;
+  background: linear-gradient(to right, rgba(139, 69, 19, 0.3), rgba(139, 69, 19, 0.6), rgba(139, 69, 19, 0.3));
+  transform: rotateX(60deg) translateZ(-20px);
+  transform-origin: bottom;
+  filter: blur(8px);
+}
+
+@media (max-width: 768px) {
+  .bookshelf {
+    flex-wrap: wrap;
+    gap: 5px;
+    min-height: 190px;
+    padding-bottom: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .goodreads-section {
+    padding: 3rem 0;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+}

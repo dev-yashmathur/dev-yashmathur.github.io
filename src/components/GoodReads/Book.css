@@ -1,0 +1,119 @@
+.book {
+  position: relative;
+  width: 40px;
+  height: 160px;
+  margin: 0 5px;
+  cursor: pointer;
+  transform-origin: top center;
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+  border-radius: 2px;
+  perspective: 1000px;
+}
+
+.book-spine {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px 5px;
+  backface-visibility: hidden;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.book-title {
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  color: white;
+  font-weight: bold;
+  font-size: 0.85rem;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+  margin-bottom: auto;
+  max-height: 140px; /* Ensure text stays within bounds */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.book-author {
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.7rem;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+.book-cover {
+  position: absolute;
+  top: 0;
+  left: -40px; /* Position in front of the book */
+  width: 120px;
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 2px;
+  transform: rotateX(-90deg) translateY(-80px);
+  transform-origin: top;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.book-cover-title {
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  margin-bottom: 5px;
+}
+
+.book-cover-author {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.7rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.book:hover .book-cover,
+.book.selected .book-cover {
+  opacity: 1;
+  transform: rotateX(-30deg) translateY(-70px); /* Tilt the cover towards the user when hovering */
+}
+
+.book.selected {
+  transform: translateY(-10px) rotateX(25deg); /* Tilt from top when selected */
+}
+
+@media (max-width: 768px) {
+  .book {
+    width: 30px;
+    height: 140px;
+  }
+
+  .book-cover {
+    width: 100px;
+    height: 140px;
+    transform: rotateX(-90deg) translateY(-70px);
+    left: -35px;
+  }
+
+  .book-title,
+  .book-author {
+    font-size: 0.7rem;
+  }
+
+  .book-cover-title {
+    font-size: 0.8rem;
+  }
+
+  .book-cover-author {
+    font-size: 0.65rem;
+  }
+}

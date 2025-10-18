@@ -1,0 +1,155 @@
+.projects-section {
+  padding: 5rem 0;
+  background-color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.projects-section .section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--primary-text);
+  font-weight: 700;
+  width: 100%;
+}
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 3rem auto;
+  overflow: hidden;
+  min-height: 550px;
+  width: 100%;
+  text-align: center;
+}
+
+.carousel-track-container {
+  overflow: visible;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: transform;
+  height: 550px;
+  align-items: center;
+  position: relative;
+  margin: 0 auto;
+  justify-content: center;
+  width: 100%;
+}
+
+.carousel-slide {
+  flex: 0 0 auto;
+  transition: opacity 0.5s ease;
+}
+
+.carousel-slide.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.carousel-slide.visible {
+  opacity: 1;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 20;
+  transition: all 0.3s ease;
+}
+
+.carousel-arrow:hover {
+  background-color: var(--primary-cta);
+  color: white;
+}
+
+.carousel-prev {
+  left: 5%;
+}
+
+.carousel-next {
+  right: 5%;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+  background-color: var(--primary-cta);
+  transform: scale(1.2);
+}
+
+@media (max-width: 992px) {
+  .carousel-container {
+    min-height: 500px;
+  }
+
+  .carousel-track {
+    height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-prev {
+    left: 1%;
+  }
+
+  .carousel-next {
+    right: 1%;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-container {
+    min-height: 450px;
+  }
+
+  .carousel-track {
+    height: 450px;
+  }
+
+  .carousel-arrow {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+}

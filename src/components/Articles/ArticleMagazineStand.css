@@ -1,0 +1,150 @@
+.articles-section {
+  padding: 5rem 0;
+  background-color: #f9f9f9;
+}
+
+.articles-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.articles-text {
+  flex: 1;
+  max-width: 500px;
+}
+
+.articles-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--primary-text);
+  margin-bottom: 2rem;
+}
+
+.magazine-stand-container {
+  flex: 1.2;
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+.magazine-stand {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transform-style: preserve-3d;
+  background-color: #333;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.magazine-stand-shelf {
+  width: 100%;
+  height: 15px;
+  background-color: #222;
+  border-radius: 5px;
+  margin: 10px 0;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+  transform: translateZ(-5px);
+}
+
+.magazine-row-container {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.magazine-row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0 10px;
+  position: relative;
+  height: 120px;
+  background-color: #444;
+  border-radius: 3px;
+}
+
+.magazine {
+  width: 100px;
+  height: 140px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 2px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin: 0 5px;
+  transform-origin: bottom center;
+  position: relative;
+  top: 0;
+  display: inline-block;
+}
+
+.magazine-title-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  padding: 1rem 0.5rem 0.5rem;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.magazine:hover .magazine-title-overlay {
+  opacity: 1;
+}
+
+.magazine-title-overlay h3 {
+  color: white;
+  font-size: 0.85rem;
+  margin: 0;
+  text-align: center;
+  font-weight: 500;
+}
+
+@media (max-width: 992px) {
+  .articles-content {
+    flex-direction: column;
+  }
+
+  .articles-text {
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .magazine-stand-container {
+    min-height: 400px;
+  }
+
+  .magazine {
+    width: 100px;
+    height: 160px;
+  }
+
+  .magazine-title-overlay h3 {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .magazine {
+    width: 80px;
+    height: 130px;
+  }
+}

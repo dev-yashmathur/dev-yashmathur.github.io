@@ -1,35 +1,84 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import './App.css';
+import { config } from './utils/config';
+
+// Import components
+import HeroSection from './components/Hero/HeroSection';
+import Timeline from './components/Timeline/Timeline';
+import ProjectCarousel from './components/Projects/ProjectCarousel';
+import ArticleMagazineStand from './components/Articles/ArticleMagazineStand';
+import Bookshelf from './components/GoodReads/Bookshelf';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const fadeIn = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 1 } }
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <AnimatePresence>
+      {loading ? (
+        <motion.div
+          key="loader"
+          initial={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="loader"
+        >
+          Loading...
+        </motion.div>
+      ) : (
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={fadeIn}
+        >
+          <header>
+            <nav>
+              <div className="container">
+                <div className="nav-logo">{config.name}</div>
+                <div className="nav-links">
+                  <a href="#hero">Home</a>
+                  <a href="#timeline">Experience</a>
+                  <a href="#projects">Projects</a>
+                  <a href="#articles">Articles</a>
+                  <a href="#good-reads">Good Reads</a>
+                </div>
+              </div>
+            </nav>
+          </header>
+
+          <main>
+            <HeroSection />
+            <Timeline />
+            <ProjectCarousel />
+            <ArticleMagazineStand />
+            <Bookshelf />
+          </main>
+
+          <footer>
+            <div className="container">
+              <p>&copy; {new Date().getFullYear()} {config.name}. All rights reserved.</p>
+            </div>
+          </footer>
+
+          <ScrollToTop />
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
 }
 
-export default App
+export default App;

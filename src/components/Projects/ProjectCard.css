@@ -1,0 +1,129 @@
+.project-card {
+  position: relative;
+  width: 300px;
+  height: 450px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  margin: 0 1.5rem;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.project-card.focused {
+  width: 380px;
+  height: 480px;
+  z-index: 10;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.project-card-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.project-card.focused .project-card-image {
+  height: 220px;
+}
+
+.project-card-timeline {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.project-card-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card-title {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary-text);
+}
+
+.project-card-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-card-skill {
+  background-color: rgba(0, 191, 255, 0.1);
+  color: var(--primary-cta);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.project-card-description {
+  color: var(--primary-text);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+  /* Limit description to 3 lines for non-focused cards */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.project-card.focused .project-card-description {
+  /* Allow more lines for focused cards */
+  -webkit-line-clamp: 4;
+}
+
+.project-card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.project-card-link {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.85rem;
+}
+
+.project-card-learn-more {
+  color: var(--secondary-action);
+  font-size: 0.85rem;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+}
+
+.project-card-learn-more::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--secondary-action);
+  transition: width 0.3s ease;
+}
+
+.project-card-learn-more:hover::after {
+  width: 100%;
+}
