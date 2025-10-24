@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import Book from './Book';
 import BookReader from './BookReader';
+import { StyledShelf } from './BookshelfDesign';
 import './Bookshelf.css';
 
 // This would typically come from a data file or API
@@ -87,10 +88,27 @@ interface BookshelfProps {
     image: string;
     takeaways: string[];
   }>;
-  bookColor?: string; // Optional color parameter for all books
 }
 
-const Bookshelf: React.FC<BookshelfProps> = ({ books = demoBooks, bookColor = '#f3a89f' }) => {
+const SPINE_COLORS = ['#f3a89f', '#6c92f0', '#f0d4c8', '#c9b3ff', '#8bc9c4', '#f6b6c4', '#d8c1ad'];
+const DESIGN_SEQUENCE: Array<'no bands' | 'split bands' | 'dual top bands' | 'colored spine'> = [
+  'colored spine',
+  'split bands',
+  'no bands',
+  'dual top bands',
+  'split bands',
+  'colored spine',
+];
+const ORIENTATION_SEQUENCE: Array<'default' | 'tilted' | 'onDisplay'> = [
+  'tilted',
+  'default',
+  'default',
+  'onDisplay',
+  'default',
+  'default',
+];
+
+const Bookshelf: React.FC<BookshelfProps> = ({ books = demoBooks }) => {
   const [selectedBook, setSelectedBook] = useState<typeof books[0] | null>(null);
 
   const handleBookClick = (book: typeof books[0]) => {
@@ -100,6 +118,17 @@ const Bookshelf: React.FC<BookshelfProps> = ({ books = demoBooks, bookColor = '#
       setSelectedBook(book);
     }
   };
+
+  const enrichedBooks = useMemo(
+    () =>
+      books.map((book, index) => ({
+        ...book,
+        spineColor: SPINE_COLORS[index % SPINE_COLORS.length],
+        spineDesign: DESIGN_SEQUENCE[index % DESIGN_SEQUENCE.length],
+        orientation: ORIENTATION_SEQUENCE[index % ORIENTATION_SEQUENCE.length],
+      })),
+    [books]
+  );
 
   return (
     <section
@@ -128,23 +157,26 @@ const Bookshelf: React.FC<BookshelfProps> = ({ books = demoBooks, bookColor = '#
           Books that have influenced my thinking and approach
         </motion.p>
 
-        <div className="bookshelf-container">
-          <div className="bookshelf">
-            {books.map((book, index) => (
-              <Book
-                key={index}
-                name={book.name}
-                author={book.author}
-                image={book.image}
-                takeaways={book.takeaways}
-                isSelected={selectedBook?.name === book.name}
-                onClick={() => handleBookClick(book)}
-                index={index}
-                bookColor={bookColor}
-              />
-            ))}
-            <div className="bookshelf-shelf"></div>
-          </div>
+        <div className="bookshelf-scene">
+          <StyledShelf className="bookshelf-surface">
+            <div className="bookshelf__wrapper">
+              {enrichedBooks.map((book, index) => (
+                <Book
+                  key={book.name}
+                  name={book.name}
+                  author={book.author}
+                  image={book.image}
+                  takeaways={book.takeaways}
+                  isSelected={selectedBook?.name === book.name}
+                  onClick={() => handleBookClick(book)}
+                  index={index}
+                  color={book.spineColor}
+                  design={book.spineDesign}
+                  orientation={book.orientation}
+                />
+              ))}
+            </div>
+          </StyledShelf>
         </div>
 
         {selectedBook && <BookReader book={selectedBook} />}

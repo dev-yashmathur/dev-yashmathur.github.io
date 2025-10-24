@@ -1,6 +1,6 @@
 .goodreads-section {
   padding: var(--space-xxl) 0;
-  background: linear-gradient(180deg, rgba(255, 248, 244, 0.75) 0%, rgba(250, 238, 255, 0.65) 100%);
+  background: linear-gradient(180deg, rgba(255, 248, 244, 0.85) 0%, rgba(248, 238, 255, 0.68) 100%);
 }
 
 .section-subtitle {
@@ -11,52 +11,23 @@
   margin: 0 auto 3rem;
 }
 
-.bookshelf-container {
-  perspective: 1600px;
-  margin-bottom: 3rem;
-}
-
-.bookshelf {
-  position: relative;
-  max-width: 860px;
-  margin: 0 auto;
-  min-height: 240px;
+.bookshelf-scene {
+  margin: 0 auto 3.5rem;
+  max-width: 980px;
+  width: 100%;
+  padding: 0 1.5rem;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
-  padding-bottom: 36px;
-  transform-style: preserve-3d;
 }
 
-.bookshelf-shelf {
-  position: absolute;
-  bottom: 0;
-  width: 82%;
-  height: 26px;
-  background: linear-gradient(90deg, rgba(243, 168, 159, 0.9) 0%, rgba(108, 146, 240, 0.85) 100%);
-  border-radius: 16px;
-  box-shadow: 0 18px 40px rgba(118, 92, 78, 0.25);
-  transform: translateZ(-16px);
-}
-
-.bookshelf::before {
-  content: '';
-  position: absolute;
-  bottom: 18px;
-  width: 80%;
-  height: 52px;
-  background: radial-gradient(ellipse at center, rgba(108, 146, 240, 0.22) 0%, rgba(108, 146, 240, 0) 70%);
-  transform: rotateX(64deg) translateZ(-24px);
-  transform-origin: bottom;
-  filter: blur(16px);
+.bookshelf-surface {
+  background-color: rgba(250, 242, 236, 0.65);
 }
 
 @media (max-width: 768px) {
-  .bookshelf {
-    flex-wrap: wrap;
-    gap: 12px;
-    min-height: 210px;
-    padding-bottom: 42px;
+  .bookshelf-scene {
+    margin-bottom: 2.5rem;
+    padding: 0 1rem;
   }
 }
 
