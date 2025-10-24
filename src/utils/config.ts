@@ -4,8 +4,8 @@ export const config = {
   domain: 'yashmathur.com',
   name: 'Yash Mathur',
   social: {
-    linkedin: 'https://linkedin.com/in/yash-mathur',
-    github: 'https://github.com/yashmathur',
+    linkedin: 'https://www.linkedin.com/in/dev-yashmathur/',
+    github: 'https://github.com/dev-yashmathur',
   },
   taglines: [
     'Choose quality, because vibe coders don\'t last, but the mess does',

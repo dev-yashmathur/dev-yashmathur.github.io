@@ -1,11 +1,15 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { useId } from 'react';
+import type { KeyboardEvent } from 'react';
 import './ProjectCard.css';
 
 interface ProjectCardProps {
   title: string;
   skills: string[];
   description: string;
-  link: string;
+  link?: string;
+  learnMoreLink: string;
   image: string;
   timeline: string;
   isFocused: boolean;
@@ -17,11 +21,21 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   skills,
   description,
   link,
+  learnMoreLink,
   image,
   timeline,
   isFocused,
   onClick
 }) => {
+  const descriptionId = useId();
+
+  const handleKeyDown = (event: KeyboardEvent<HTMLElement>) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      onClick();
+    }
+  };
+
   const cardVariants = {
     focused: {
       scale: 1,
@@ -48,13 +62,18 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   };
 
   return (
-    <motion.div
+    <motion.article
       className={`project-card ${isFocused ? 'focused' : ''}`}
       onClick={onClick}
       variants={cardVariants}
       animate={isFocused ? 'focused' : 'unfocused'}
       initial="unfocused"
       whileHover={{ scale: isFocused ? 1.02 : 0.95 }}
+      role="group"
+      aria-label={`${title} project`}
+      aria-describedby={descriptionId}
+      tabIndex={isFocused ? 0 : -1}
+      onKeyDown={handleKeyDown}
     >
       <div
         className="project-card-image"
@@ -71,7 +90,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             <span key={index} className="project-card-skill">{skill}</span>
           ))}
         </div>
-        <p className="project-card-description">{description}</p>
+        <p className="project-card-description" id={descriptionId}>{description}</p>
 
         {isFocused && (
           <motion.div
@@ -80,24 +99,28 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
           >
-            <a
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="button-secondary project-card-link"
-            >
-              View Project
-            </a>
-            <a
-              href={`/projects/${title.toLowerCase().replace(/\s+/g, '-')}`}
+            {link && (
+              <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="button-secondary project-card-link"
+                onClick={(event) => event.stopPropagation()}
+              >
+                View Project
+              </a>
+            )}
+            <Link
+              to={learnMoreLink}
               className="project-card-learn-more"
+              onClick={(event) => event.stopPropagation()}
             >
               Learn more
-            </a>
+            </Link>
           </motion.div>
         )}
       </div>
-    </motion.div>
+    </motion.article>
   );
 };
 

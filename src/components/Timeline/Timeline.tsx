@@ -4,35 +4,43 @@ import TimelineItem from './TimelineItem';
 import './Timeline.css';
 
 // This would typically come from a data file or API
-const demoExperiences = [
+const Experiences = [
   {
-    title: 'Senior Software Engineer at XYZ Company',
-    year: '2023',
+    title: 'Lead AI Product Engineer - Techolution',
+    year: '2025',
     icon: '💻',
-    paragraph: 'Led development of scalable backend services using Node.js and Golang. Improved system performance by 40% through architectural optimizations.',
+    paragraph: 'Led multiple teams to develop and deliver AI Centric solutions, solving real customer problems and driving business value in short timeframes. Worked closely with sales team, to understand customer requirements and translate them into technical solutions. Worked on all aspects of developing a product, from the AI Pipelines, to the interface and deployment.',
     hyperlink: '#'
   },
   {
-    title: 'Software Developer at ABC Tech',
-    year: '2021',
+    title: 'Associate AI Engineer - Techolution',
+    year: '2024',
     icon: '🚀',
-    paragraph: 'Developed and maintained front-end components using React and TypeScript. Collaborated with UX team to implement responsive designs.',
+    paragraph: 'Worked with highly agile teams, working closely with customers to devliver GenAI powered solution, enhancing quality and improving efficiency. Also worked on lesser known technologies such as Google AppScript.',
     hyperlink: '#'
   },
   {
-    title: 'Junior Developer at Tech Startup',
-    year: '2020',
+    title: 'AI Intern - Techolution',
+    year: '2024',
     icon: '🔧',
-    paragraph: 'Contributed to full-stack development using MERN stack. Implemented authentication system and real-time data updates using websockets.',
+    paragraph: 'Worked on developing GenAI powered applications, including a strong focus on Finetuning, RAG Pipelines and Prompt Engineering.',
     hyperlink: '#'
   },
   {
-    title: 'Computer Science Degree',
-    year: '2019',
+    title: 'BTech in Artificial Intelligence - Mahindra University',
+    year: '2024',
     icon: '🎓',
     paragraph: 'Graduated with a Bachelor\'s degree in Computer Science. Specialized in software engineering and machine learning.',
     hyperlink: '#'
   },
+  {
+    title: 'Intern - ADP',
+    year: '2023',
+    icon: '🎓',
+    paragraph: 'Graduated with a Bachelor\'s degree in Computer Science. Specialized in software engineering and machine learning.',
+    hyperlink: '#'
+  },
+
 ];
 
 interface TimelineProps {
@@ -45,7 +53,7 @@ interface TimelineProps {
   }>;
 }
 
-const Timeline: React.FC<TimelineProps> = ({ experiences = demoExperiences }) => {
+const Timeline: React.FC<TimelineProps> = ({ experiences = Experiences }) => {
   const [visibleCount, setVisibleCount] = useState(3);
 
   const loadMore = () => {
@@ -53,10 +61,15 @@ const Timeline: React.FC<TimelineProps> = ({ experiences = demoExperiences }) =>
   };
 
   return (
-    <section id="timeline" className="timeline-section">
+    <section
+      id="timeline"
+      className="timeline-section"
+      aria-labelledby="timeline-heading"
+    >
       <div className="container">
         <motion.h2
           className="section-title"
+          id="timeline-heading"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -73,7 +86,7 @@ const Timeline: React.FC<TimelineProps> = ({ experiences = demoExperiences }) =>
                 key={index}
                 title={experience.title}
                 year={experience.year}
-                icon={<span role="img" aria-label="icon">{experience.icon}</span>}
+                icon={<span role="img" aria-hidden="true">{experience.icon}</span>}
                 paragraph={experience.paragraph}
                 hyperlink={experience.hyperlink}
                 index={index}

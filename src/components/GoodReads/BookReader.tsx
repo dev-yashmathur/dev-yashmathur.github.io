@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import type { KeyboardEvent as ReactKeyboardEvent } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import BookImageModal from './BookImageModal';
 import './BookReader.css';
@@ -25,6 +26,13 @@ const BookReader: React.FC<BookReaderProps> = ({ book }) => {
 
   const handleImageClick = () => {
     setIsImageModalOpen(true);
+  };
+
+  const handleCoverKeyDown = (event: ReactKeyboardEvent<HTMLDivElement>) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      handleImageClick();
+    }
   };
 
   const closeImageModal = () => {
@@ -74,10 +82,14 @@ const BookReader: React.FC<BookReaderProps> = ({ book }) => {
         className="book-reader-cover"
         style={{ backgroundImage: `url(${image})` }}
         onClick={handleImageClick}
+        role="button"
+        tabIndex={0}
+        aria-label={`View larger cover for ${name}`}
+        onKeyDown={handleCoverKeyDown}
       >
         <div className="book-reader-title">{name}</div>
         <div className="book-reader-author">by {author}</div>
-        <div className="book-image-zoom-hint">Click to zoom</div>
+        <div className="book-image-zoom-hint">Activate to zoom</div>
       </div>
 
       <div className="book-reader-pages">
@@ -90,6 +102,7 @@ const BookReader: React.FC<BookReaderProps> = ({ book }) => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
+              aria-live="polite"
             >
               <h3>My Key Takeaways</h3>
               <div className="book-reader-takeaways">
@@ -130,6 +143,7 @@ const BookReader: React.FC<BookReaderProps> = ({ book }) => {
       {isImageModalOpen && (
         <BookImageModal
           image={image}
+          title={name}
           onClose={closeImageModal}
         />
       )}

@@ -35,7 +35,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="hero" className="hero-section">
+    <section id="hero" className="hero-section" aria-labelledby="hero-title">
       <div className="container">
         <div className="hero-content">
           <motion.div
@@ -44,8 +44,8 @@ const HeroSection = () => {
             initial="hidden"
             animate="visible"
           >
-            <motion.h1 variants={fadeInUp} className="hero-name">
-              {config.name}
+            <motion.h1 variants={fadeInUp} className="hero-name" id="hero-title">
+              <span>{config.name}</span>
             </motion.h1>
 
             <motion.div
@@ -55,6 +55,8 @@ const HeroSection = () => {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.5 }}
               className="hero-tagline"
+              role="status"
+              aria-live="polite"
             >
               <p>{config.taglines[taglineIndex]}</p>
             </motion.div>
@@ -65,6 +67,7 @@ const HeroSection = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="button-primary"
+                aria-label={`Connect with ${config.name} on LinkedIn`}
               >
                 Let's get in touch
               </a>
@@ -76,16 +79,24 @@ const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
+            aria-hidden="true"
           >
-            <svg width="300" height="300" viewBox="0 0 300 300" className="hero-svg">
+            <svg
+              width="300"
+              height="300"
+              viewBox="0 0 300 300"
+              className="hero-svg"
+              aria-hidden="true"
+              focusable="false"
+            >
               <g>
                 {/* Simple developer illustration - placeholder */}
                 {/* We would replace this with a proper SVG from the assets folder */}
-                <circle cx="150" cy="80" r="50" fill="#008080" opacity="0.8" />
-                <rect x="100" y="130" width="100" height="120" rx="5" fill="#00BFFF" opacity="0.9" />
-                <circle cx="150" cy="80" r="30" fill="#F5F5F5" />
-                <rect x="130" y="170" width="40" height="60" rx="5" fill="#F5F5F5" />
-                <path d="M110 230 L190 230 L150 270 Z" fill="#008080" opacity="0.8" />
+                <circle cx="150" cy="80" r="50" fill="#f3a89f" opacity="0.8" />
+                <rect x="100" y="130" width="100" height="120" rx="5" fill="#6c92f0" opacity="0.9" />
+                <circle cx="150" cy="80" r="30" fill="#fff9f5" />
+                <rect x="130" y="170" width="40" height="60" rx="5" fill="#fff9f5" />
+                <path d="M110 230 L190 230 L150 270 Z" fill="#f3a89f" opacity="0.8" />
 
                 {/* Animated code elements */}
                 <motion.rect
@@ -94,7 +105,7 @@ const HeroSection = () => {
                   width="60"
                   height="5"
                   rx="2"
-                  fill="#F5F5F5"
+                  fill="#fff9f5"
                   initial={{ opacity: 0.5 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 1, repeat: Infinity, repeatType: "reverse" }}
@@ -105,7 +116,7 @@ const HeroSection = () => {
                   width="40"
                   height="5"
                   rx="2"
-                  fill="#F5F5F5"
+                  fill="#fff9f5"
                   initial={{ opacity: 0.3 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse", delay: 0.2 }}
@@ -116,7 +127,7 @@ const HeroSection = () => {
                   width="50"
                   height="5"
                   rx="2"
-                  fill="#F5F5F5"
+                  fill="#fff9f5"
                   initial={{ opacity: 0.7 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 1.2, repeat: Infinity, repeatType: "reverse", delay: 0.4 }}

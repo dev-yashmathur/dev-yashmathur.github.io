@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import type { KeyboardEvent } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ArticleModal from './ArticleModal';
 import './ArticleMagazineStand.css';
@@ -54,17 +55,29 @@ const ArticleMagazineStand: React.FC<ArticleMagazineStandProps> = ({ articles = 
     setSelectedArticle(article);
   };
 
+  const handleArticleKeyDown = (event: KeyboardEvent<HTMLDivElement>, article: typeof articles[0]) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      handleArticleClick(article);
+    }
+  };
+
   const closeModal = () => {
     setSelectedArticle(null);
   };
 
   return (
-    <section id="articles" className="articles-section">
+    <section
+      id="articles"
+      className="articles-section"
+      aria-labelledby="articles-heading"
+    >
       <div className="container">
         <div className="articles-content">
           <div className="articles-text">
             <motion.h2
-              className="section-title"
+              className="section-title articles-heading"
+              id="articles-heading"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
@@ -98,17 +111,25 @@ const ArticleMagazineStand: React.FC<ArticleMagazineStandProps> = ({ articles = 
                         <motion.div
                           key={startIdx + idx}
                           className="magazine"
-                          style={{
-                            backgroundImage: `url(${article.image})`
-                          }}
                           whileHover={{
-                            y: -15,
-                            scale: 1.1,
-                            zIndex: 20,
-                            transition: { duration: 0.3 }
+                            y: -22,
+                            scale: 1.08,
+                            rotateX: 6,
+                            zIndex: 24,
+                            transition: { duration: 0.28, ease: 'easeOut' }
                           }}
                           onClick={() => handleArticleClick(article)}
+                          role="button"
+                          tabIndex={0}
+                          aria-label={`Open preview for ${article.title}`}
+                          onKeyDown={(event) => handleArticleKeyDown(event, article)}
                         >
+                          <div
+                            className="magazine-cover"
+                            style={{
+                              backgroundImage: `url(${article.image})`
+                            }}
+                          />
                           <div className="magazine-title-overlay">
                             <h3>{article.title}</h3>
                           </div>

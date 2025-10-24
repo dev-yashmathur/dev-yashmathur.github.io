@@ -35,7 +35,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
   };
 
   return (
-    <motion.div
+    <motion.li
       className="timeline-item"
       variants={variants}
       initial="hidden"
@@ -54,13 +54,14 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
               target="_blank"
               rel="noopener noreferrer"
               className="timeline-link"
+              aria-label={`Learn more about ${title}`}
             >
               Learn more
             </a>
           )}
         </div>
       </div>
-    </motion.div>
+    </motion.li>
   );
 };
 

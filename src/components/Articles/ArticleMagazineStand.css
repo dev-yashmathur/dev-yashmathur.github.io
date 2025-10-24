@@ -1,6 +1,22 @@
 .articles-section {
   padding: 5rem 0;
-  background-color: #f9f9f9;
+  background: linear-gradient(180deg, #fdf6ec 0%, #fde7e6 65%, #f8e3f2 100%);
+}
+
+.articles-heading {
+  display: inline-flex;
+  padding: 0.4rem 1.4rem;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(255, 183, 197, 0.6), rgba(255, 221, 187, 0.55));
+  color: #523b44;
+  letter-spacing: 0.06em;
+  font-size: 2.75rem;
+  transform: rotateY(-12deg) skewX(-4deg);
+  text-transform: uppercase;
+  text-shadow: 4px 12px 18px rgba(240, 150, 170, 0.35), 0 2px 6px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 22px 30px rgba(244, 183, 210, 0.35);
+  border: 1px solid rgba(255, 204, 188, 0.45);
+  backdrop-filter: blur(8px);
 }
 
 .articles-content {
@@ -29,7 +45,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  perspective: 1000px;
+  perspective: 1400px;
 }
 
 .magazine-stand {
@@ -42,24 +58,52 @@
   justify-content: space-between;
   align-items: center;
   transform-style: preserve-3d;
-  background-color: #333;
-  border-radius: 5px;
-  padding: 20px;
+  background: linear-gradient(180deg, #f3d6d0 0%, #f0cfe0 45%, #edd6f5 100%);
+  border-radius: 24px;
+  padding: 28px 32px;
+  border: 1px solid rgba(255, 201, 216, 0.6);
+  box-shadow: 0 40px 100px rgba(244, 170, 209, 0.42), inset 0 2px 6px rgba(255, 255, 255, 0.4);
+  transform: rotateY(-9deg) rotateX(3deg);
+  overflow: visible;
+}
+
+.magazine-stand::before {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0));
+  pointer-events: none;
+  z-index: 1;
 }
 
 .magazine-stand-shelf {
-  width: 100%;
-  height: 15px;
-  background-color: #222;
-  border-radius: 5px;
-  margin: 10px 0;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
-  transform: translateZ(-5px);
+  width: calc(100% - 36px);
+  height: 24px;
+  background: linear-gradient(180deg, #f8d3c7 0%, #f3bfb6 50%, #f0b3b6 100%);
+  border-radius: 18px;
+  margin: 22px auto 8px;
+  box-shadow: 0 16px 28px rgba(238, 142, 168, 0.28), inset 0 2px 8px rgba(255, 232, 225, 0.9);
+  transform: translateZ(-12px);
+  position: relative;
+}
+
+.magazine-stand-shelf::before {
+  content: '';
+  position: absolute;
+  inset: -6px -18px 12px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.5), transparent);
+  opacity: 0.9;
+  filter: blur(6px);
+  z-index: -1;
 }
 
 .magazine-row-container {
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
+  position: relative;
+  z-index: 2;
 }
 
 .magazine-row {
@@ -71,54 +115,98 @@
   padding: 0 10px;
   position: relative;
   height: 120px;
-  background-color: #444;
-  border-radius: 3px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.45), rgba(255, 172, 201, 0.25));
+  border-radius: 14px;
+  box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.45), inset 0 -6px 12px rgba(244, 176, 188, 0.6);
 }
 
 .magazine {
-  width: 100px;
-  height: 140px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 2px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  width: 110px;
+  height: 152px;
+  border-radius: 6px;
+  box-shadow: 0 20px 35px rgba(239, 140, 178, 0.35);
   cursor: pointer;
-  transition: transform 0.3s ease;
-  margin: 0 5px;
-  transform-origin: bottom center;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  margin: 0 12px;
+  transform-origin: center bottom;
   position: relative;
   top: 0;
   display: inline-block;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(1px);
+}
+
+.magazine:focus-visible {
+  outline: 3px solid rgba(108, 146, 240, 0.5);
+  outline-offset: 6px;
+}
+
+.magazine-cover {
+  position: relative;
+  flex: 0 0 70%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  overflow: hidden;
+}
+
+.magazine-cover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.18), transparent 55%);
+  mix-blend-mode: screen;
+  opacity: 0.9;
+  transition: opacity 0.35s ease;
 }
 
 .magazine-title-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
   width: 100%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
-  padding: 1rem 0.5rem 0.5rem;
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  flex: 0 0 30%;
+  background: rgba(99, 55, 79, 0.85);
+  padding: 0.6rem 0.55rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-top: 1px solid rgba(255, 214, 230, 0.4);
 }
 
-.magazine:hover .magazine-title-overlay {
-  opacity: 1;
+.magazine:hover {
+  box-shadow: 0 26px 40px rgba(238, 150, 184, 0.5);
+}
+
+.magazine:hover .magazine-cover::after {
+  opacity: 0.5;
 }
 
 .magazine-title-overlay h3 {
-  color: white;
-  font-size: 0.85rem;
+  color: #ffe6f3;
+  font-size: 0.75rem;
   margin: 0;
-  text-align: center;
   font-weight: 500;
+  line-height: 1.2;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @media (max-width: 992px) {
   .articles-content {
     flex-direction: column;
+  }
+
+  .articles-heading {
+    transform: rotateY(-8deg) skewX(-3deg);
+    font-size: 2.4rem;
+    color: #543f47;
   }
 
   .articles-text {
@@ -135,10 +223,11 @@
   .magazine {
     width: 100px;
     height: 160px;
+    margin: 0 10px;
   }
 
   .magazine-title-overlay h3 {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
   }
 }
 
@@ -146,5 +235,11 @@
   .magazine {
     width: 80px;
     height: 130px;
+    margin: 0 6px;
+  }
+
+  .magazine-stand {
+    transform: rotateY(-6deg) rotateX(2deg);
+    padding: 22px;
   }
 }

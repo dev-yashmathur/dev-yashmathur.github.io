@@ -1,6 +1,6 @@
 export const colors = {
-  primaryBackground: '#F5F5F5', // Light Gray
-  primaryCta: '#00BFFF',        // Sky Blue
-  secondaryAction: '#008080',   // Teal
-  primaryText: '#333333',       // Dark Charcoal
+  primaryBackground: '#fef8f4', // Warm blush
+  primaryCta: '#6c92f0',        // Soft blue
+  secondaryAction: '#f3a89f',   // Peach accent
+  primaryText: '#3f312c',       // Deep cocoa
 };

@@ -13,7 +13,7 @@
   background-size: cover;
   background-position: center;
   border-radius: 4px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 45px rgba(118, 92, 78, 0.25);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -34,8 +34,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
+  background-color: rgba(63, 49, 44, 0.75);
+  color: #fff;
   padding: 5px 10px;
   border-radius: 4px;
   font-size: 0.8rem;
@@ -71,9 +71,9 @@
 .book-reader-page {
   width: 100%;
   height: 100%;
-  background: #fff;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-  border-radius: 0 0 4px 4px;
+  background: var(--card-surface);
+  box-shadow: 0 18px 36px rgba(118, 92, 78, 0.18);
+  border-radius: 18px;
   overflow: hidden;
   transform-origin: center top;
   transform-style: preserve-3d;
@@ -85,17 +85,28 @@
 }
 
 .book-reader-page-content {
-  padding: 50px 40px 30px;
+  padding: 48px 40px 32px;
   height: 100%;
   overflow: auto;
 }
 
 .book-reader-page-content h3 {
+  position: relative;
   color: var(--primary-text);
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  margin-bottom: 1.75rem;
   text-align: center;
   font-weight: 600;
+}
+
+.book-reader-page-content h3::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin: 0.75rem auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--primary-cta), rgba(108, 146, 240, 0));
 }
 
 .book-reader-takeaways {
@@ -127,7 +138,7 @@
   text-align: center;
   margin-top: 1.5rem;
   font-size: 0.85rem;
-  color: #777;
+  color: var(--muted-text);
 }
 
 .book-reader-navigation {
@@ -140,9 +151,9 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: white;
+  background: rgba(255, 255, 255, 0.95);
   border: none;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 24px rgba(118, 92, 78, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -156,6 +167,11 @@
   background: var(--primary-cta);
   color: white;
   transform: translateY(-2px);
+}
+
+.book-reader-nav-button:focus-visible {
+  outline: 3px solid rgba(108, 146, 240, 0.5);
+  outline-offset: 3px;
 }
 
 .book-reader-nav-button:disabled {

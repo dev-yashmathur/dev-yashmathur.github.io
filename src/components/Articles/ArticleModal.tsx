@@ -1,4 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
+import { useEffect, useRef, useId } from 'react';
 import './ArticleModal.css';
 
 interface ArticleModalProps {
@@ -13,6 +14,25 @@ interface ArticleModalProps {
 
 const ArticleModal: React.FC<ArticleModalProps> = ({ article, onClose }) => {
   if (!article) return null;
+
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const titleId = useId();
+  const descriptionId = useId();
+
+  useEffect(() => {
+    closeButtonRef.current?.focus();
+  }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [onClose]);
 
   return (
     <AnimatePresence>
@@ -30,8 +50,17 @@ const ArticleModal: React.FC<ArticleModalProps> = ({ article, onClose }) => {
           exit={{ opacity: 0, y: 50 }}
           transition={{ type: 'spring', damping: 25, stiffness: 300 }}
           onClick={(e) => e.stopPropagation()}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby={titleId}
+          aria-describedby={descriptionId}
         >
-          <button className="article-modal-close" onClick={onClose}>
+          <button
+            className="article-modal-close"
+            onClick={onClose}
+            aria-label="Close article preview"
+            ref={closeButtonRef}
+          >
             &times;
           </button>
 
@@ -41,8 +70,8 @@ const ArticleModal: React.FC<ArticleModalProps> = ({ article, onClose }) => {
           />
 
           <div className="article-modal-content">
-            <h2 className="article-modal-title">{article.title}</h2>
-            <p className="article-modal-preview">{article.preview}</p>
+            <h2 className="article-modal-title" id={titleId}>{article.title}</h2>
+            <p className="article-modal-preview" id={descriptionId}>{article.preview}</p>
 
             <a
               href={article.link}

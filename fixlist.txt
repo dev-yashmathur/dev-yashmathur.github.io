@@ -1,0 +1,4 @@
+1. Changing width in Hero Section
+2. SVG in Hero Section
+3. Timeline - Duration, Tags (skills)
+

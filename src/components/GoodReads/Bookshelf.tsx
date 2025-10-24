@@ -90,7 +90,7 @@ interface BookshelfProps {
   bookColor?: string; // Optional color parameter for all books
 }
 
-const Bookshelf: React.FC<BookshelfProps> = ({ books = demoBooks, bookColor = '#008080' }) => {
+const Bookshelf: React.FC<BookshelfProps> = ({ books = demoBooks, bookColor = '#f3a89f' }) => {
   const [selectedBook, setSelectedBook] = useState<typeof books[0] | null>(null);
 
   const handleBookClick = (book: typeof books[0]) => {
@@ -102,10 +102,15 @@ const Bookshelf: React.FC<BookshelfProps> = ({ books = demoBooks, bookColor = '#
   };
 
   return (
-    <section id="good-reads" className="goodreads-section">
+    <section
+      id="good-reads"
+      className="goodreads-section"
+      aria-labelledby="goodreads-heading"
+    >
       <div className="container">
         <motion.h2
           className="section-title"
+          id="goodreads-heading"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}

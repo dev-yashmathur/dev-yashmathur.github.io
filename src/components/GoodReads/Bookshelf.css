@@ -1,69 +1,68 @@
 .goodreads-section {
-  padding: 5rem 0;
-  background-color: white;
+  padding: var(--space-xxl) 0;
+  background: linear-gradient(180deg, rgba(255, 248, 244, 0.75) 0%, rgba(250, 238, 255, 0.65) 100%);
 }
 
 .section-subtitle {
   text-align: center;
-  font-size: 1.1rem;
-  color: var(--primary-text);
-  opacity: 0.8;
-  max-width: 600px;
+  font-size: 1.05rem;
+  color: var(--secondary-text);
+  max-width: 620px;
   margin: 0 auto 3rem;
 }
 
 .bookshelf-container {
-  perspective: 1000px;
+  perspective: 1600px;
   margin-bottom: 3rem;
 }
 
 .bookshelf {
   position: relative;
-  max-width: 800px;
+  max-width: 860px;
   margin: 0 auto;
-  min-height: 220px;
+  min-height: 240px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  padding-bottom: 20px;
+  padding-bottom: 36px;
   transform-style: preserve-3d;
 }
 
 .bookshelf-shelf {
   position: absolute;
   bottom: 0;
-  width: 80%;
-  height: 20px;
-  background: linear-gradient(to right, #8b4513, #d2691e, #8b4513);
-  border-radius: 5px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-  transform: translateZ(-10px);
+  width: 82%;
+  height: 26px;
+  background: linear-gradient(90deg, rgba(243, 168, 159, 0.9) 0%, rgba(108, 146, 240, 0.85) 100%);
+  border-radius: 16px;
+  box-shadow: 0 18px 40px rgba(118, 92, 78, 0.25);
+  transform: translateZ(-16px);
 }
 
 .bookshelf::before {
   content: '';
   position: absolute;
-  bottom: 20px;
-  width: 75%;
-  height: 40px;
-  background: linear-gradient(to right, rgba(139, 69, 19, 0.3), rgba(139, 69, 19, 0.6), rgba(139, 69, 19, 0.3));
-  transform: rotateX(60deg) translateZ(-20px);
+  bottom: 18px;
+  width: 80%;
+  height: 52px;
+  background: radial-gradient(ellipse at center, rgba(108, 146, 240, 0.22) 0%, rgba(108, 146, 240, 0) 70%);
+  transform: rotateX(64deg) translateZ(-24px);
   transform-origin: bottom;
-  filter: blur(8px);
+  filter: blur(16px);
 }
 
 @media (max-width: 768px) {
   .bookshelf {
     flex-wrap: wrap;
-    gap: 5px;
-    min-height: 190px;
-    padding-bottom: 30px;
+    gap: 12px;
+    min-height: 210px;
+    padding-bottom: 42px;
   }
 }
 
 @media (max-width: 576px) {
   .goodreads-section {
-    padding: 3rem 0;
+    padding: var(--space-xl) 0;
   }
 
   .section-subtitle {

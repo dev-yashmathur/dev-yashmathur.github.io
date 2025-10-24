@@ -1,20 +1,20 @@
 .timeline-section {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-  background-color: #f9f9f9;
+  padding-top: var(--space-xxl);
+  padding-bottom: var(--space-xxl);
+  background: linear-gradient(180deg, rgba(255, 246, 238, 0.85) 0%, rgba(255, 238, 231, 0.65) 100%);
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
   text-align: center;
   margin-bottom: 3rem;
   color: var(--primary-text);
-  font-weight: 700;
+  letter-spacing: 0.04em;
 }
 
 .timeline-container {
   position: relative;
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 2rem 0;
 }
@@ -23,60 +23,59 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 50%;
+  left: clamp(1.75rem, 6vw, 3rem);
   width: 4px;
-  background: linear-gradient(to bottom,
-    rgba(0, 191, 255, 0.2),
-    rgba(0, 191, 255, 0.5),
-    rgba(0, 128, 128, 0.8));
-  transform: translateX(-50%);
-  border-radius: 2px;
+  background: linear-gradient(180deg, rgba(108, 146, 240, 0.3) 0%, rgba(243, 168, 159, 0.7) 100%);
+  transform: none;
+  border-radius: 999px;
   z-index: 0;
 }
 
 .timeline-items {
   position: relative;
   z-index: 1;
+  display: grid;
+  gap: 1.75rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .timeline-load-more {
   display: flex;
   justify-content: center;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
 }
 
 .timeline-load-more button {
-  padding: 0.7rem 1.5rem;
-  font-weight: 500;
-  border-radius: 4px;
+  padding: 0.75rem 1.75rem;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .timeline-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 @media (max-width: 768px) {
-  .timeline-container {
-    padding-left: 1rem;
-  }
-
   .timeline-line {
-    left: 1rem;
-  }
-
-  .section-title {
-    font-size: 2rem;
-    margin-bottom: 2rem;
+    left: 12px;
   }
 }
 
 @media (max-width: 576px) {
   .timeline-section {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
   }
 
-  .timeline-container {
-    padding-left: 2rem;
+  .section-title {
+    margin-bottom: 2rem;
   }
 
   .timeline-line {
-    left: 0.5rem;
+    left: 6px;
   }
 }
