@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { config } from '../../utils/config';
+import Robot from '../../assets/images/Robot.png'
 import './HeroSection.css';
 
 const HeroSection = () => {
@@ -81,59 +82,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             aria-hidden="true"
           >
-            <svg
-              width="300"
-              height="300"
-              viewBox="0 0 300 300"
-              className="hero-svg"
-              aria-hidden="true"
-              focusable="false"
-            >
-              <g>
-                {/* Simple developer illustration - placeholder */}
-                {/* We would replace this with a proper SVG from the assets folder */}
-                <circle cx="150" cy="80" r="50" fill="#f3a89f" opacity="0.8" />
-                <rect x="100" y="130" width="100" height="120" rx="5" fill="#6c92f0" opacity="0.9" />
-                <circle cx="150" cy="80" r="30" fill="#fff9f5" />
-                <rect x="130" y="170" width="40" height="60" rx="5" fill="#fff9f5" />
-                <path d="M110 230 L190 230 L150 270 Z" fill="#f3a89f" opacity="0.8" />
-
-                {/* Animated code elements */}
-                <motion.rect
-                  x="120"
-                  y="150"
-                  width="60"
-                  height="5"
-                  rx="2"
-                  fill="#fff9f5"
-                  initial={{ opacity: 0.5 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 1, repeat: Infinity, repeatType: "reverse" }}
-                />
-                <motion.rect
-                  x="120"
-                  y="160"
-                  width="40"
-                  height="5"
-                  rx="2"
-                  fill="#fff9f5"
-                  initial={{ opacity: 0.3 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse", delay: 0.2 }}
-                />
-                <motion.rect
-                  x="120"
-                  y="170"
-                  width="50"
-                  height="5"
-                  rx="2"
-                  fill="#fff9f5"
-                  initial={{ opacity: 0.7 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 1.2, repeat: Infinity, repeatType: "reverse", delay: 0.4 }}
-                />
-              </g>
-            </svg>
+            <img src={Robot} alt="Robot illustration" className="hero-robot-image" />
           </motion.div>
         </div>
       </div>

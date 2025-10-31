@@ -1,21 +1,21 @@
 .articles-section {
   padding: 5rem 0;
-  background: linear-gradient(180deg, #fdf6ec 0%, #fde7e6 65%, #f8e3f2 100%);
+  background: linear-gradient(180deg, #fbf1df 0%, #f3dfbf 65%, #ead0a6 100%);
 }
 
 .articles-heading {
   display: inline-flex;
   padding: 0.4rem 1.4rem;
   border-radius: 16px;
-  background: linear-gradient(135deg, rgba(255, 183, 197, 0.6), rgba(255, 221, 187, 0.55));
-  color: #523b44;
+  background: linear-gradient(135deg, rgba(224, 172, 101, 0.7), rgba(245, 216, 174, 0.6));
+  color: #3f2a16;
   letter-spacing: 0.06em;
   font-size: 2.75rem;
   transform: rotateY(-12deg) skewX(-4deg);
   text-transform: uppercase;
-  text-shadow: 4px 12px 18px rgba(240, 150, 170, 0.35), 0 2px 6px rgba(255, 255, 255, 0.5);
-  box-shadow: 0 22px 30px rgba(244, 183, 210, 0.35);
-  border: 1px solid rgba(255, 204, 188, 0.45);
+  text-shadow: 4px 12px 18px rgba(139, 96, 45, 0.38), 0 2px 6px rgba(255, 244, 226, 0.6);
+  box-shadow: 0 22px 30px rgba(151, 105, 49, 0.35);
+  border: 1px solid rgba(193, 146, 83, 0.55);
   backdrop-filter: blur(8px);
 }
 
@@ -58,11 +58,11 @@
   justify-content: space-between;
   align-items: center;
   transform-style: preserve-3d;
-  background: linear-gradient(180deg, #f3d6d0 0%, #f0cfe0 45%, #edd6f5 100%);
+  background: linear-gradient(180deg, #f1ddb9 0%, #d4a264 45%, #9b6b3b 100%);
   border-radius: 24px;
   padding: 28px 32px;
-  border: 1px solid rgba(255, 201, 216, 0.6);
-  box-shadow: 0 40px 100px rgba(244, 170, 209, 0.42), inset 0 2px 6px rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(145, 96, 48, 0.55);
+  box-shadow: 0 40px 100px rgba(120, 78, 35, 0.45), inset 0 2px 6px rgba(255, 243, 222, 0.5);
   transform: rotateY(-9deg) rotateX(3deg);
   overflow: visible;
 }
@@ -80,10 +80,10 @@
 .magazine-stand-shelf {
   width: calc(100% - 36px);
   height: 24px;
-  background: linear-gradient(180deg, #f8d3c7 0%, #f3bfb6 50%, #f0b3b6 100%);
+  background: linear-gradient(180deg, #f0d2a2 0%, #c78a43 50%, #9d652f 100%);
   border-radius: 18px;
   margin: 22px auto 8px;
-  box-shadow: 0 16px 28px rgba(238, 142, 168, 0.28), inset 0 2px 8px rgba(255, 232, 225, 0.9);
+  box-shadow: 0 16px 28px rgba(112, 70, 30, 0.35), inset 0 2px 8px rgba(255, 233, 199, 0.85);
   transform: translateZ(-12px);
   position: relative;
 }
@@ -115,16 +115,16 @@
   padding: 0 10px;
   position: relative;
   height: 120px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.45), rgba(255, 172, 201, 0.25));
+  background: linear-gradient(135deg, rgba(255, 246, 232, 0.4), rgba(189, 133, 76, 0.3));
   border-radius: 14px;
-  box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.45), inset 0 -6px 12px rgba(244, 176, 188, 0.6);
+  box-shadow: inset 0 1px 3px rgba(255, 252, 240, 0.55), inset 0 -6px 12px rgba(137, 92, 46, 0.55);
 }
 
 .magazine {
   width: 110px;
   height: 152px;
   border-radius: 6px;
-  box-shadow: 0 20px 35px rgba(239, 140, 178, 0.35);
+  box-shadow: 0 20px 35px rgba(121, 78, 32, 0.45);
   cursor: pointer;
   transition: transform 0.35s ease, box-shadow 0.35s ease;
   margin: 0 12px;
@@ -140,7 +140,7 @@
 }
 
 .magazine:focus-visible {
-  outline: 3px solid rgba(108, 146, 240, 0.5);
+  outline: 3px solid rgba(182, 124, 58, 0.55);
   outline-offset: 6px;
 }
 
@@ -168,17 +168,17 @@
 .magazine-title-overlay {
   width: 100%;
   flex: 0 0 30%;
-  background: rgba(99, 55, 79, 0.85);
+  background: rgba(72, 50, 28, 0.85);
   padding: 0.6rem 0.55rem;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  border-top: 1px solid rgba(255, 214, 230, 0.4);
+  border-top: 1px solid rgba(201, 156, 92, 0.45);
 }
 
 .magazine:hover {
-  box-shadow: 0 26px 40px rgba(238, 150, 184, 0.5);
+  box-shadow: 0 26px 40px rgba(121, 78, 32, 0.55);
 }
 
 .magazine:hover .magazine-cover::after {
@@ -186,7 +186,7 @@
 }
 
 .magazine-title-overlay h3 {
-  color: #ffe6f3;
+  color: #f8e8ce;
   font-size: 0.75rem;
   margin: 0;
   font-weight: 500;

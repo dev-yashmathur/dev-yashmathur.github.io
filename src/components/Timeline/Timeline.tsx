@@ -10,35 +10,35 @@ const Experiences = [
     year: '2025',
     icon: '💻',
     paragraph: 'Led multiple teams to develop and deliver AI Centric solutions, solving real customer problems and driving business value in short timeframes. Worked closely with sales team, to understand customer requirements and translate them into technical solutions. Worked on all aspects of developing a product, from the AI Pipelines, to the interface and deployment.',
-    hyperlink: '#'
+    hyperlink: undefined
   },
   {
     title: 'Associate AI Engineer - Techolution',
     year: '2024',
     icon: '🚀',
     paragraph: 'Worked with highly agile teams, working closely with customers to devliver GenAI powered solution, enhancing quality and improving efficiency. Also worked on lesser known technologies such as Google AppScript.',
-    hyperlink: '#'
+    hyperlink: undefined
   },
   {
     title: 'AI Intern - Techolution',
     year: '2024',
     icon: '🔧',
     paragraph: 'Worked on developing GenAI powered applications, including a strong focus on Finetuning, RAG Pipelines and Prompt Engineering.',
-    hyperlink: '#'
+    hyperlink: undefined
   },
   {
     title: 'BTech in Artificial Intelligence - Mahindra University',
     year: '2024',
     icon: '🎓',
     paragraph: 'Graduated with a Bachelor\'s degree in Computer Science. Specialized in software engineering and machine learning.',
-    hyperlink: '#'
+    hyperlink: undefined
   },
   {
     title: 'Intern - ADP',
     year: '2023',
     icon: '🎓',
     paragraph: 'Graduated with a Bachelor\'s degree in Computer Science. Specialized in software engineering and machine learning.',
-    hyperlink: '#'
+    hyperlink: undefined
   },
 
 ];
@@ -54,7 +54,7 @@ interface TimelineProps {
 }
 
 const Timeline: React.FC<TimelineProps> = ({ experiences = Experiences }) => {
-  const [visibleCount, setVisibleCount] = useState(3);
+  const [visibleCount, setVisibleCount] = useState(5);
 
   const loadMore = () => {
     setVisibleCount(prev => Math.min(prev + 3, experiences.length));

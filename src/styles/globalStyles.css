@@ -1,15 +1,15 @@
 :root {
-  --primary-background: #fef8f4;
-  --secondary-background: #fdeee4;
-  --surface-color: #fff9f5;
+  --primary-background: #fdf6eb;
+  --secondary-background: #f0e0c9;
+  --surface-color: #fff7ef;
   --card-surface: #ffffff;
-  --neutral-100: #f8ebe2;
-  --neutral-200: #f0ded2;
-  --neutral-300: #e3cfc0;
-  --primary-cta: #6c92f0;
-  --primary-cta-hover: #587fdd;
-  --secondary-action: #f3a89f;
-  --secondary-action-hover: #e38e85;
+  --neutral-100: #f4e5d3;
+  --neutral-200: #ebd9c4;
+  --neutral-300: #decab2;
+  --primary-cta: #5d909c;
+  --primary-cta-hover: #4c7f89;
+  --secondary-action: #d6a470;
+  --secondary-action-hover: #c48e59;
   --primary-text: #3f312c;
   --secondary-text: #5e4b45;
   --muted-text: #8c746b;
@@ -100,7 +100,7 @@ button,
 .button-primary {
   background-color: var(--primary-cta);
   color: white;
-  box-shadow: 0 8px 22px rgba(108, 146, 240, 0.25);
+  box-shadow: 0 8px 22px rgba(93, 144, 156, 0.25);
 }
 
 .button-primary:hover,
@@ -111,7 +111,7 @@ button,
 .button-secondary {
   background-color: var(--secondary-action);
   color: white;
-  box-shadow: 0 8px 20px rgba(243, 168, 159, 0.25);
+  box-shadow: 0 8px 20px rgba(214, 164, 112, 0.25);
 }
 
 .button-secondary:hover,

@@ -30,8 +30,8 @@
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary-cta), rgba(108, 146, 240, 0.4));
-  box-shadow: 0 0 0 6px rgba(108, 146, 240, 0.1);
+  background: linear-gradient(135deg, var(--primary-cta), rgba(93, 144, 156, 0.4));
+  box-shadow: 0 0 0 6px rgba(93, 144, 156, 0.1);
 }
 
 .timeline-content:hover {
@@ -45,7 +45,7 @@
   font-size: 1.05rem;
   padding: 0.35rem 0.75rem;
   border-radius: 999px;
-  background: rgba(108, 146, 240, 0.12);
+  background: rgba(93, 144, 156, 0.12);
 }
 
 .timeline-icon {
@@ -54,7 +54,7 @@
   border-radius: 16px;
   display: grid;
   place-items: center;
-  background: rgba(243, 168, 159, 0.18);
+  background: rgba(206, 168, 116, 0.2);
   color: var(--secondary-text);
   font-size: 1.5rem;
 }

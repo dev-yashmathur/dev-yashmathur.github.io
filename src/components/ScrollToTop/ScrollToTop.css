@@ -13,13 +13,13 @@
   justify-content: center;
   cursor: pointer;
   z-index: 99;
-  box-shadow: 0 16px 32px rgba(108, 146, 240, 0.25);
+  box-shadow: 0 16px 32px rgba(93, 144, 156, 0.25);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .scroll-to-top:hover {
   background-color: var(--primary-cta-hover);
-  box-shadow: 0 22px 40px rgba(108, 146, 240, 0.3);
+  box-shadow: 0 22px 40px rgba(93, 144, 156, 0.3);
   transform: translateY(-3px);
 }
 

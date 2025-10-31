@@ -12,8 +12,8 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 20% 20%, rgba(255, 210, 188, 0.55) 0%, rgba(255, 210, 188, 0) 55%),
-              radial-gradient(circle at 80% 0%, rgba(194, 214, 255, 0.4) 0%, rgba(194, 214, 255, 0) 55%);
+  background: radial-gradient(circle at 20% 20%, rgba(246, 219, 186, 0.55) 0%, rgba(246, 219, 186, 0) 55%),
+              radial-gradient(circle at 80% 0%, rgba(222, 206, 173, 0.45) 0%, rgba(222, 206, 173, 0) 55%);
   pointer-events: none;
   z-index: 0;
 }
@@ -48,7 +48,7 @@
 
 .hero-name span {
   display: inline-block;
-  background: linear-gradient(135deg, rgba(243, 168, 159, 0.4), rgba(108, 146, 240, 0.4));
+  background: linear-gradient(135deg, rgba(230, 200, 162, 0.5), rgba(194, 164, 124, 0.4));
   padding: 0.15em 0.35em;
   border-radius: 18px;
 }
@@ -61,7 +61,7 @@
   line-height: 1.5;
   margin: 0;
   padding-left: 0.25rem;
-  border-left: 3px solid rgba(108, 146, 240, 0.35);
+  border-left: 3px solid rgba(181, 143, 96, 0.35);
 }
 
 .hero-tagline p {
@@ -110,7 +110,7 @@
   width: clamp(220px, 35vw, 320px);
   height: clamp(220px, 35vw, 320px);
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(108, 146, 240, 0.25) 0%, rgba(108, 146, 240, 0) 65%);
+  background: radial-gradient(circle, rgba(204, 174, 133, 0.3) 0%, rgba(204, 174, 133, 0) 65%);
   z-index: 0;
 }
 
@@ -142,7 +142,7 @@
 
   .hero-tagline {
     border-left: none;
-    border-top: 3px solid rgba(108, 146, 240, 0.35);
+    border-top: 3px solid rgba(181, 143, 96, 0.35);
     padding-left: 0;
     padding-top: 0.75rem;
   }

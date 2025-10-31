@@ -24,5 +24,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src"]
+  "include": ["src", "src/components/GoodReads/BookshelfComponents/Book.tsx", "src/components/GoodReads/BookshelfComponents/BookShelf.tsx", "src/components/GoodReads/BookshelfComponents/BookStack.tsx", "src/components/GoodReads/BookshelfComponents/BookStackElement.tsx", "src/components/GoodReads/BookshelfComponents/BookText.tsx"]
 }

@@ -1,8 +1,7 @@
-import classicGamesImg from '../assets/images/ClassicGamesHub.png';
-import increzioLightImg from '../assets/images/Increzio_light.png';
-import increzioDarkImg from '../assets/images/Increzio_dark.png';
+import classicGamesHomePage from '../assets/images/ClassicGamesHub.png';
+import increzioLightHomeScreen from '../assets/images/Increzio_light.png';
 import rlSolverImg from '../assets/images/RLTicTacToe.jpg';
-import tamboloImg from '../assets/images/Tambolo.png';
+
 
 export interface ProjectProcessStep {
   title: string;
@@ -33,92 +32,92 @@ export interface ProjectDetail {
 
 export const projects: ProjectDetail[] = [
   {
-    slug: 'classic-games-hub',
-    title: 'Classic Games Hub',
-    timeline: '2024',
-    summary: 'A curated storefront that lets players rediscover retro board and arcade titles with modern multiplayer support.',
-    skills: ['React', 'Next.js', 'Firebase'],
-    image: classicGamesImg,
-    liveUrl: 'https://classic-games-hub.example.com',
-    repoUrl: 'https://github.com/dev-yashmathur/classic-games-hub',
-    learnMoreLink: '/projects/classic-games-hub',
-    videoUrl: 'https://www.youtube.com/embed/ysz5S6PUM-U',
-    overview: 'Classic Games Hub reimagines the experience of browsing dusty game stores by giving retro fans a polished digital catalogue, live multiplayer rooms, and profiles that track high-scores in real time.',
-    motivation: [
-      'I grew up swapping cartridges and board games with friends, and wanted to capture that communal vibe digitally without the friction of outdated UIs.',
-      'Indie developers were also looking for a lightweight discovery channel that did not bury their lovingly remastered ports under modern releases.'
+    "slug": "classic-games-hub",
+    "title": "Classic Games Hub",
+    "timeline": "2024",
+    "summary": "A multiplayer platform that blends nostalgia with modern design, letting players enjoy fun new twists on classic childhood games like TicTacToe and Four In a Row.",
+    "skills": ["React", "Next.js", "Firebase", "SEO"],
+    "image": classicGamesHomePage,
+    "liveUrl": "https://classicgameshub.com",
+    "repoUrl": "https://github.com/dev-yashmathur/classic-games-hub",
+    "learnMoreLink": "/projects/classic-games-hub",
+    "videoUrl": "https://www.youtube.com/embed/ysz5S6PUM-U",
+    "overview": "Classic Games Hub reimagines nostalgic childhood board and arcade games into playful, modern web experiences. It lets players compete online, challenge the computer, or enjoy reimagined versions of old favorites—all within a sleek, warm, 3D-inspired interface.",
+    "motivation": [
+      "I often saw creative modern twists of nostalgic games on social media and wanted to build a central, high-quality platform to play them.",
+      "Traditional TicTacToe often ends in a draw, losing its excitement. I wanted to revive that strategic fun while keeping it light, familiar, and accessible."
     ],
-    process: [
+    "process": [
       {
-        title: 'Experience Research & Content Pipeline',
-        description: 'Interviewed 12 retro enthusiasts, mapped the discovery journey, and built a content pipeline that ingests metadata from IGDB plus manual curator notes.'
+        "title": "Ideation & Validation",
+        "description": "Discovered the concept through social media trends, validated user interest by discussing with friends and researching engagement on similar games."
       },
       {
-        title: 'Realtime Multiplayer Layer',
-        description: 'Implemented a Firebase powered presence service, WebRTC game rooms, and a turn-based rules engine that can be configured per title.'
+        "title": "Design & Development",
+        "description": "Designed a warm, playful 3D aesthetic, implemented live multiplayer using Firebase for serverless deployment, and developed core game logic in React + Next.js."
       },
       {
-        title: 'Observability & Launch',
-        description: 'Added structured logging, replayable error sessions, and shipped to production behind feature flags with A/B tested onboarding.'
+        "title": "Testing & Deployment",
+        "description": "Created local 2-player and computer-play modes, added online multiplayer, and deployed to Vercel with CI/CD. Monitored SEO metrics and optimized for Google search rankings."
       }
     ],
-    gallery: [
+    "gallery": [
       {
-        src: classicGamesImg,
-        alt: 'Classic Games Hub storefront hero illustration'
+        "src": "classicGamesImg",
+        "alt": "Classic Games Hub homepage showcasing nostalgic game variants"
       },
       {
-        src: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=1200',
-        alt: 'Players gathered around an arcade machine'
+        "src": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=1200",
+        "alt": "Players gathered around an arcade machine"
       },
       {
-        src: 'https://images.unsplash.com/photo-1527430253228-e93688616381?auto=format&fit=crop&q=80&w=1200',
-        alt: 'Board game pieces arranged on a table'
+        "src": "https://images.unsplash.com/photo-1527430253228-e93688616381?auto=format&fit=crop&q=80&w=1200",
+        "alt": "Board game pieces arranged on a table"
       }
     ]
   },
   {
-    slug: 'increzio-habit-tracker',
-    title: 'Increzio — Habit Tracker',
-    timeline: '2025',
-    summary: 'A cross-platform habit companion that gently nudges teams and individuals toward consistent routines.',
-    skills: ['Flutter', 'Android', 'iOS'],
-    image: increzioLightImg,
-    liveUrl: 'https://increzio.app',
-    repoUrl: 'https://github.com/dev-yashmathur/increzio',
-    learnMoreLink: '/projects/increzio-habit-tracker',
-    videoUrl: 'https://www.youtube.com/embed/2Vv-BfVoq4g',
-    overview: 'Increzio wraps behaviour science insights into a lightweight Flutter experience. The app unifies calendars, context aware reminders, and mood tracking so habits actually stick.',
-    motivation: [
-      'Teams I worked with struggled to adopt wellness and productivity plans because existing trackers were either too clinical or too distracting.',
-      'I wanted a flexible routine builder that nudged progress without guilt and could sync across personal and shared spaces.'
+    "slug": "increase-your-habit-tracker",
+    "title": "Increase Your Habit Tracker",
+    "timeline": "2024",
+    "summary": "A Flutter-based habit tracking app featuring home screen widgets, a hand-drawn aesthetic, incremental habit goals, and customizable day reset times.",
+    "skills": ["Flutter", "Dart", "Mobile Development", "UI/UX Design"],
+    "image": increzioLightHomeScreen,
+    "liveUrl": "https://increaseyourhabitapp.com",
+    "repoUrl": "https://github.com/dev-yashmathur/increase-your-habit-tracker",
+    "learnMoreLink": "/projects/increase-your-habit-tracker",
+    "videoUrl": "https://www.youtube.com/embed/ysz5S6PUM-U",
+    "overview": "Increase Your Habit Tracker is a mobile app designed to make habit building more engaging through home screen widgets and a flexible, hand-drawn interface. It encourages users to improve incrementally and lets them customize when their habit day resets.",
+    "motivation": [
+      "I loved the idea of habit streaks and wanted an app that would place those streaks right on the home screen as widgets for extra motivation.",
+      "Inspired by 'Atomic Habits,' I wanted to integrate the idea of tiny daily improvements that compound over time."
     ],
-    process: [
+    "process": [
       {
-        title: 'Signal Design & Research',
-        description: 'Ran diary studies with 18 participants to understand push notification fatigue, then created a tone framework for encouraging copy.'
+        "title": "Concept & Design",
+        "description": "Conceptualized the app around the idea of habit widgets and a hand-drawn UI. Sketched out a user-friendly interface focused on simplicity and daily motivation."
       },
       {
-        title: 'Cross-Platform Architecture',
-        description: 'Structured the codebase with feature-first folders, ensured pixel parity between Material 3 and iOS Human Interface Guidelines, and tuned performance with isolate-based schedulers.'
+        "title": "Development & Unique Features",
+        "description": "Built the app using Flutter, added home screen widgets, incremental daily improvement goals, and a customizable day reset time to match users' schedules."
       },
       {
-        title: 'Insights & Experimentation',
-        description: 'Shipped analytics funnels, sentiment analysis for journal entries, and remote config toggles to iterate on habit loops without forced updates.'
+        "title": "Testing & Launch",
+        "description": "Tested the app with a small user group, refined the features based on feedback, and launched it on app stores with full habit-tracking functionality."
       }
     ],
-    gallery: [
+    "gallery": [
       {
-        src: increzioDarkImg,
-        alt: 'Increzio dark mode dashboard'
+        "src": "habitTrackerImg",
+        "alt": "Increase Your Habit Tracker main interface showing hand-drawn style UI"
       },
       {
-        src: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=1200',
-        alt: 'Team collaborating with sticky notes planning habits'
+        "src": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=1200",
+        "alt": "Illustration of a habit tracker widget on a phone's home screen"
       },
       {
-        src: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=1200',
-        alt: 'Person checking a morning routine on a phone'
+        "src": "https://images.unsplash.com/photo-1527430253228-e93688616381?auto=format&fit=crop&q=80&w=1200",
+        "alt": "Close-up of the app's incremental improvement goal setting screen"
       }
     ]
   },
@@ -168,50 +167,51 @@ export const projects: ProjectDetail[] = [
     ]
   },
   {
-    slug: 'tambolo-desktop-app',
-    title: 'Tambolo App for Desktop',
-    timeline: '2020',
-    summary: 'A cross-platform desktop companion for Tambola hosts with automated number calling, score tracking, and celebration overlays.',
-    skills: ['Java', 'Windows', 'macOS'],
-    image: tamboloImg,
-    liveUrl: 'https://tambolo-app.example.com',
-    repoUrl: 'https://github.com/dev-yashmathur/tambolo-desktop',
-    learnMoreLink: '/projects/tambolo-desktop-app',
-    videoUrl: 'https://www.youtube.com/embed/6LTzL9YQ7jM',
-    overview: 'Tambolo Desktop keeps community game nights flowing with snappy number draws, shareable tickets, and whimsical confetti states for every winning pattern.',
-    motivation: [
-      'Family game nights devolved into chaos when someone misheard a number or misplaced ticket sheets.',
-      'Most Tambola software felt like dated accounting tools, so I aimed for a warmer, celebration-first experience.'
+    "slug": "tambola-desktop-app",
+    "title": "Tambola Desktop App",
+    "timeline": "2020",
+    "summary": "A cross-platform Java desktop app that automated the tedious parts of playing Tambola (Housie) online during the COVID lockdowns, so everyone could join the fun.",
+    "skills": ["Java", "Swing", "Desktop Application", "Object-Oriented Design"],
+    "image": "tambolaAppImg",
+    "liveUrl": "",
+    "repoUrl": "",
+    "learnMoreLink": "/projects/tambola-desktop-app",
+    "videoUrl": "https://www.youtube.com/embed/ysz5S6PUM-U",
+    "overview": "The Tambola Desktop App was my first real-world project—built to solve a problem my friends and family faced during lockdown game nights. It automated ticket generation, number calling, and win verification so that no one had to sit out to manage the game.",
+    "motivation": [
+      "During the 2020 lockdowns, our family game nights moved to Zoom and Google Meet, but one person always had to miss playing to handle ticket distribution and verification.",
+      "I wanted to create something simple yet effective that would automate the boring parts, allowing everyone to participate and enjoy the experience equally."
     ],
-    process: [
+    "process": [
       {
-        title: 'Realtime Draw Engine',
-        description: 'Developed a deterministic RNG with guard rails against repeats, plus announcer voice packs and keyboard shortcuts for hosts.'
+        "title": "Problem Discovery & Concept",
+        "description": "Identified the recurring friction point in online Tambola games — manual ticket management and win validation — and decided to build a desktop solution for it."
       },
       {
-        title: 'Ticket & Prize Modules',
-        description: 'Automated ticket generation, validations for multiple prize types, and introduced celebratory overlays for claims.'
+        "title": "Design & Core Development",
+        "description": "Developed a Java-based application with a simple GUI using Swing, allowing users to configure players, prizes, and rule variations like four corners, full house, and first five."
       },
       {
-        title: 'Packaging & Distribution',
-        description: 'Set up cross-platform builds with Gradle, notarised macOS binaries, and implemented in-app update checks.'
+        "title": "Automation & Play Experience",
+        "description": "Implemented automated number calling and real-time win detection logic, ensuring fair play while keeping the social elements intact. Players could instantly verify claims on-screen."
       }
     ],
-    gallery: [
+    "gallery": [
       {
-        src: tamboloImg,
-        alt: 'Tambolo desktop dashboard showing current draw status'
+        "src": "tambolaAppImg",
+        "alt": "Tambola Desktop App main interface showing ticket generation and number calling"
       },
       {
-        src: 'https://images.unsplash.com/photo-1501426668471-14d4a847a18b?auto=format&fit=crop&q=80&w=1200',
-        alt: 'Friends celebrating during a house party'
+        "src": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=1200",
+        "alt": "Family playing Tambola online during lockdown"
       },
       {
-        src: 'https://images.unsplash.com/photo-1529400971008-f566de0e6dfc?auto=format&fit=crop&q=80&w=1200',
-        alt: 'Colorful bingo balls on a table'
+        "src": "https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&q=80&w=1200",
+        "alt": "Screenshot concept of Tambola app running on desktop"
       }
     ]
   }
+
 ];
 
 export const projectMap = new Map(projects.map(project => [project.slug, project]));

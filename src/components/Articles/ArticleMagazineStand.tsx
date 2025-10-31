@@ -76,7 +76,7 @@ const ArticleMagazineStand: React.FC<ArticleMagazineStandProps> = ({ articles = 
         <div className="articles-content">
           <div className="articles-text">
             <motion.h2
-              className="section-title articles-heading"
+              className="section-title"
               id="articles-heading"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}

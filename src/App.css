@@ -24,7 +24,7 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(254, 248, 244, 0.95);
+  background: rgba(253, 245, 233, 0.95);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-soft);
   box-shadow: 0 12px 30px rgba(118, 92, 78, 0.1);
@@ -118,7 +118,7 @@ main {
 
 footer {
   margin-top: auto;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 236, 226, 0.85));
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(243, 227, 204, 0.85));
   border-top: 1px solid var(--border-soft);
   padding: 2.5rem 0;
 }

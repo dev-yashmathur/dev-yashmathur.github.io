@@ -108,7 +108,7 @@
 
 .project-detail-tags li {
   padding: 0.35rem 0.75rem;
-  background: rgba(108, 146, 240, 0.18);
+  background: rgba(93, 144, 156, 0.18);
   color: var(--primary-text);
   border-radius: 999px;
   font-size: 0.85rem;
@@ -173,7 +173,7 @@
 .project-detail-footer {
   border-top: 1px solid var(--border-soft);
   padding: var(--space-xl) 0;
-  background: rgba(255, 236, 226, 0.45);
+  background: rgba(243, 227, 204, 0.45);
 }
 
 .project-detail-footer__content {

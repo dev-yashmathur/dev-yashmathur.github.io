@@ -112,7 +112,7 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ projects = defaultPro
             →
           </button>
         </div>
-
+        < br />
         <div className="carousel-dots" role="tablist" aria-label="Project selection">
           {projects.map((_, index) => (
             <button

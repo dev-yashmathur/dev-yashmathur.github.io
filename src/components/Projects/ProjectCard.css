@@ -76,7 +76,7 @@
 .project-card-skill {
   padding: 0.35rem 0.65rem;
   border-radius: 999px;
-  background: rgba(108, 146, 240, 0.12);
+  background: rgba(93, 144, 156, 0.12);
   color: var(--primary-cta);
   font-size: 0.75rem;
   font-weight: 600;
@@ -132,9 +132,11 @@
 @media (max-width: 576px) {
   .project-card {
     width: min(85vw, 320px);
+    margin: 0 auto;
   }
 
   .project-card.focused {
     width: min(92vw, 340px);
+    margin: 0 auto;
   }
 }

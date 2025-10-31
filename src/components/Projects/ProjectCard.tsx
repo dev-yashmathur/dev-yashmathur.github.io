@@ -107,7 +107,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 className="button-secondary project-card-link"
                 onClick={(event) => event.stopPropagation()}
               >
-                View Project
+                View Live!
               </a>
             )}
             <Link

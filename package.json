@@ -13,14 +13,12 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "@types/styled-components": "^5.1.35",
     "framer-motion": "^12.23.22",
     "gh-pages": "^6.3.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-pageflip": "^2.0.3",
-    "react-router-dom": "^7.9.4",
-    "styled-components": "^6.1.19"
+    "react-router-dom": "^7.9.4"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
