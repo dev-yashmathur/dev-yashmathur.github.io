@@ -92,6 +92,7 @@
 
 .hero-cta a:hover {
   transform: translateY(-3px);
+  color: white;
 }
 
 .hero-graphic {

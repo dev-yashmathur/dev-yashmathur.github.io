@@ -77,20 +77,21 @@ export const projects: ProjectDetail[] = [
     ]
   },
   {
-    "slug": "increase-your-habit-tracker",
-    "title": "Increase Your Habit Tracker",
-    "timeline": "2024",
+    "slug": "increzio-habit-tracker",
+    "title": "Increzio - Habit Tracker",
+    "timeline": "2025",
     "summary": "A Flutter-based habit tracking app featuring home screen widgets, a hand-drawn aesthetic, incremental habit goals, and customizable day reset times.",
-    "skills": ["Flutter", "Dart", "Mobile Development", "UI/UX Design"],
+    "skills": ["Flutter", "Mobile Development", "UI/UX Design"],
     "image": increzioLightHomeScreen,
-    "liveUrl": "https://increaseyourhabitapp.com",
+    "liveUrl": "https://<playstorelink>.com",
     "repoUrl": "https://github.com/dev-yashmathur/increase-your-habit-tracker",
-    "learnMoreLink": "/projects/increase-your-habit-tracker",
+    "learnMoreLink": "/projects/increzio-habit-tracker",
     "videoUrl": "https://www.youtube.com/embed/ysz5S6PUM-U",
-    "overview": "Increase Your Habit Tracker is a mobile app designed to make habit building more engaging through home screen widgets and a flexible, hand-drawn interface. It encourages users to improve incrementally and lets them customize when their habit day resets.",
+    "overview": "Increzio Habit Tracker is a mobile app designed to make habit building more engaging through home screen widgets and a flexible, hand-drawn interface. It encourages users to improve incrementally and lets them customize when their habit day resets.",
     "motivation": [
       "I loved the idea of habit streaks and wanted an app that would place those streaks right on the home screen as widgets for extra motivation.",
-      "Inspired by 'Atomic Habits,' I wanted to integrate the idea of tiny daily improvements that compound over time."
+      "Inspired by 'Atomic Habits,' I wanted to integrate the idea of tiny daily improvements that compound over time.",
+      "As a night owl, I needed a habit tracker that allowed me to set a custom day reset time instead of the default midnight."
     ],
     "process": [
       {
@@ -109,7 +110,7 @@ export const projects: ProjectDetail[] = [
     "gallery": [
       {
         "src": "habitTrackerImg",
-        "alt": "Increase Your Habit Tracker main interface showing hand-drawn style UI"
+        "alt": "Increzio Habit Tracker main interface showing hand-drawn style UI"
       },
       {
         "src": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=1200",

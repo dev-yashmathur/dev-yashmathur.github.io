@@ -1,0 +1,92 @@
+/* .demo-book {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+} */
+
+.my-page-left {
+  height: 100%;
+  background-color: #fdfaf7;
+  border: 1px solid #c2b5a3;
+  border-right: 0;
+  box-shadow: inset -7px 0 30px -7px rgba(0,0,0,0.4);
+}
+
+.my-page-right {
+  background-color: #fdfaf7;
+  border: 1px solid #c2b5a3;
+  border-left: 0;
+  box-shadow: inset 7px 0 30px -7px rgba(0,0,0,0.4);
+}
+
+.page-content {
+  padding: 20px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* .page-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  padding: 20px;
+  border: 1px solid #c2b5a3;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+} */
+
+.page-header {
+  text-align: center;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.my-page-right .page-footer {
+  text-align: right;
+  font-size: 0.8em;
+  border-top: 1px solid black;
+  padding-top: 10px;
+}
+
+.my-page-left .page-footer {
+  text-align: left;
+  font-size: 0.8em;
+  border-top: 1px solid black;
+  padding-top: 10px;
+}
+
+
+.my-page img {
+  width: 100%;
+  height: auto;
+  /* margin-bottom: 10px; */
+}
+
+.my-page p {
+  text-align: justify;
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+.buttons {
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.buttons button {
+    border-radius: 50%;
+    margin: 0 1em;
+}
+.selected-book-reader {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

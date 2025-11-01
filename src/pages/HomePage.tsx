@@ -4,7 +4,8 @@ import HeroSection from '../components/Hero/HeroSection';
 import Timeline from '../components/Timeline/Timeline';
 import ProjectCarousel from '../components/Projects/ProjectCarousel';
 import ArticleMagazineStand from '../components/Articles/ArticleMagazineStand';
-import Bookshelf from '../components/GoodReads/Bookshelf';
+// import Bookshelf from '../components/GoodReads/Bookshelf';
+import { NewBookshelf } from '../components/Bookshelf/bookshelf';
 import ScrollToTop from '../components/ScrollToTop/ScrollToTop';
 import { config } from '../utils/config';
 import '../App.css';
@@ -111,7 +112,8 @@ const HomePage: React.FC = () => {
             <Timeline />
             <ProjectCarousel />
             <ArticleMagazineStand />
-            <Bookshelf />
+            {/* <Bookshelf /> */}
+            <NewBookshelf />
           </main>
 
           <footer>
