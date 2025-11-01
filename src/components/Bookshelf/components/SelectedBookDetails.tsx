@@ -12,7 +12,7 @@ interface PageProps {
     number: string;
 }
 
-const CoverPage = React.forwardRef<HTMLDivElement, PageProps>((props, ref) => {
+const CoverPage = React.forwardRef<HTMLDivElement, PageProps>((_, ref) => {
     return (
         <div ref={ref}></div>
     );
