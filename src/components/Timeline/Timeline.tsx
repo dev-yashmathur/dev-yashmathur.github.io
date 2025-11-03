@@ -30,17 +30,16 @@ const Experiences = [
     title: 'BTech in Artificial Intelligence - Mahindra University',
     year: '2024',
     icon: '🎓',
-    paragraph: 'Graduated with a Bachelor\'s degree in Computer Science. Specialized in software engineering and machine learning.',
+    paragraph: 'Completed my Graduation in Artifical Intellegence, which included key couses such as NLP, Deep Learning, High Performance Computing, Big Data and Quantum Computing. Graduated amoungst the top of the batch, having received 2 scholarships.',
     hyperlink: undefined
   },
   {
     title: 'Intern - ADP',
     year: '2023',
     icon: '🎓',
-    paragraph: 'Graduated with a Bachelor\'s degree in Computer Science. Specialized in software engineering and machine learning.',
+    paragraph: 'This was my first corporate expereince, where i besides the tasks alloted to me, I also participated in software engineering practices such as Daily Scrums and Jira. I worked with highly skilled teams, contributing to significant initiatives for integrating AI features into existing products, building the visual frontend component (Angular, StencilJS) for it, as well as working on the backend APIs (Java SpringBoot) and assisting in the AI pipeline and Testing processes.',
     hyperlink: undefined
   },
-
 ];
 
 interface TimelineProps {
@@ -54,7 +53,7 @@ interface TimelineProps {
 }
 
 const Timeline: React.FC<TimelineProps> = ({ experiences = Experiences }) => {
-  const [visibleCount, setVisibleCount] = useState(5);
+  const [visibleCount, setVisibleCount] = useState(7);
 
   const loadMore = () => {
     setVisibleCount(prev => Math.min(prev + 3, experiences.length));
