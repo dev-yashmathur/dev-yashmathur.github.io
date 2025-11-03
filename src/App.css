@@ -49,6 +49,10 @@
   letter-spacing: 0.02em;
 }
 
+.nav-logo-img {
+    height: var(--font-size-xxl);
+}
+
 .nav-toggle {
   display: none;
   flex-direction: column;

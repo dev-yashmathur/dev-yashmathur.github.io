@@ -7,14 +7,14 @@
   background-color: #fdfaf7;
   border: 1px solid #c2b5a3;
   border-right: 0;
-  box-shadow: inset -7px 0 30px -7px rgba(0,0,0,0.4);
+  box-shadow: inset -7px 0 30px -7px rgba(0, 0, 0, 0.4);
 }
 
 .my-page-right {
   background-color: #fdfaf7;
   border: 1px solid #c2b5a3;
   border-left: 0;
-  box-shadow: inset 7px 0 30px -7px rgba(0,0,0,0.4);
+  box-shadow: inset 7px 0 30px -7px rgba(0, 0, 0, 0.4);
 }
 
 .page-content {
@@ -75,18 +75,368 @@
 }
 
 .buttons {
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .buttons button {
-    border-radius: 50%;
-    margin: 0 1em;
+  border-radius: 50%;
+  margin: 0 1em;
 }
+
 .selected-book-reader {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cover-page {
+  box-sizing: border-box;
+  position: relative;
+  height: 100%;
+  padding: 1.35rem;
+  background: linear-gradient(145deg, #2d1407 0%, #462313 45%, #1c0d05 100%);
+  border-radius: 16px;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 230, 205, 0.1),
+    inset 0 0 35px rgba(0, 0, 0, 0.35),
+    0 42px 64px rgba(12, 6, 3, 0.45);
+  border: 1px solid rgba(12, 6, 3, 0.65);
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  overflow: hidden;
+  font-family: 'Georgia', serif;
+}
+
+.cover-page::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 80%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.55), rgba(255, 237, 209, 0.1));
+  border-radius: 999px;
+  opacity: 0.65;
+}
+
+.cover-page::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.02) 45%, rgba(0, 0, 0, 0.35) 92%);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.cover-page__frame {
+  position: relative;
+  height: 100%;
+  flex: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  isolation: isolate;
+  border: 1px solid rgba(255, 240, 225, 0.2);
+  box-shadow: inset 0 0 35px rgba(0, 0, 0, 0.4);
+}
+
+.cover-page__art {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: saturate(1.05) brightness(0.82);
+  transform: scale(1.05);
+  transition: transform 0.6s ease;
+}
+
+.cover-page__sheen {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.2) 40%, rgba(15, 7, 3, 0.35) 100%);
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+  opacity: 0.75;
+}
+
+.cover-page__content {
+  position: relative;
+  box-sizing: border-box;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  padding: 2.4rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fdf6eb;
+  background: linear-gradient(180deg, rgba(20, 10, 5, 0.55), rgba(20, 10, 5, 0.82));
+  backdrop-filter: blur(2px);
+  box-shadow: inset 0 0 0 1px rgba(255, 235, 210, 0.08);
+  gap: 1rem;
+}
+
+.cover-page__tagline {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin: 0 0 0.5rem;
+  color: rgba(255, 237, 206, 0.88);
+  text-wrap: balance;
+}
+
+.cover-page__title {
+  margin: 1.25rem 0 0.75rem;
+  font-size: 2.3rem;
+  line-height: 1.16;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #fff7e4;
+  text-shadow: 0 0 18px rgba(0, 0, 0, 0.4);
+  font-family: 'Playfair Display', 'Georgia', serif;
+  width: 90%;
+  max-width: 240px;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  text-wrap: balance;
+}
+
+.cover-page__subtitle {
+  margin: 0;
+  font-size: 1.1rem;
+  font-style: italic;
+  letter-spacing: 0.08em;
+  color: rgba(255, 241, 218, 0.85);
+  font-family: 'Playfair Display', 'Georgia', serif;
+}
+
+.cover-page__divider {
+  display: block;
+  width: 60%;
+  max-width: 220px;
+  height: 1px;
+  margin: 1.5rem auto;
+  background: linear-gradient(90deg, rgba(255, 243, 214, 0), rgba(255, 243, 214, 0.9), rgba(255, 243, 214, 0));
+}
+
+.cover-page__author {
+  margin: 0;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  color: rgba(255, 245, 223, 0.95);
+  font-weight: 600;
+  margin-top: auto;
+  padding-top: 1rem;
+  font-family: 'Playfair Display', 'Georgia', serif;
+  text-wrap: balance;
+}
+
+.cover-page:hover .cover-page__art {
+  transform: scale(1.08);
+}
+
+.cover-page--long .cover-page__title {
+  hyphens: auto;
+  font-size: 1.8rem;
+  letter-spacing: 0.1em;
+  line-height: 1.18;
+}
+
+.cover-page--long .cover-page__content {
+  padding: 2.1rem 1.6rem;
+  gap: 0.9rem;
+}
+
+.cover-page--long .cover-page__tagline {
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+}
+
+.cover-page--xlong .cover-page__title {
+  hyphens: auto;
+  font-size: 1.5rem;
+  letter-spacing: 0.08em;
+  line-height: 1.15;
+  max-width: 95%;
+}
+
+.cover-page--xlong .cover-page__content {
+  padding: 1.9rem 1.4rem;
+  gap: 0.8rem;
+}
+
+.cover-page--xlong .cover-page__subtitle {
+  font-size: 0.9rem;
+}
+
+.cover-page--xlong .cover-page__tagline {
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+}
+
+.cover-page--xlong .cover-page__author {
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+}
+
+.cover-page--xlong .cover-page__divider {
+  margin: 1rem auto;
+  width: 70%;
+  max-width: 210px;
+}
+
+@media (max-width: 960px) {
+  .cover-page__content {
+    padding: 2.2rem 1.6rem;
+    gap: 0.9rem;
+  }
+
+  .cover-page__title {
+    font-size: 2.1rem;
+    letter-spacing: 0.11em;
+  }
+
+  .cover-page__subtitle {
+    font-size: 1.05rem;
+  }
+
+  .cover-page__author {
+    font-size: 0.9rem;
+    letter-spacing: 0.26em;
+  }
+}
+
+@media (max-width: 720px) {
+  .cover-page__content {
+    padding: 2rem 1.4rem;
+  }
+
+  .cover-page__title {
+    font-size: 1.95rem;
+    letter-spacing: 0.1em;
+  }
+
+  .cover-page__subtitle {
+    font-size: 0.98rem;
+  }
+
+  .cover-page__tagline {
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+  }
+
+  .cover-page__author {
+    font-size: 0.88rem;
+  }
+
+  .cover-page--long .cover-page__title {
+    font-size: 1.9rem;
+    letter-spacing: 0.09em;
+  }
+
+  .cover-page--xlong .cover-page__title {
+    font-size: 1.68rem;
+    letter-spacing: 0.07em;
+  }
+
+  .cover-page--long .cover-page__content {
+    padding: 1.9rem 1.45rem;
+  }
+
+  .cover-page--xlong .cover-page__content {
+    padding: 1.8rem 1.35rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .cover-page {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .cover-page__frame {
+    border-radius: 10px;
+  }
+
+  .cover-page__content {
+    padding: 1.8rem 1.2rem;
+    gap: 0.75rem;
+  }
+
+  .cover-page__title {
+    font-size: 1.8rem;
+    letter-spacing: 0.09em;
+  }
+
+  .cover-page__subtitle {
+    font-size: 0.92rem;
+  }
+
+  .cover-page__divider {
+    margin: 1.1rem auto;
+  }
+
+  .cover-page__tagline {
+    font-size: 0.64rem;
+    letter-spacing: 0.16em;
+  }
+
+  .cover-page__author {
+    font-size: 0.84rem;
+    letter-spacing: 0.24em;
+  }
+
+  .cover-page--long .cover-page__title {
+    font-size: 1.7rem;
+  }
+
+  .cover-page--xlong .cover-page__title {
+    font-size: 1.55rem;
+  }
+
+  .cover-page--long .cover-page__content {
+    padding: 1.7rem 1.25rem;
+  }
+
+  .cover-page--xlong .cover-page__content {
+    padding: 1.6rem 1.15rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .cover-page__content {
+    padding: 1.5rem 1rem;
+    gap: 0.7rem;
+  }
+
+  .cover-page__title {
+    font-size: 1.55rem;
+    letter-spacing: 0.05em;
+  }
+
+  .cover-page__author {
+    letter-spacing: 0.18em;
+  }
+
+  .cover-page--long .cover-page__title {
+    font-size: 1.5rem;
+    letter-spacing: 0.06em;
+  }
+
+  .cover-page--xlong .cover-page__title {
+    font-size: 1.42rem;
+    letter-spacing: 0.05em;
+  }
 }

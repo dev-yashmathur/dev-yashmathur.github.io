@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { BookShelf, Book} from "./components";
 import { SelectedBookDetails } from "./components/SelectedBookDetails";
-import { getBookOverview, type BookOverview } from "./data/bookDetails";
+import { bookDetailsById, getBookOverview, type BookOverview } from "./data/bookDetails";
 
 export const NewBookshelf = () => {
     const [selectedBook, setSelectedBook] = useState<BookOverview | null>(null);
@@ -10,7 +10,6 @@ export const NewBookshelf = () => {
     const handleBookSelect = (book: { id?: string; title?: string }) => {
         const nextSelection = getBookOverview(book.id ?? book.title);
         setSelectedBook(nextSelection);
-        console.log("Selected Book:", nextSelection);
     };
 
     return (
@@ -37,11 +36,20 @@ export const NewBookshelf = () => {
                 </motion.p>
             </div>
             <BookShelf>
-                <Book id="atomic-habits" title={"Atomic Habits"} author={"James Clear"} color={"#F6C28B"} design={"split bands"} onSelect={handleBookSelect} />
-                <Book id="ikigai" title={"Ikigai"} author={"Hector Garcia & Francesc Miralles"} color={"#F7B7A3"} design={"split bands"} onSelect={handleBookSelect} />
-                <Book id="how-to-win-friends" title={"How to Win Friends and Influence People"} author={"Dale Carnegie"} width={800} color={"#F8E1A5"} design={"split bands"} onSelect={handleBookSelect} />
-                <Book id="million-dollar-weekend" title={"Million Dollar Weekend"} author={"Noah Kagan"} color={"#F3D1DC"} design={"split bands"} onSelect={handleBookSelect} />
-                <Book id="power-of-your-subconscious-mind" title={"The Power of Your Subconscious Mind"} author={"Joseph Murphy"} color={"#F2D6B3"} design={"split bands"} onSelect={handleBookSelect} />
+                <>
+                    {Object.values(bookDetailsById).map((book) => (
+                        <Book
+                            key={book.id}
+                            id={book.id}
+                            title={book.title}
+                            author={book.author}
+                            color={book.color}
+                            design={book.design}
+                            width={book.width}
+                            onSelect={handleBookSelect}
+                        />
+                    ))}
+                </>
             </BookShelf>
             <SelectedBookDetails book={selectedBook} />
         </>

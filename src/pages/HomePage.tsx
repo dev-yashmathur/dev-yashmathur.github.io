@@ -8,6 +8,7 @@ import ArticleMagazineStand from '../components/Articles/ArticleMagazineStand';
 import { NewBookshelf } from '../components/Bookshelf/bookshelf';
 import ScrollToTop from '../components/ScrollToTop/ScrollToTop';
 import { config } from '../utils/config';
+import YMLogoBlack from '../assets/images/YMLogoBlack.png'
 import '../App.css';
 
 const navLinks = [
@@ -72,8 +73,9 @@ const HomePage: React.FC = () => {
             <nav className="primary-nav" aria-label="Primary navigation">
               <div className="container nav-container">
                 <div className="nav-logo" aria-label="Site home">
-                  {config.name}
+                  <img className="nav-logo-img" src={YMLogoBlack} aria-label='Yash Mathur Logo as YM' alt='YM Logo formed from pixelated datapoints'/>
                 </div>
+                <span>[In development]</span>
                 <button
                   className="nav-toggle"
                   type="button"
