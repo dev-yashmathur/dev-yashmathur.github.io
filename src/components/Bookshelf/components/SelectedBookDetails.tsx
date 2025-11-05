@@ -26,7 +26,6 @@ const CoverPage = React.forwardRef<HTMLDivElement, PageProps>(({ selectedBook },
         author,
         coverImage,
         coverImageAlt,
-        coverTagline
     } = selectedBook;
 
     const titleLength = title?.replace(/\s+/g, "").length ?? 0;

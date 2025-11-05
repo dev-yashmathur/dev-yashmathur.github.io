@@ -42,10 +42,12 @@ export const projects: ProjectDetail[] = [
     "repoUrl": "https://github.com/dev-yashmathur/classic-games-hub",
     "learnMoreLink": "/projects/classic-games-hub",
     "videoUrl": "https://www.youtube.com/embed/ysz5S6PUM-U",
-    "overview": "Classic Games Hub reimagines nostalgic childhood board and arcade games into playful, modern web experiences. It lets players compete online, challenge the computer, or enjoy reimagined versions of old favorites—all within a sleek, warm, 3D-inspired interface.",
+    "overview": "Classic Games Hub reimagines nostalgic childhood board games into playful, modern web experiences. It lets players compete online, challenge the computer, or enjoy reimagined versions of old favorites—all within a sleek, warm, 3D-inspired interface.",
     "motivation": [
-      "I often saw creative modern twists of nostalgic games on social media and wanted to build a central, high-quality platform to play them.",
-      "Traditional TicTacToe often ends in a draw, losing its excitement. I wanted to revive that strategic fun while keeping it light, familiar, and accessible."
+      "I often saw creative modern twists of nostalgic games on social media which seemed fun, but I didn't have anyone to play those with around me.",
+      "I then also, did not find any online platforms to play these variants with friends or strangers online.",
+      "These games seemed to me, to be the perfect blend of simple, exciting while still mainting the core essence of the orignal games to be a fun iteration of them, to play with others, without knowing the outcome is always a draw.",
+      "This adds the much needed revival layer on these games, to enjoy them once more!"
     ],
     "process": [
       {
@@ -96,7 +98,7 @@ export const projects: ProjectDetail[] = [
     "process": [
       {
         "title": "Concept & Design",
-        "description": "Conceptualized the app around the idea of habit widgets and a hand-drawn UI. Sketched out a user-friendly interface focused on simplicity and daily motivation."
+        "description": "Conceptualized the app around the idea of habit widgets and a hand-drawn UI. Sketched out a user-friendly interface focused on simplicity and daily motivation, away from the over polished industry designs"
       },
       {
         "title": "Development & Unique Features",
@@ -104,7 +106,7 @@ export const projects: ProjectDetail[] = [
       },
       {
         "title": "Testing & Launch",
-        "description": "Tested the app with a small user group, refined the features based on feedback, and launched it on app stores with full habit-tracking functionality."
+        "description": "Tested the app with a small user group, refined the features based on feedback, and launched it on play store with full habit-tracking functionality."
       }
     ],
     "gallery": [

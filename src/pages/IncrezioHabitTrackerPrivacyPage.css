@@ -1,0 +1,123 @@
+.privacy-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(180deg, rgba(253, 246, 235, 0.95), rgba(240, 224, 201, 0.9));
+}
+
+.privacy-header {
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--border-soft);
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+}
+
+.privacy-header__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.privacy-back-link {
+  color: var(--primary-cta);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.privacy-app-label {
+  font-size: var(--font-size-sm);
+  color: var(--muted-text);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: 999px;
+  border: 1px solid rgba(93, 144, 156, 0.35);
+  background-color: rgba(93, 144, 156, 0.08);
+}
+
+.privacy-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.privacy-hero {
+  padding-top: var(--space-xxl);
+  padding-bottom: var(--space-xl);
+}
+
+.privacy-hero__content h1 {
+  font-size: clamp(2.25rem, 5vw, 3.25rem);
+}
+
+.privacy-last-updated {
+  font-size: var(--font-size-sm);
+  color: var(--muted-text);
+  margin-bottom: var(--space-lg);
+}
+
+.privacy-intro {
+  font-size: var(--font-size-lg);
+  max-width: 720px;
+}
+
+.privacy-section {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.privacy-card {
+  background: var(--card-surface);
+  border-radius: 24px;
+  padding: var(--space-xl);
+  box-shadow: 0 16px 40px rgba(118, 92, 78, 0.12);
+  border: 1px solid rgba(222, 187, 164, 0.35);
+}
+
+.privacy-card h2 {
+  margin-bottom: var(--space-sm);
+}
+
+.privacy-card p:last-of-type {
+  margin-bottom: 0;
+}
+
+.privacy-list {
+  margin: var(--space-md) 0;
+  padding-left: var(--space-xl);
+  color: var(--secondary-text);
+  list-style: disc;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.privacy-footer {
+  margin-top: auto;
+  padding: var(--space-xl) 0;
+  border-top: 1px solid var(--border-soft);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(243, 227, 204, 0.9));
+}
+
+.privacy-footer__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  align-items: flex-start;
+}
+
+.privacy-footer__link {
+  font-weight: 600;
+  color: var(--primary-cta);
+}
+
+@media (max-width: 768px) {
+  .privacy-card {
+    padding: var(--space-lg);
+  }
+
+  .privacy-header__content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

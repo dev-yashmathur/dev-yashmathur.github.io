@@ -118,7 +118,7 @@ const ProjectDetailPage: React.FC = () => {
             <h2>Motivation</h2>
             <div className="project-detail-text-stack">
               {project.motivation.map((paragraph, index) => (
-                <p key={index}>{paragraph}</p>
+                <li key={index}>{paragraph}</li>
               ))}
             </div>
           </div>
