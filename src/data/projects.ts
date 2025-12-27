@@ -1,6 +1,20 @@
-import classicGamesHomePage from '../assets/images/ClassicGamesHub.png';
-import increzioLightHomeScreen from '../assets/images/Increzio_light.png';
+import classicGamesHomePage from '../assets/images/ClassicGamesHub/ClassicGamesHub.png';
+import stackTicTacToeImg from '../assets/images/ClassicGamesHub/StackTicTacToe.png';
+import normalTicTacToeImg from '../assets/images/ClassicGamesHub/TicTacToe.png';
+import ultimateTicTacToeImg from '../assets/images/ClassicGamesHub/UltimateTicTacToe.png';
+import vanishingTicTacToeImg from '../assets/images/ClassicGamesHub/VanishingTicTacToe.png';
+
+
+import increzioLightHomeScreen from '../assets/images/IncrezioHabitTracker/Increzio_light.png';
+import increzioDarkHomeScreen from '../assets/images/IncrezioHabitTracker/Increzio_dark.png';
+import increzioAnalyticsPage from '../assets/images/IncrezioHabitTracker/AnalyticsPage.png';
+import increzioHabitListScreen from '../assets/images/IncrezioHabitTracker/HabitList.png';
+import increzioChangeThemeDialog from '../assets/images/IncrezioHabitTracker/ChangeTheme.png';
+import increzioWidget from '../assets/images/IncrezioHabitTracker/Widget.png';
+
+
 import rlSolverImg from '../assets/images/RLTicTacToe.jpg';
+import tambolaAppImg from '../assets/images/TamboloApp/Tambolo.png';
 
 
 export interface ProjectProcessStep {
@@ -41,7 +55,7 @@ export const projects: ProjectDetail[] = [
     "liveUrl": "https://classicgameshub.com",
     "repoUrl": "https://github.com/dev-yashmathur/classic-games-hub",
     "learnMoreLink": "/projects/classic-games-hub",
-    "videoUrl": "https://www.youtube.com/embed/ysz5S6PUM-U",
+    "videoUrl": "https://www.youtube.com/embed/9GX9BBpR5Qo",
     "overview": "Classic Games Hub reimagines nostalgic childhood board games into playful, modern web experiences. It lets players compete online, challenge the computer, or enjoy reimagined versions of old favorites—all within a sleek, warm, 3D-inspired interface.",
     "motivation": [
       "I often saw creative modern twists of nostalgic games on social media which seemed fun, but I didn't have anyone to play those with around me.",
@@ -65,17 +79,25 @@ export const projects: ProjectDetail[] = [
     ],
     "gallery": [
       {
-        "src": "classicGamesImg",
+        "src": classicGamesHomePage,
         "alt": "Classic Games Hub homepage showcasing nostalgic game variants"
       },
       {
-        "src": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=1200",
-        "alt": "Players gathered around an arcade machine"
+        "src": stackTicTacToeImg,
+        "alt": "Tic Tac Toe Stack - Where Size Matters"
       },
       {
-        "src": "https://images.unsplash.com/photo-1527430253228-e93688616381?auto=format&fit=crop&q=80&w=1200",
-        "alt": "Board game pieces arranged on a table"
-      }
+        "src": vanishingTicTacToeImg,
+        "alt": "Vanishing Tic Tac Toe - where pieces only stay on board for 3 turns!"
+      },
+      {
+        "src": ultimateTicTacToeImg,
+        "alt": "Ultimate Tic Tac Toe - 9 Games of Tic Tac Toe in One 3x3 grid of 3x3 boards!"
+      },
+      {
+        "src": normalTicTacToeImg,
+        "alt": "Anti Tic Tac Toe - Just like regular, but on making 3 in a row - You LOOSE!"
+      },
     ]
   },
   {
@@ -111,17 +133,29 @@ export const projects: ProjectDetail[] = [
     ],
     "gallery": [
       {
-        "src": "habitTrackerImg",
+        "src": increzioLightHomeScreen,
         "alt": "Increzio Habit Tracker main interface showing hand-drawn style UI"
       },
       {
-        "src": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=1200",
-        "alt": "Illustration of a habit tracker widget on a phone's home screen"
+        "src": increzioHabitListScreen,
+        "alt": "Increzio Habit Tracker habit list, and add screen"
       },
       {
-        "src": "https://images.unsplash.com/photo-1527430253228-e93688616381?auto=format&fit=crop&q=80&w=1200",
-        "alt": "Close-up of the app's incremental improvement goal setting screen"
-      }
+        "src": increzioAnalyticsPage,
+        "alt": "Increzio Habit Tracker Analytics for all measurable habits"
+      },
+      {
+        "src": increzioChangeThemeDialog,
+        "alt": "Increzio Habit Tracker supporting LIGHT and DARK themes"
+      },
+      {
+        "src": increzioWidget,
+        "alt": "Increzio Habit Tracker's Home Screen widget to always remind you of your streak"
+      },
+      {
+        "src": increzioDarkHomeScreen,
+        "alt": "Sneak Peek of the Dark mode for Increzio Habit Tracker!"
+      },
     ]
   },
   {
@@ -175,7 +209,7 @@ export const projects: ProjectDetail[] = [
     "timeline": "2020",
     "summary": "A cross-platform Java desktop app that automated the tedious parts of playing Tambola (Housie) online during the COVID lockdowns, so everyone could join the fun.",
     "skills": ["Java", "Swing", "Desktop Application", "Object-Oriented Design"],
-    "image": "tambolaAppImg",
+    "image": tambolaAppImg,
     "liveUrl": "",
     "repoUrl": "",
     "learnMoreLink": "/projects/tambola-desktop-app",

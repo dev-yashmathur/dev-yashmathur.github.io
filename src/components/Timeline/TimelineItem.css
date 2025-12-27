@@ -8,9 +8,9 @@
 .timeline-content {
   position: relative;
   display: grid;
-  grid-template-columns: auto auto 1fr;
+  grid-template-columns: auto 1fr;
   gap: 1.25rem;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
   margin-left: clamp(2.75rem, 9vw, 5rem);
   background: var(--card-surface);
@@ -42,10 +42,13 @@
 .timeline-year {
   font-weight: 700;
   color: var(--primary-cta);
-  font-size: 1.05rem;
-  padding: 0.35rem 0.75rem;
-  border-radius: 999px;
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
   background: rgba(93, 144, 156, 0.12);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .timeline-icon {
@@ -57,12 +60,22 @@
   background: rgba(206, 168, 116, 0.2);
   color: var(--secondary-text);
   font-size: 1.5rem;
+  align-self: center;
 }
 
 .timeline-details {
   display: flex;
   flex-direction: column;
   gap: 0.65rem;
+  width: 100%;
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
 }
 
 .timeline-title {
@@ -102,13 +115,10 @@
 @media (max-width: 900px) {
   .timeline-content {
     grid-template-columns: auto 1fr;
-    grid-template-rows: auto auto;
     gap: 1rem;
   }
 
-  .timeline-icon {
-    grid-row: 1 / span 2;
-  }
+  /* Removed timeline-icon grid-row override since we only have 2 columns now and icon is on left */
 }
 
 @media (max-width: 768px) {
@@ -132,12 +142,16 @@
     display: none;
   }
 
-  .timeline-year {
-    justify-self: flex-start;
+  .timeline-header {
+    flex-wrap: wrap;
+    gap: 0.5rem;
   }
 
   .timeline-icon {
     width: 44px;
     height: 44px;
+    margin-bottom: 0.5rem;
   }
+
+  /* Removed timeline-year justify-self since it's now in the header */
 }

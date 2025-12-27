@@ -7,39 +7,40 @@ import './Timeline.css';
 const Experiences = [
   {
     title: 'Lead AI Product Engineer - Techolution',
-    year: '2025',
+    year: 'Apr 25 - Oct 25',
     icon: '💻',
-    paragraph: 'Led multiple teams to develop and deliver AI Centric solutions, solving real customer problems and driving business value in short timeframes. Worked closely with sales team, to understand customer requirements and translate them into technical solutions. Worked on all aspects of developing a product, from the AI Pipelines, to the interface and deployment.',
+    paragraph: 'Led multiple teams to develop and deliver AI Centric solutions, solving real customer problems and driving business value in short timeframes. Worked closely with sales team, to understand customer requirements and translate them into technical solutions. Contributed to all aspects of developing a product, from the Architecture, to the interface and deployment.',
     hyperlink: undefined
   },
   {
     title: 'Associate AI Engineer - Techolution',
-    year: '2024',
+    year: 'July 24 - Apr 25',
     icon: '🚀',
     paragraph: 'Worked with highly agile teams, working closely with customers to devliver GenAI powered solution, enhancing quality and improving efficiency. Also worked on lesser known technologies such as Google AppScript.',
     hyperlink: undefined
   },
   {
     title: 'AI Intern - Techolution',
-    year: '2024',
+    year: 'Jan 24 - Jul 24',
     icon: '🔧',
     paragraph: 'Worked on developing GenAI powered applications, including a strong focus on Finetuning, RAG Pipelines and Prompt Engineering.',
     hyperlink: undefined
   },
   {
+    title: 'Intern - ADP',
+    year: 'July 23 - Oct 23',
+    icon: '🎓',
+    paragraph: 'This was my first corporate expereince, where besides the tasks alloted to me, I also participated in software engineering practices such as Daily Scrums and Jira. I worked with highly skilled teams, contributing to significant initiatives for integrating AI features into existing products, building the visual frontend component (Angular, StencilJS) for it, as well as working on the backend APIs (Java SpringBoot) and assisting in the AI pipeline and Testing processes.',
+    hyperlink: undefined
+  },
+  {
     title: 'BTech in Artificial Intelligence - Mahindra University',
-    year: '2024',
+    year: '2020 - 2024',
     icon: '🎓',
     paragraph: 'Completed my Graduation in Artifical Intellegence, which included key couses such as NLP, Deep Learning, High Performance Computing, Big Data and Quantum Computing. Graduated amoungst the top of the batch, having received 2 scholarships.',
     hyperlink: undefined
   },
-  {
-    title: 'Intern - ADP',
-    year: '2023',
-    icon: '🎓',
-    paragraph: 'This was my first corporate expereince, where i besides the tasks alloted to me, I also participated in software engineering practices such as Daily Scrums and Jira. I worked with highly skilled teams, contributing to significant initiatives for integrating AI features into existing products, building the visual frontend component (Angular, StencilJS) for it, as well as working on the backend APIs (Java SpringBoot) and assisting in the AI pipeline and Testing processes.',
-    hyperlink: undefined
-  },
+
 ];
 
 interface TimelineProps {

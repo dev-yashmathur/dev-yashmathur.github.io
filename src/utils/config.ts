@@ -8,8 +8,9 @@ export const config = {
     github: 'https://github.com/dev-yashmathur',
   },
   taglines: [
-    'Choose quality, because vibe coders don\'t last, but the mess does',
-    'Building systems that won\'t wake you up in nightmares',
-    'From Ideation to Production'
+    // 'Choose quality, because vibe coders don\'t last, but the mess does',
+    // 'Building systems that won\'t wake you up in nightmares',
+    // 'From Ideation to Production',
+    'Solving Real Problems, from Ideation to Production - Reliably'
   ]
 };

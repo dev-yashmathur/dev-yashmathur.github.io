@@ -43,10 +43,14 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
       viewport={{ once: true, amount: 0.3 }}
     >
       <div className="timeline-content">
-        <div className="timeline-year">{year}</div>
         <div className="timeline-icon">{icon}</div>
         <div className="timeline-details">
-          <h3 className="timeline-title">{title}</h3>
+          <div className="timeline-header">
+            <h3 className="timeline-title">{title}</h3>
+            <div className="timeline-year">
+              {year}
+            </div>
+          </div>
           <p className="timeline-paragraph">{paragraph}</p>
           {hyperlink && (
             <a

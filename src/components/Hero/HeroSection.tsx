@@ -8,13 +8,13 @@ const HeroSection = () => {
   const [taglineIndex, setTaglineIndex] = useState(0);
 
   // Cycle through taglines every 4 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTaglineIndex((prevIndex) => (prevIndex + 1) % config.taglines.length);
-    }, 4000);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setTaglineIndex((prevIndex) => (prevIndex + 1) % config.taglines.length);
+  //   }, 4000);
 
-    return () => clearInterval(interval);
-  }, []);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
