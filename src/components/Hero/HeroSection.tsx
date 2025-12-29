@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { config } from '../../utils/config';
 import Robot from '../../assets/images/Robot.png'
 import './HeroSection.css';
 
 const HeroSection = () => {
-  const [taglineIndex, setTaglineIndex] = useState(0);
+  // const [taglineIndex, setTaglineIndex] = useState(0);
+  const taglineIndex = 0;
 
   // Cycle through taglines every 4 seconds
   // useEffect(() => {

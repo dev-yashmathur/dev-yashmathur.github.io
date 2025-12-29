@@ -5,7 +5,7 @@ import Timeline from '../components/Timeline/Timeline';
 import ProjectCarousel from '../components/Projects/ProjectCarousel';
 import ArticleMagazineStand from '../components/Articles/ArticleMagazineStand';
 // import Bookshelf from '../components/GoodReads/Bookshelf';
-import { NewBookshelf } from '../components/Bookshelf/bookshelf';
+// import { NewBookshelf } from '../components/Bookshelf/bookshelf'; # TODO
 import ScrollToTop from '../components/ScrollToTop/ScrollToTop';
 import YMLogoBlack from '../assets/images/YMLogoBlack.png'
 import '../App.css';

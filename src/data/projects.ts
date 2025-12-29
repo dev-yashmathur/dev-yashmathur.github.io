@@ -20,7 +20,7 @@ import tamboloPrizeInit from '../assets/images/TamboloApp/Prize Selection.png';
 import tamboloPrizeClaim from '../assets/images/TamboloApp/prize claim.png';
 
 
-import rlSolverImg from '../assets/images/RLTicTacToe.jpg';
+// import rlSolverImg from '../assets/images/RLTicTacToe.jpg';
 
 
 export interface ProjectProcessStep {
