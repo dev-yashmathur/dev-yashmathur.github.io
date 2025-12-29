@@ -15,7 +15,7 @@ const navLinks = [
   { href: '#timeline', label: 'Experience' },
   { href: '#projects', label: 'Projects' },
   { href: '#articles', label: 'Articles' },
-  { href: '#good-reads', label: 'Good Reads' },
+  // { href: '#good-reads', label: 'Good Reads' },
 ];
 
 const HomePage: React.FC = () => {
