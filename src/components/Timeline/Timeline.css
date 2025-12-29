@@ -2,6 +2,7 @@
   padding-top: var(--space-xxl);
   padding-bottom: var(--space-xxl);
   background: linear-gradient(180deg, rgba(253, 244, 229, 0.9) 0%, rgba(240, 220, 196, 0.75) 100%);
+  margin-bottom: 0;
 }
 
 .section-title {

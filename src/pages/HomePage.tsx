@@ -7,7 +7,6 @@ import ArticleMagazineStand from '../components/Articles/ArticleMagazineStand';
 // import Bookshelf from '../components/GoodReads/Bookshelf';
 import { NewBookshelf } from '../components/Bookshelf/bookshelf';
 import ScrollToTop from '../components/ScrollToTop/ScrollToTop';
-import { config } from '../utils/config';
 import YMLogoBlack from '../assets/images/YMLogoBlack.png'
 import '../App.css';
 
@@ -20,14 +19,9 @@ const navLinks = [
 ];
 
 const HomePage: React.FC = () => {
-  const [loading, setLoading] = useState(true);
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
 
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 1000);
-    return () => clearTimeout(timer);
-  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -55,78 +49,62 @@ const HomePage: React.FC = () => {
 
   return (
     <AnimatePresence>
-      {loading ? (
-        <motion.div
-          key="loader"
-          initial={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="loader"
-        >
-          Loading...
-        </motion.div>
-      ) : (
-        <motion.div initial="hidden" animate="visible" variants={fadeIn}>
-          <a className="skip-link" href="#main-content">
-            Skip to main content
-          </a>
-          <header className="site-header">
-            <nav className="primary-nav" aria-label="Primary navigation">
-              <div className="container nav-container">
-                <div className="nav-logo" aria-label="Site home">
-                  <img className="nav-logo-img" src={YMLogoBlack} aria-label='Yash Mathur Logo as YM' alt='YM Logo formed from pixelated datapoints'/>
-                </div>
-                <span>[In development]</span>
-                <button
-                  className="nav-toggle"
-                  type="button"
-                  onClick={handleNavToggle}
-                  aria-expanded={isNavOpen}
-                  aria-controls="primary-navigation"
-                >
-                  <span className="nav-toggle-bar" aria-hidden="true" />
-                  <span className="nav-toggle-bar" aria-hidden="true" />
-                  <span className="nav-toggle-bar" aria-hidden="true" />
-                  <span className="sr-only">Toggle navigation</span>
-                </button>
-                <ul
-                  id="primary-navigation"
-                  className={`nav-links ${isNavOpen ? 'open' : ''}`}
-                  aria-hidden={!isDesktop && !isNavOpen}
-                >
-                  {navLinks.map((item) => (
-                    <li key={item.href} className="nav-item">
-                      <a
-                        href={item.href}
-                        onClick={handleLinkClick}
-                        tabIndex={isDesktop || isNavOpen ? 0 : -1}
-                      >
-                        {item.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+
+      <motion.div initial="hidden" animate="visible" variants={fadeIn}>
+        <a className="skip-link" href="#main-content">
+          Skip to main content
+        </a>
+        <header className="site-header">
+          <nav className="primary-nav" aria-label="Primary navigation">
+            <div className="container nav-container">
+              <div className="nav-logo" aria-label="Site home">
+                <img className="nav-logo-img" src={YMLogoBlack} aria-label='Yash Mathur Logo as YM' alt='YM Logo formed from pixelated datapoints' />
               </div>
-            </nav>
-          </header>
-
-          <main id="main-content" role="main">
-            <HeroSection />
-            <Timeline />
-            <ProjectCarousel />
-            <ArticleMagazineStand />
-            {/* <Bookshelf /> */}
-            <NewBookshelf />
-          </main>
-
-          <footer>
-            <div className="container">
-              <p>&copy; {new Date().getFullYear()} {config.name}. All rights reserved.</p>
+              {/* <span>[In development]</span> */}
+              <button
+                className="nav-toggle"
+                type="button"
+                onClick={handleNavToggle}
+                aria-expanded={isNavOpen}
+                aria-controls="primary-navigation"
+              >
+                <span className="nav-toggle-bar" aria-hidden="true" />
+                <span className="nav-toggle-bar" aria-hidden="true" />
+                <span className="nav-toggle-bar" aria-hidden="true" />
+                <span className="sr-only">Toggle navigation</span>
+              </button>
+              <ul
+                id="primary-navigation"
+                className={`nav-links ${isNavOpen ? 'open' : ''}`}
+                aria-hidden={!isDesktop && !isNavOpen}
+              >
+                {navLinks.map((item) => (
+                  <li key={item.href} className="nav-item">
+                    <a
+                      href={item.href}
+                      onClick={handleLinkClick}
+                      tabIndex={isDesktop || isNavOpen ? 0 : -1}
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </footer>
+          </nav>
+        </header>
 
-          <ScrollToTop />
-        </motion.div>
-      )}
+        <main id="main-content" role="main">
+          <HeroSection />
+          <Timeline />
+          <ProjectCarousel />
+          <ArticleMagazineStand />
+          {/* <Bookshelf /> */}
+          {/* <NewBookshelf /> */}
+        </main>
+
+        <ScrollToTop />
+      </motion.div>
     </AnimatePresence>
   );
 };

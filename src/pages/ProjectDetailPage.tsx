@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import ScrollToTop from '../components/ScrollToTop/ScrollToTop';
-import { config } from '../utils/config';
 import { getProjectBySlug } from '../data/projects';
 import './ProjectDetailPage.css';
 
@@ -60,15 +59,17 @@ const ProjectDetailPage: React.FC = () => {
       <main className="project-detail-main">
         <section className="project-detail-hero">
           <div className="container project-detail-hero__content">
-            <div className="project-video-wrapper">
-              <iframe
-                src={project.videoUrl}
-                title={`${project.title} demo video`}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                loading="lazy"
-              />
-            </div>
+            {project.videoUrl && (
+              <div className="project-video-wrapper">
+                <iframe
+                  src={project.videoUrl}
+                  title={`${project.title} demo video`}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  loading="lazy"
+                />
+              </div>
+            )}
             <div className="project-overview">
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
@@ -151,15 +152,6 @@ const ProjectDetailPage: React.FC = () => {
           </div>
         </section>
       </main>
-
-      <footer className="project-detail-footer">
-        <div className="container project-detail-footer__content">
-          <p>&copy; {new Date().getFullYear()} {config.name}. Built with curiosity and care.</p>
-          <Link to="/" className="project-detail-footer__home-link">
-            Return to home →
-          </Link>
-        </div>
-      </footer>
 
       <ScrollToTop />
     </div>

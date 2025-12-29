@@ -1,6 +1,7 @@
 .articles-section {
   padding: 5rem 0;
   background: linear-gradient(180deg, #fbf1df 0%, #f3dfbf 65%, #ead0a6 100%);
+  margin-bottom: 0;
 }
 
 .articles-heading {

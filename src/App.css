@@ -50,7 +50,7 @@
 }
 
 .nav-logo-img {
-    height: var(--font-size-xxl);
+  height: var(--font-size-xxl);
 }
 
 .nav-toggle {
@@ -117,7 +117,7 @@
 main {
   display: flex;
   flex-direction: column;
-  gap: var(--space-xxl);
+  /* gap: var(--space-xxl); */
 }
 
 footer {

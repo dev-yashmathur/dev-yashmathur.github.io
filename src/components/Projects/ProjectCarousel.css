@@ -1,6 +1,7 @@
 .projects-section {
   padding: var(--space-xxl) 0;
   background: linear-gradient(180deg, rgba(253, 244, 229, 0.85) 0%, rgba(236, 218, 189, 0.85) 100%);
+  margin-bottom: 0;
 }
 
 .projects-section .section-title {

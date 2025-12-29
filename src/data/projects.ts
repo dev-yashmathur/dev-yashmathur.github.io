@@ -12,9 +12,15 @@ import increzioHabitListScreen from '../assets/images/IncrezioHabitTracker/Habit
 import increzioChangeThemeDialog from '../assets/images/IncrezioHabitTracker/ChangeTheme.png';
 import increzioWidget from '../assets/images/IncrezioHabitTracker/Widget.png';
 
+import tambolaAppImg from '../assets/images/TamboloApp/Tambolo.png';
+import tamboloTicketHighliting from '../assets/images/TamboloApp/Automatic Ticket Highlighting.png';
+import tamboloRandomTicketGeneration from '../assets/images/TamboloApp/Generated Randomized Tickets.png';
+import tamboloInitialization from '../assets/images/TamboloApp/Player initialization.png';
+import tamboloPrizeInit from '../assets/images/TamboloApp/Prize Selection.png';
+import tamboloPrizeClaim from '../assets/images/TamboloApp/prize claim.png';
+
 
 import rlSolverImg from '../assets/images/RLTicTacToe.jpg';
-import tambolaAppImg from '../assets/images/TamboloApp/Tambolo.png';
 
 
 export interface ProjectProcessStep {
@@ -37,7 +43,7 @@ export interface ProjectDetail {
   liveUrl?: string;
   repoUrl?: string;
   learnMoreLink: string;
-  videoUrl: string;
+  videoUrl: string | null;
   overview: string;
   motivation: string[];
   process: ProjectProcessStep[];
@@ -53,7 +59,7 @@ export const projects: ProjectDetail[] = [
     "skills": ["React", "Next.js", "Firebase", "SEO"],
     "image": classicGamesHomePage,
     "liveUrl": "https://classicgameshub.com",
-    "repoUrl": "https://github.com/dev-yashmathur/classic-games-hub",
+    // "repoUrl": "https://github.com/dev-yashmathur/classic-games-hub",
     "learnMoreLink": "/projects/classic-games-hub",
     "videoUrl": "https://www.youtube.com/embed/9GX9BBpR5Qo",
     "overview": "Classic Games Hub reimagines nostalgic childhood board games into playful, modern web experiences. It lets players compete online, challenge the computer, or enjoy reimagined versions of old favorites—all within a sleek, warm, 3D-inspired interface.",
@@ -107,10 +113,10 @@ export const projects: ProjectDetail[] = [
     "summary": "A Flutter-based habit tracking app featuring home screen widgets, a hand-drawn aesthetic, incremental habit goals, and customizable day reset times.",
     "skills": ["Flutter", "Mobile Development", "UI/UX Design"],
     "image": increzioLightHomeScreen,
-    "liveUrl": "https://<playstorelink>.com",
-    "repoUrl": "https://github.com/dev-yashmathur/increase-your-habit-tracker",
+    "liveUrl": "https://play.google.com/store/apps/details?id=com.yashmathur.habit_tracker",
+    // "repoUrl": "https://github.com/dev-yashmathur/increase-your-habit-tracker",
     "learnMoreLink": "/projects/increzio-habit-tracker",
-    "videoUrl": "https://www.youtube.com/embed/ysz5S6PUM-U",
+    "videoUrl": null,
     "overview": "Increzio Habit Tracker is a mobile app designed to make habit building more engaging through home screen widgets and a flexible, hand-drawn interface. It encourages users to improve incrementally and lets them customize when their habit day resets.",
     "motivation": [
       "I loved the idea of habit streaks and wanted an app that would place those streaks right on the home screen as widgets for extra motivation.",
@@ -158,66 +164,68 @@ export const projects: ProjectDetail[] = [
       },
     ]
   },
-  {
-    slug: 'reinforcement-learning-game-solver',
-    title: 'Reinforcement Learning Game Solver',
-    timeline: '2023',
-    summary: 'An experimentation sandbox that trains agents to master zero-sum board games using self-play and curriculum learning.',
-    skills: ['AI/ML', 'Reinforcement Learning', 'Python'],
-    image: rlSolverImg,
-    liveUrl: 'https://rl-game-solver.example.com',
-    repoUrl: 'https://github.com/dev-yashmathur/rl-game-solver',
-    learnMoreLink: '/projects/reinforcement-learning-game-solver',
-    videoUrl: 'https://www.youtube.com/embed/gbzqvQmuMP0',
-    overview: 'This project demystifies reinforcement learning by wrapping policy iteration experiments in an approachable UI that visualises agent strategies evolving over time.',
-    motivation: [
-      'University peers kept asking for an intuitive way to see how Q-learning actually converges beyond textbook plots.',
-      'I wanted to stress-test curriculum learning ideas on accessible games like Tic Tac Toe before scaling to more complex environments.'
-    ],
-    process: [
-      {
-        title: 'Environment Toolkit',
-        description: 'Built a lightweight OpenAI Gym compatible environment with pluggable reward functions and symmetry reductions for small board games.'
-      },
-      {
-        title: 'Training & Evaluation Pipelines',
-        description: 'Created distributed training jobs on Kubernetes, logged metrics with Weights & Biases, and streamed policy checkpoints to the frontend.'
-      },
-      {
-        title: 'Interactive Visualisations',
-        description: 'Rendered heatmaps, decision trees, and replay timelines so students could pause any move and inspect the policy behind it.'
-      }
-    ],
-    gallery: [
-      {
-        src: rlSolverImg,
-        alt: 'Reinforcement learning agent analysing a tic tac toe board'
-      },
-      {
-        src: 'https://images.unsplash.com/photo-1529101091764-c3526daf38fe?auto=format&fit=crop&q=80&w=1200',
-        alt: 'Team monitoring graphs on multiple displays'
-      },
-      {
-        src: 'https://images.unsplash.com/photo-1523475472560-d2df97ec485c?auto=format&fit=crop&q=80&w=1200',
-        alt: 'Notebook containing reinforcement learning equations'
-      }
-    ]
-  },
+  // {
+  //   slug: 'reinforcement-learning-game-solver',
+  //   title: 'Reinforcement Learning Game Solver',
+  //   timeline: '2023',
+  //   summary: 'An experimentation sandbox that trains agents to master zero-sum board games using self-play and curriculum learning.',
+  //   skills: ['AI/ML', 'Reinforcement Learning', 'Python'],
+  //   image: rlSolverImg,
+  //   liveUrl: 'https://rl-game-solver.example.com',
+  //   repoUrl: 'https://github.com/dev-yashmathur/rl-game-solver',
+  //   learnMoreLink: '/projects/reinforcement-learning-game-solver',
+  //   videoUrl: 'https://www.youtube.com/embed/gbzqvQmuMP0',
+  //   overview: 'This project demystifies reinforcement learning by wrapping policy iteration experiments in an approachable UI that visualises agent strategies evolving over time.',
+  //   motivation: [
+  //     'University peers kept asking for an intuitive way to see how Q-learning actually converges beyond textbook plots.',
+  //     'I wanted to stress-test curriculum learning ideas on accessible games like Tic Tac Toe before scaling to more complex environments.'
+  //   ],
+  //   process: [
+  //     {
+  //       title: 'Environment Toolkit',
+  //       description: 'Built a lightweight OpenAI Gym compatible environment with pluggable reward functions and symmetry reductions for small board games.'
+  //     },
+  //     {
+  //       title: 'Training & Evaluation Pipelines',
+  //       description: 'Created distributed training jobs on Kubernetes, logged metrics with Weights & Biases, and streamed policy checkpoints to the frontend.'
+  //     },
+  //     {
+  //       title: 'Interactive Visualisations',
+  //       description: 'Rendered heatmaps, decision trees, and replay timelines so students could pause any move and inspect the policy behind it.'
+  //     }
+  //   ],
+  //   gallery: [
+  //     {
+  //       src: rlSolverImg,
+  //       alt: 'Reinforcement learning agent analysing a tic tac toe board'
+  //     },
+  //     {
+  //       src: 'https://images.unsplash.com/photo-1529101091764-c3526daf38fe?auto=format&fit=crop&q=80&w=1200',
+  //       alt: 'Team monitoring graphs on multiple displays'
+  //     },
+  //     {
+  //       src: 'https://images.unsplash.com/photo-1523475472560-d2df97ec485c?auto=format&fit=crop&q=80&w=1200',
+  //       alt: 'Notebook containing reinforcement learning equations'
+  //     }
+  //   ]
+  // },
   {
     "slug": "tambola-desktop-app",
     "title": "Tambola Desktop App",
     "timeline": "2020",
-    "summary": "A cross-platform Java desktop app that automated the tedious parts of playing Tambola (Housie) online during the COVID lockdowns, so everyone could join the fun.",
+    "summary": "A cross-platform Java desktop app that automated the tedious parts of playing Tambola (Housie) online during the COVID lockdowns, so everyone could join the fun. ",
     "skills": ["Java", "Swing", "Desktop Application", "Object-Oriented Design"],
     "image": tambolaAppImg,
     "liveUrl": "",
-    "repoUrl": "",
+    "repoUrl": "https://github.com/dev-yashmathur/TamboloFinal",
     "learnMoreLink": "/projects/tambola-desktop-app",
-    "videoUrl": "https://www.youtube.com/embed/ysz5S6PUM-U",
-    "overview": "The Tambola Desktop App was my first real-world project—built to solve a problem my friends and family faced during lockdown game nights. It automated ticket generation, number calling, and win verification so that no one had to sit out to manage the game.",
+    "videoUrl": null,
+    "overview": "The Tambola Desktop App was my first real-world project—built to solve a problem my friends and family faced during covid lockdown game nights. It automated ticket generation, number calling, and win verification so that no one had to sit out to manage the game. Note: As this was my first project, the UI/UX does leave a lot to be desired, which would have been done differently, had I approached it now.",
     "motivation": [
       "During the 2020 lockdowns, our family game nights moved to Zoom and Google Meet, but one person always had to miss playing to handle ticket distribution and verification.",
-      "I wanted to create something simple yet effective that would automate the boring parts, allowing everyone to participate and enjoy the experience equally."
+      "It also always stalled the game unnecessarily when someone claimed they had won, because the verification was completely manual.",
+      "I wanted to create something simple yet effective that would automate the boring parts, allowing everyone to participate and enjoy the experience equally.",
+      "It was also equally important, to only remove the manual task of hosting, still retaining all human - social elements of the game.",
     ],
     "process": [
       {
@@ -235,17 +243,29 @@ export const projects: ProjectDetail[] = [
     ],
     "gallery": [
       {
-        "src": "tambolaAppImg",
+        "src": tambolaAppImg,
         "alt": "Tambola Desktop App main interface showing ticket generation and number calling"
       },
       {
-        "src": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=1200",
-        "alt": "Family playing Tambola online during lockdown"
+        "src": tamboloInitialization,
+        "alt": "Tambola Desktop App setting up player names"
       },
       {
-        "src": "https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&q=80&w=1200",
-        "alt": "Screenshot concept of Tambola app running on desktop"
-      }
+        "src": tamboloPrizeInit,
+        "alt": "Tambola Desktop App prize selection screen"
+      },
+      {
+        "src": tamboloRandomTicketGeneration,
+        "alt": "Generated Randomized tickets per player"
+      },
+      {
+        "src": tamboloTicketHighliting,
+        "alt": "Automatic updates on each ticket, when a called out number hits."
+      },
+      {
+        "src": tamboloPrizeClaim,
+        "alt": "Real time update, when a prize can be claimed by any of the players, making it a seamless process!"
+      },
     ]
   }
 
