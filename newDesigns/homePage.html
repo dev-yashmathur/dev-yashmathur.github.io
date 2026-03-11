@@ -1,0 +1,886 @@
+<!-- Yash Mathur - Ultra-Luxury Portfolio (Polished) -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1e40af",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#0a080c", // Solid metallic black base
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .liquid-glass {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow:
+                inset 0 1px 1px rgba(255, 255, 255, 0.2),
+                0 20px 40px -10px rgba(0, 0, 0, 0.6);
+        }
+
+        .thick-glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(40px);
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            border-left: 1px solid rgba(255, 255, 255, 0.2);
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+        }
+
+        .engraved-text {
+            background: linear-gradient(180deg, #fff 0%, #94a3b8 40%, #475569 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+        }
+
+        .metal-shelf {
+            background: linear-gradient(90deg, #1e293b 0%, #334155 50%, #1e293b 100%);
+            height: 8px;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+        }
+
+        .caustic-light {
+            background: radial-gradient(circle at 50% -20%, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+        }
+    </style>
+</head>
+
+<body class="bg-[#050505] text-slate-100 font-display selection:bg-primary/30 caustic-light">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+        <!-- Navigation -->
+        <header class="fixed top-0 z-50 w-full border-b border-white/10 bg-background-dark/80 backdrop-blur-md">
+            <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="size-10 rounded-lg bg-primary flex items-center justify-center shadow-lg shadow-primary/20">
+                        <span class="material-symbols-outlined text-white">deployed_code</span>
+                    </div>
+                    <h2 class="text-xl font-extrabold tracking-tighter text-white">YM<span class="text-primary">.</span>
+                    </h2>
+                </div>
+                <nav class="hidden md:flex items-center gap-10">
+                    <a class="text-sm font-medium text-slate-400 hover:text-white transition-colors"
+                        href="#experience">Experience</a>
+                    <a class="text-sm font-medium text-slate-400 hover:text-white transition-colors"
+                        href="#projects">Projects</a>
+                    <a class="text-sm font-medium text-slate-400 hover:text-white transition-colors"
+                        href="#articles">Articles</a>
+                </nav>
+                <div class="flex items-center gap-4">
+                    <button
+                        class="liquid-glass px-6 py-2.5 rounded-full text-sm font-bold text-white hover:bg-white/5 transition-all">
+                        Connect
+                    </button>
+                </div>
+            </div>
+        </header>
+        <main class="flex-1 pt-32">
+            <!-- Hero Section -->
+            <section class="max-w-7xl mx-auto px-6 py-20 lg:py-32 flex flex-col items-center text-center">
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-8">
+                    <span class="relative flex h-2 w-2">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                    </span>
+                    <span class="text-[10px] uppercase tracking-widest font-bold text-primary">Available for High-Impact
+                        Roles</span>
+                </div>
+                <h1 class="text-6xl md:text-8xl font-black tracking-tight text-white mb-6 engraved-text">
+                    Yash Mathur
+                </h1>
+                <p class="max-w-2xl text-lg md:text-xl text-slate-400 leading-relaxed mb-12">
+                    Solving Real Problems, from <span class="text-white">Ideation to Production</span> — Reliably.
+                    Architecting AI ecosystems that scale.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-8">
+                    <a class="relative group overflow-hidden bg-primary px-10 py-5 rounded-2xl font-bold flex items-center justify-center gap-3 transition-all hover:scale-105 shadow-[0_0_30px_rgba(30,64,175,0.4)]"
+                        href="https://linkedin.com">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent opacity-50"></div>
+                        <span class="relative z-10 text-white">Connect on LinkedIn</span>
+                        <span class="material-symbols-outlined relative z-10 text-sm">north_east</span>
+                    </a>
+                    <a class="thick-glass px-10 py-5 rounded-2xl font-bold text-white flex items-center justify-center gap-3 hover:bg-white/5 transition-all group"
+                        href="#">
+                        <span class="group-hover:text-primary transition-colors">Schedule a Meet</span>
+                        <span class="material-symbols-outlined text-sm group-hover:text-primary">calendar_today</span>
+                    </a>
+                </div>
+                <div
+                    class="mt-24 w-full max-w-5xl aspect-[21/9] rounded-3xl liquid-glass overflow-hidden relative border border-white/5">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-primary/5"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="size-64 bg-primary/20 blur-[120px] rounded-full"></div>
+                    </div>
+                    <div class="relative w-full h-full bg-[url('https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&amp;w=2000&amp;auto=format&amp;fit=crop')] bg-cover bg-center opacity-40 mix-blend-overlay"
+                        data-alt="Abstract 3D digital neural network architecture"></div>
+                </div>
+            </section>
+            <!-- Experience Timeline -->
+            <section class="max-w-4xl mx-auto px-6 py-32" id="experience">
+                <div class="flex items-center gap-4 mb-16">
+                    <h2 class="text-3xl font-bold text-white">The Progression</h2>
+                    <div class="h-px flex-1 bg-gradient-to-r from-white/20 to-transparent"></div>
+                </div>
+                <div
+                    class="space-y-24 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-[1px] before:bg-gradient-to-b before:from-primary/80 before:via-white/20 before:to-transparent">
+                    <div
+                        class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                        <div
+                            class="flex items-center justify-center w-4 h-4 rounded-full bg-primary shadow-[0_0_15px_#1e40af] z-10 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                        </div>
+                        <div
+                            class="w-[calc(100%-4rem)] md:w-[calc(50%-4rem)] thick-glass p-8 rounded-2xl transition-all hover:border-primary/50">
+                            <time class="text-[10px] font-black text-primary uppercase tracking-[0.2em] mb-2 block">Apr
+                                25 - Oct 25</time>
+                            <h3 class="font-bold text-white text-xl mb-1">Lead AI Product Engineer</h3>
+                            <p class="text-slate-400 text-sm font-medium mb-4">Techolution</p>
+                            <p class="text-slate-500 text-sm leading-relaxed">Led multidisciplinary teams in developing
+                                AI-centric solutions from initial architecture through to global deployment.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                        <div
+                            class="flex items-center justify-center w-4 h-4 rounded-full bg-slate-700 shadow-[0_0_15px_rgba(255,255,255,0.1)] z-10 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                        </div>
+                        <div
+                            class="w-[calc(100%-4rem)] md:w-[calc(50%-4rem)] thick-glass p-8 rounded-2xl transition-all hover:border-white/30">
+                            <time
+                                class="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-2 block">July
+                                24 - Apr 25</time>
+                            <h3 class="font-bold text-white text-xl mb-1">Associate AI Engineer</h3>
+                            <p class="text-slate-400 text-sm font-medium mb-4">Techolution</p>
+                            <p class="text-slate-500 text-sm leading-relaxed">Pioneered GenAI powered business
+                                automations using LLMs and Google AppScript ecosystems.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                        <div
+                            class="flex items-center justify-center w-4 h-4 rounded-full bg-slate-700 shadow-[0_0_15px_rgba(255,255,255,0.1)] z-10 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                        </div>
+                        <div
+                            class="w-[calc(100%-4rem)] md:w-[calc(50%-4rem)] thick-glass p-8 rounded-2xl transition-all hover:border-white/30">
+                            <time
+                                class="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-2 block">Jan
+                                24 - Jul 24</time>
+                            <h3 class="font-bold text-white text-xl mb-1">AI Intern</h3>
+                            <p class="text-slate-400 text-sm font-medium mb-4">Techolution</p>
+                            <p class="text-slate-500 text-sm leading-relaxed">Focused on LLM fine-tuning, RAG pipelines,
+                                and complex prompt engineering for enterprise data.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Projects Section -->
+            <section class="max-w-7xl mx-auto px-6 py-32 bg-background-dark" id="projects">
+                <div class="text-center mb-20">
+                    <h2 class="text-4xl md:text-5xl font-black text-white mb-4">Selected Projects</h2>
+                    <p class="text-slate-500">A showcase of craftsmanship in code and design.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div
+                        class="group thick-glass rounded-[32px] overflow-hidden transition-all duration-700 hover:-translate-y-4 hover:shadow-primary/5">
+                        <div class="h-72 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#050505] to-transparent z-10"></div>
+                            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDN3pj7MvUkuSItch-qeRRGwn8NrN62MO6JV21U3gMHQfr9OIL0BY5VKvMROSCjd-Pty0Zw4xmF0ZCFgsmLMNlUZTpH1yvPRPsFZeEQFjnq3eqOoxccmTORuWmCxuO641teZMWEhv9eU_i-rwGdg17P_y_SKi2YhFSzaWEmMza4AOeIdpbIF23EYxcXAcAVCj6SOoMR67T-wbFJH951kmN1aqnzdehEpxldtRwwqb_LBmO_t7Ykk0r5HHPppFfnsYtMVKPnS1NPIII');">
+                            </div>
+                        </div>
+                        <div class="p-10">
+                            <span
+                                class="text-[10px] font-black text-primary uppercase tracking-[0.3em] mb-4 block">Next.js
+                                • React • WebSockets</span>
+                            <h3 class="text-2xl font-bold text-white mb-4">Classic Games Hub</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed mb-8">A real-time multiplayer platform
+                                bringing classic arcade experiences to the modern web browser.</p>
+                            <a class="inline-flex items-center text-sm font-bold text-white hover:text-primary transition-colors"
+                                href="#">
+                                View Project <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div
+                        class="group thick-glass rounded-[32px] overflow-hidden transition-all duration-700 hover:-translate-y-4 hover:shadow-primary/5">
+                        <div class="h-72 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#050505] to-transparent z-10"></div>
+                            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAwrqofEoVi5elW7V7y29Ohp6I65X4c0ty1EEG4xq1F65rnGxPKmcn5dgIqC0ESdcb-Spn_7SvPeqobv_NOu8L49XudWtc9hH_beLskEkmo7rJ9ADY1RPk3tD56b7_I8MSTm7MfodzqqltlKHiA8AC7RJ3he8qSS-XKhud3l4U8rcYAjIkwK7_uVMxNPMg_Viv3Iy-IJwqTRKhE3yCWq3FyJyJZOrZowO7OsS4jo22iQbKEA7SGRd4JBZe5Osa1nETnNEGPT3aN0do');">
+                            </div>
+                        </div>
+                        <div class="p-10">
+                            <span
+                                class="text-[10px] font-black text-primary uppercase tracking-[0.3em] mb-4 block">Flutter
+                                • Firebase • Design</span>
+                            <h3 class="text-2xl font-bold text-white mb-4">Increzio - Habit Tracker</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed mb-8">A productivity app featuring a unique
+                                hand-drawn aesthetic focused on behavioral psychology.</p>
+                            <a class="inline-flex items-center text-sm font-bold text-white hover:text-primary transition-colors"
+                                href="#">
+                                View Case Study <span
+                                    class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div
+                        class="group thick-glass rounded-[32px] overflow-hidden transition-all duration-700 hover:-translate-y-4 hover:shadow-primary/5">
+                        <div class="h-72 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#050505] to-transparent z-10"></div>
+                            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCK0FDrm7rTYLMN6en5Y_gsNi-tx9NBFgZO8jsajeJvYhuTVaFouc3ioRGXvpWwO1BF2MZzeeultS85OyNX30PaeR9_-pWCtLLZUByKlZTIQJDr8BoW7GXsBSmKpSokzJQWc2YCP9VKg4Mc1YfSfuLMMQ69GMHAgFVAwFP-cH7AqGcZKThnFlp2SenAVUxbNAPNCU-v15OAT-lWzsPxvlnuPkp5lg_YIrYf-aXI0sz3Jkt7028ETYEAzsrtfywZPk5tLl4aom8QNIM');">
+                            </div>
+                        </div>
+                        <div class="p-10">
+                            <span class="text-[10px] font-black text-primary uppercase tracking-[0.3em] mb-4 block">Java
+                                Swing • Networking</span>
+                            <h3 class="text-2xl font-bold text-white mb-4">Tambola Desktop App</h3>
+                            <p class="text-slate-500 text-sm leading-relaxed mb-8">Cross-platform desktop application
+                                for synchronized online Tambola gameplay sessions.</p>
+                            <a class="inline-flex items-center text-sm font-bold text-white hover:text-primary transition-colors"
+                                href="#">
+                                View Project <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Articles Preview -->
+            <section class="max-w-7xl mx-auto px-6 py-48" id="articles">
+                <div class="text-center mb-24">
+                    <h2 class="text-5xl font-black text-white mb-6">Insights &amp; Articles</h2>
+                    <p class="text-slate-500 max-w-2xl mx-auto">Curated thoughts on the intersection of engineering
+                        excellence and product distribution.</p>
+                </div>
+                <div
+                    class="relative py-20 px-10 rounded-[40px] bg-[#0c0c0e] border border-white/5 shadow-2xl overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none"
+                        style="background-image: radial-gradient(circle at 50% 50%, rgba(30,64,175,0.1) 0%, transparent 70%);">
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-12 relative z-10">
+                        <div class="flex flex-col gap-6">
+                            <div
+                                class="aspect-[3/4] thick-glass rounded-xl overflow-hidden group cursor-pointer transition-transform hover:-translate-y-4 hover:shadow-[0_20px_40px_rgba(0,0,0,0.8)]">
+                                <div class="h-full w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC2NuQN6hdI-dFUJVodVxrjiEDwhjyKu3UoPIVYYlvGFmXwj8Sc8SjyZ1a5Z7BJ1yAP4j_2cwuIf3m7SDV1F4M8Ub9OKkqHBiyyu4xmRK418lti8-TFJNUt6F8WDDqwgN67TGeGtgW1f9jko1lHN7misOC-Ti7OYyiqH4oY-0nGzmo-G8_MvQhsBiRGpa6r-gIr_r0W2GI0wkc_BkjTnqtCYAqnfwsdOUqJLSXoDNqQbdZmlLArfbBMmOVh2WJmfZecXxIFKg_1NZE');">
+                                </div>
+                            </div>
+                            <div class="metal-shelf"></div>
+                            <h4 class="text-sm font-bold text-white line-clamp-2">Getting Started with application
+                                building using LLMs</h4>
+                        </div>
+                        <div class="flex flex-col gap-6">
+                            <div
+                                class="aspect-[3/4] thick-glass rounded-xl overflow-hidden group cursor-pointer transition-transform hover:-translate-y-4 hover:shadow-[0_20px_40px_rgba(0,0,0,0.8)]">
+                                <div class="h-full w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAakoDRaSvlohlshMIjoNvT32MgEbbR9sCg63CIH0afqwp90XiNGQKYGjPl6Tu-hl4eYICXuXAge1ZKLyvLHKp6r-NCy5QJ4RR2VmGV4MGnnv6vTiMgwNX7PxAax_8R4Ikwgz-B-AzxBervxJmn66j8VBHR1H_fHywBvnw-NQs-XKWr5ZDVvYOsIJ8YyeUTvf_54EWZt8pRSFriw26rKRSJIGIskIzaGJR2-iaXpdtmHyGmnN4RM03TGgpWLYmV1TYdGBHBIS2f_jY');">
+                                </div>
+                            </div>
+                            <div class="metal-shelf"></div>
+                            <h4 class="text-sm font-bold text-white line-clamp-2">Why distribution matters more than
+                                models in AI</h4>
+                        </div>
+                        <div class="flex flex-col gap-6">
+                            <div
+                                class="aspect-[3/4] thick-glass rounded-xl overflow-hidden group cursor-pointer transition-transform hover:-translate-y-4 hover:shadow-[0_20px_40px_rgba(0,0,0,0.8)]">
+                                <div class="h-full w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCSSWMDLoI9lz8B_AvMjbec3-M5HaKj9TEEWmNauvDNfzgXhuY5X2hCNqpEUJKgz6tp7OzqW_-orIW2TDZsIZwZW40mLJ7nBOs0KpIdKuIjXQtW5d8qSQVtLC-UIuEQA4xkR_w8kUYYrt8dZMAzl5vLp5XiudSfhTGxMcwmmolrQ14A88lyj2v_YmNIpdKCixF6oCGs_Xqw9FBuf2VrfaaEiG6iHemGTvCboXo1mLCnvk2a0yiQAEWv0Tb-jo2oRW6JNH1C6kZHW8w');">
+                                </div>
+                            </div>
+                            <div class="metal-shelf"></div>
+                            <h4 class="text-sm font-bold text-white line-clamp-2">The Real Benefit of Open Source AI
+                            </h4>
+                        </div>
+                        <div class="flex flex-col items-center justify-center gap-4">
+                            <button
+                                class="size-20 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+                                <span class="material-symbols-outlined text-4xl">add</span>
+                            </button>
+                            <p class="text-xs font-black uppercase tracking-widest text-slate-500">View More</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Footer -->
+        <footer class="border-t border-white/5 bg-background-dark py-20">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-10">
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="size-8 rounded bg-primary/20 border border-primary/40 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-sm text-primary">terminal</span>
+                        </div>
+                        <h2 class="text-lg font-bold text-white">Yash Mathur</h2>
+                    </div>
+                    <div class="flex items-center gap-6">
+                        <a class="text-slate-400 hover:text-white transition-colors" href="#">
+                            <span class="material-symbols-outlined">code</span>
+                        </a>
+                        <a class="text-slate-400 hover:text-white transition-colors" href="#">
+                            <span class="material-symbols-outlined">share</span>
+                        </a>
+                        <a class="text-slate-400 hover:text-white transition-colors" href="#">
+                            <span class="material-symbols-outlined">camera</span>
+                        </a>
+                        <a class="text-slate-400 hover:text-white transition-colors" href="#">
+                            <span class="material-symbols-outlined">smart_display</span>
+                        </a>
+                    </div>
+                    <p class="text-slate-500 text-sm">
+                        © 2026 Yash Mathur. Built for the future.
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
+
+<!-- Project Details: Classic Games Hub -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#7317cf",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#0a0a0c",
+                        "royal-blue": "#2563eb",
+                        "metallic-slate": "#1e1e24",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .liquid-glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+        }
+
+        .metallic-finish {
+            background: linear-gradient(145deg, #1e1e24, #0a0a0c);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.05), 4px 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .chrome-text {
+            background: linear-gradient(180deg, #ffffff 0%, #a1a1aa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+    <div
+        class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <header
+                class="flex items-center justify-between whitespace-nowrap border-b border-white/5 px-6 md:px-20 py-6 sticky top-0 z-50 bg-background-dark/80 backdrop-blur-md">
+                <div class="flex items-center gap-4">
+                    <div
+                        class="size-8 bg-royal-blue rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(37,99,235,0.4)]">
+                        <span class="material-symbols-outlined text-white text-xl">deployed_code</span>
+                    </div>
+                    <h2 class="chrome-text text-xl font-extrabold tracking-tighter uppercase">Yash Mathur</h2>
+                </div>
+                <nav class="hidden md:flex items-center gap-10">
+                    <a class="text-slate-400 hover:text-royal-blue text-xs font-bold uppercase tracking-widest transition-colors"
+                        href="#">Work</a>
+                    <a class="text-slate-400 hover:text-royal-blue text-xs font-bold uppercase tracking-widest transition-colors"
+                        href="#">About</a>
+                    <a class="text-slate-400 hover:text-royal-blue text-xs font-bold uppercase tracking-widest transition-colors"
+                        href="#">Contact</a>
+                </nav>
+                <div class="flex items-center gap-4">
+                    <button
+                        class="flex items-center justify-center rounded-full h-10 w-10 metallic-finish hover:border-royal-blue/50 transition-all">
+                        <span class="material-symbols-outlined text-slate-300 text-lg">share</span>
+                    </button>
+                </div>
+            </header>
+            <main class="flex-1 flex flex-col items-center">
+                <div class="w-full max-w-[1200px] px-6 py-10 md:py-16">
+                    <div
+                        class="relative w-full aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl group mb-12 border border-white/5">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                            data-alt="Retro gaming console and neon lighting aesthetic"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBNNEdVAHauzSEAD2l1O30vmcuOdtJLqSuKwRi3KE_G9GOTRF3yTA0d134tc2y5MspyzOoJBcqoPls6U2tNeD3fHbC0aAwvmC25kYqBCT5M5db9435Un1BC8iJOZzrnp5xSdUT-OMkgTMNZIP8suw4W2ymjAXDmH1UMuwMUwQ7whJZs6_D5aZ8OHWiguvHSHRt8stT6rfErSspcnvMzOtZtfUMsBKRxCTK1QMS6dFiMm47JUG7hIqOXG3cJowG3MgdSgFc5TwxMoRc');">
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent">
+                        </div>
+                        <div class="absolute bottom-0 left-0 w-full p-8 md:p-12">
+                            <div class="liquid-glass inline-block px-4 py-1 rounded-full mb-4">
+                                <span class="text-royal-blue text-[10px] font-black uppercase tracking-[0.2em]">Featured
+                                    Project</span>
+                            </div>
+                            <h1 class="chrome-text text-5xl md:text-7xl font-black leading-none tracking-tighter">
+                                CLASSIC GAMES HUB</h1>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                        <div class="lg:col-span-8 space-y-12">
+                            <section>
+                                <div class="flex items-center gap-4 mb-6">
+                                    <div class="h-px flex-1 bg-gradient-to-r from-royal-blue/50 to-transparent"></div>
+                                    <h3 class="text-slate-500 text-xs font-bold uppercase tracking-widest">Project
+                                        Overview</h3>
+                                </div>
+                                <p class="text-xl md:text-2xl text-slate-300 font-light leading-relaxed">
+                                    The <span class="text-white font-medium">Classic Games Hub</span> is a high-fidelity
+                                    digital archive of timeless entertainment. Reimagined for the high-end collector,
+                                    this portal blends nostalgic mechanics with <span
+                                        class="text-royal-blue">liquid-smooth UI performance</span> and a deep, metallic
+                                    design language.
+                                </p>
+                                <p class="mt-6 text-slate-400 leading-loose">
+                                    Built from the ground up to showcase what's possible when modern web technologies
+                                    meet vintage aesthetics. Every interaction, from the card flips to the score
+                                    transitions, is designed to evoke a sense of physical luxury and tactile response.
+                                </p>
+                            </section>
+                            <section>
+                                <div class="flex items-center gap-4 mb-8">
+                                    <div class="h-px flex-1 bg-gradient-to-r from-royal-blue/50 to-transparent"></div>
+                                    <h3 class="text-slate-500 text-xs font-bold uppercase tracking-widest">Key Features
+                                    </h3>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div
+                                        class="metallic-finish p-6 rounded-xl group hover:border-royal-blue/30 transition-all">
+                                        <div
+                                            class="size-10 rounded-lg bg-royal-blue/10 flex items-center justify-center mb-4 group-hover:bg-royal-blue/20 transition-all">
+                                            <span class="material-symbols-outlined text-royal-blue">blur_on</span>
+                                        </div>
+                                        <h4 class="text-white font-bold mb-2">Glass-morphic Engine</h4>
+                                        <p class="text-slate-400 text-sm">Real-time light refraction and depth
+                                            calculations for a physical glass appearance.</p>
+                                    </div>
+                                    <div
+                                        class="metallic-finish p-6 rounded-xl group hover:border-royal-blue/30 transition-all">
+                                        <div
+                                            class="size-10 rounded-lg bg-royal-blue/10 flex items-center justify-center mb-4 group-hover:bg-royal-blue/20 transition-all">
+                                            <span class="material-symbols-outlined text-royal-blue">bolt</span>
+                                        </div>
+                                        <h4 class="text-white font-bold mb-2">60FPS Interactions</h4>
+                                        <p class="text-slate-400 text-sm">Hardware-accelerated animations ensuring
+                                            buttery smooth gameplay and transitions.</p>
+                                    </div>
+                                    <div
+                                        class="metallic-finish p-6 rounded-xl group hover:border-royal-blue/30 transition-all">
+                                        <div
+                                            class="size-10 rounded-lg bg-royal-blue/10 flex items-center justify-center mb-4 group-hover:bg-royal-blue/20 transition-all">
+                                            <span class="material-symbols-outlined text-royal-blue">shield</span>
+                                        </div>
+                                        <h4 class="text-white font-bold mb-2">State Persistence</h4>
+                                        <p class="text-slate-400 text-sm">Cloud-synced high scores and session data
+                                            across all luxury devices.</p>
+                                    </div>
+                                    <div
+                                        class="metallic-finish p-6 rounded-xl group hover:border-royal-blue/30 transition-all">
+                                        <div
+                                            class="size-10 rounded-lg bg-royal-blue/10 flex items-center justify-center mb-4 group-hover:bg-royal-blue/20 transition-all">
+                                            <span class="material-symbols-outlined text-royal-blue">palette</span>
+                                        </div>
+                                        <h4 class="text-white font-bold mb-2">Adaptive UI</h4>
+                                        <p class="text-slate-400 text-sm">A interface that morphs based on the game
+                                            being played, matching its specific era.</p>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="lg:col-span-4 space-y-8">
+                            <div
+                                class="liquid-glass p-8 rounded-2xl sticky top-28 border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                                <h3 class="chrome-text text-xl font-bold mb-6">Project Assets</h3>
+                                <div class="space-y-4 mb-8">
+                                    <button
+                                        class="w-full flex items-center justify-center gap-3 bg-royal-blue hover:bg-royal-blue/80 text-white font-bold py-4 rounded-xl shadow-[0_10px_20px_rgba(37,99,235,0.3)] transition-all">
+                                        <span class="material-symbols-outlined">rocket_launch</span>
+                                        View Live Project
+                                    </button>
+                                    <button
+                                        class="w-full flex items-center justify-center gap-3 metallic-finish text-slate-300 hover:text-white font-bold py-4 rounded-xl transition-all border border-white/10">
+                                        <span class="material-symbols-outlined">code</span>
+                                        Source Code
+                                    </button>
+                                </div>
+                                <h4 class="text-slate-500 text-[10px] font-black uppercase tracking-[0.2em] mb-4">Tech
+                                    Stack</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-3 py-1.5 metallic-finish rounded-lg text-[10px] font-bold text-slate-300 uppercase tracking-wider border border-white/5">Next.js
+                                        14</span>
+                                    <span
+                                        class="px-3 py-1.5 metallic-finish rounded-lg text-[10px] font-bold text-slate-300 uppercase tracking-wider border border-white/5">TypeScript</span>
+                                    <span
+                                        class="px-3 py-1.5 metallic-finish rounded-lg text-[10px] font-bold text-slate-300 uppercase tracking-wider border border-white/5">Three.js</span>
+                                    <span
+                                        class="px-3 py-1.5 metallic-finish rounded-lg text-[10px] font-bold text-slate-300 uppercase tracking-wider border border-white/5">Tailwind
+                                        CSS</span>
+                                    <span
+                                        class="px-3 py-1.5 metallic-finish rounded-lg text-[10px] font-bold text-slate-300 uppercase tracking-wider border border-white/5">Framer
+                                        Motion</span>
+                                    <span
+                                        class="px-3 py-1.5 metallic-finish rounded-lg text-[10px] font-bold text-slate-300 uppercase tracking-wider border border-white/5">PostgreSQL</span>
+                                </div>
+                                <div class="mt-8 pt-8 border-t border-white/5">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span
+                                            class="text-slate-500 text-[10px] font-bold uppercase tracking-widest">Client</span>
+                                        <span class="text-slate-200 text-xs font-bold">Personal Portfolio</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span
+                                            class="text-slate-500 text-[10px] font-bold uppercase tracking-widest">Year</span>
+                                        <span class="text-slate-200 text-xs font-bold">2024</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer class="border-t border-white/5 py-12 px-6 md:px-20">
+                <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+                    <div class="flex items-center gap-3">
+                        <div class="size-6 bg-slate-800 rounded-full"></div>
+                        <span class="text-slate-500 text-xs font-medium uppercase tracking-widest">© 2024 Yash Mathur
+                            Design</span>
+                    </div>
+                    <div class="flex gap-8">
+                        <a class="text-slate-500 hover:text-royal-blue transition-colors" href="#"><span
+                                class="material-symbols-outlined">language</span></a>
+                        <a class="text-slate-500 hover:text-royal-blue transition-colors" href="#"><span
+                                class="material-symbols-outlined">alternate_email</span></a>
+                        <a class="text-slate-500 hover:text-royal-blue transition-colors" href="#"><span
+                                class="material-symbols-outlined">link</span></a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<!-- Article Detail: Building with LLMs -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0052FF", /* Adjusted to Royal Blue as per request */
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#0a0a0c", /* Deeper metallic black */
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .glass-slab {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05);
+        }
+
+        .metallic-border {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+        }
+
+        .metallic-border::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            pointer-events: none;
+        }
+
+        .liquid-bg {
+            background: radial-gradient(circle at 50% -20%, rgba(0, 82, 255, 0.15) 0%, rgba(10, 10, 12, 0) 60%);
+        }
+
+        .glossy-button {
+            background: linear-gradient(180deg, #0066FF 0%, #0044CC 100%);
+            box-shadow: 0 4px 15px rgba(0, 82, 255, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 selection:bg-primary/30">
+    <div class="relative min-h-screen w-full flex flex-col overflow-x-hidden liquid-bg">
+        <!-- Navigation -->
+        <header class="sticky top-0 z-50 w-full glass-slab border-b border-white/10 px-6 lg:px-20 py-4">
+            <div class="max-w-7xl mx-auto flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center shadow-lg shadow-primary/20">
+                        <span class="material-symbols-outlined text-white text-xl">deployed_code</span>
+                    </div>
+                    <h2 class="text-slate-100 text-xl font-extrabold tracking-tighter">YASH MATHUR</h2>
+                </div>
+                <nav class="hidden md:flex items-center gap-10">
+                    <a class="text-slate-400 hover:text-primary transition-colors text-sm font-semibold uppercase tracking-widest"
+                        href="#">Portfolio</a>
+                    <a class="text-primary transition-colors text-sm font-semibold uppercase tracking-widest"
+                        href="#">Articles</a>
+                    <a class="text-slate-400 hover:text-primary transition-colors text-sm font-semibold uppercase tracking-widest"
+                        href="#">Contact</a>
+                </nav>
+                <div class="flex items-center gap-4">
+                    <button
+                        class="w-10 h-10 flex items-center justify-center rounded-full glass-slab hover:bg-white/10 transition-all">
+                        <span class="material-symbols-outlined text-slate-300 text-xl">share</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <main class="flex-1 max-w-7xl mx-auto w-full px-6 lg:px-20 py-12">
+            <!-- Breadcrumb -->
+            <div class="flex items-center gap-2 mb-8 text-xs font-bold uppercase tracking-[0.2em] text-slate-500">
+                <a class="hover:text-primary transition-colors" href="#">Insights</a>
+                <span class="material-symbols-outlined text-sm">chevron_right</span>
+                <span class="text-primary">LLM Development</span>
+            </div>
+            <!-- Hero Section -->
+            <section class="relative group mb-16">
+                <div
+                    class="absolute -inset-1 bg-gradient-to-r from-primary/20 to-purple-600/20 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000">
+                </div>
+                <div
+                    class="relative aspect-[21/9] w-full overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                        data-alt="Abstract neural network visualization in dark blue"
+                        style="background-image: linear-gradient(to top, rgba(10, 10, 12, 0.9) 0%, rgba(10, 10, 12, 0.2) 60%), url('https://lh3.googleusercontent.com/aida-public/AB6AXuANrxTAF4rFEgz_GCrqVdXlcbCZfpKTbtEqawWmD8aBSpleE4-rVDsTKmfZFQ7p6fURzrBw0ZkuCoTGkrYAeclJ3nCcxys4kxsHt0Lnbqeemq19gG1dRhyw5obW28Dp3e6-BkThr_UssILO2Qx21ZSo7AobcOXUjQBZJ1q8pfJ_CNiDCSXomxYn9LrDHmfuTUr9AVxtB_aVC4zNGwb6clBR-p0bee5u1xnvOMW2_KHtlka1SCUgv7IqhtgzbXCCNsmJZYOLO7rklSE')">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-8 lg:p-16 max-w-4xl">
+                        <div class="flex items-center gap-4 mb-6">
+                            <span
+                                class="px-3 py-1 glass-slab rounded text-[10px] font-bold text-primary tracking-widest uppercase border border-primary/30">AI
+                                Architecture</span>
+                            <span class="text-slate-400 text-xs font-medium">12 Min Read • Oct 24, 2023</span>
+                        </div>
+                        <h1 class="text-white text-4xl lg:text-7xl font-extrabold leading-[1.1] tracking-tight mb-6">
+                            Building the Future with <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">Large
+                                Language Models</span>
+                        </h1>
+                    </div>
+                </div>
+            </section>
+            <!-- Article Body -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Main Content -->
+                <article class="lg:col-span-8 space-y-10">
+                    <div class="glass-slab p-8 lg:p-12 rounded-2xl metallic-border">
+                        <p
+                            class="text-xl lg:text-2xl text-slate-300 leading-relaxed font-light mb-10 italic border-l-4 border-primary pl-8">
+                            "The transition from deterministic code to probabilistic intelligence is the defining shift
+                            of our generation. Understanding LLM application architecture is no longer optional—it is
+                            the foundation of the modern stack."
+                        </p>
+                        <div class="prose prose-invert max-w-none text-slate-400 leading-loose space-y-6">
+                            <p>
+                                Large Language Models (LLMs) have evolved from simple text predictors into powerful
+                                engines for complex application logic. In this deep dive, we explore how to architect
+                                systems that are robust, scalable, and truly intelligent.
+                            </p>
+                            <h3 class="text-white text-2xl font-bold mt-12 mb-4">The Orchestration Layer</h3>
+                            <p>
+                                Building with LLMs requires more than just an API call. It's about the orchestration
+                                between vector databases, prompt templates, and real-time retrieval-augmented generation
+                                (RAG) loops. We break down the 'Liquid Glass' architecture—a paradigm that emphasizes
+                                fluidity between data sources and reasoning engines.
+                            </p>
+                            <div class="my-10 grid grid-cols-2 gap-4">
+                                <div
+                                    class="bg-white/5 rounded-xl p-6 border border-white/5 hover:border-primary/20 transition-all">
+                                    <span class="material-symbols-outlined text-primary mb-3">memory</span>
+                                    <h4 class="text-white font-bold mb-2">Vector Embeddings</h4>
+                                    <p class="text-sm">High-dimensional representations of semantic meaning.</p>
+                                </div>
+                                <div
+                                    class="bg-white/5 rounded-xl p-6 border border-white/5 hover:border-primary/20 transition-all">
+                                    <span class="material-symbols-outlined text-primary mb-3">auto_awesome</span>
+                                    <h4 class="text-white font-bold mb-2">Prompt Engineering</h4>
+                                    <p class="text-sm">Contextual steering for deterministic outputs.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CTA Section -->
+                    <div
+                        class="relative overflow-hidden rounded-2xl glass-slab p-12 text-center border border-primary/20">
+                        <div class="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-primary/10 rounded-full blur-3xl">
+                        </div>
+                        <h3 class="text-white text-3xl font-bold mb-4 relative z-10">Dive deeper into the implementation
+                        </h3>
+                        <p class="text-slate-400 mb-8 max-w-lg mx-auto relative z-10">Explore the full technical
+                            breakdown, including code samples and architectural diagrams on Medium.</p>
+                        <a class="inline-flex items-center gap-3 glossy-button px-10 py-5 rounded-full text-white font-bold tracking-wide hover:scale-105 transition-transform"
+                            href="#">
+                            Read Full Article on Medium
+                            <span class="material-symbols-outlined">north_east</span>
+                        </a>
+                    </div>
+                </article>
+                <!-- Sidebar -->
+                <aside class="lg:col-span-4 space-y-8">
+                    <div class="glass-slab p-8 rounded-2xl border border-white/5">
+                        <h4
+                            class="text-white text-xs font-black uppercase tracking-widest mb-6 flex items-center gap-2">
+                            <span class="w-2 h-2 bg-primary rounded-full"></span>
+                            Author
+                        </h4>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-16 h-16 rounded-full border-2 border-primary p-1">
+                                <img alt="Yash Mathur Professional Headshot"
+                                    class="w-full h-full rounded-full object-cover"
+                                    data-alt="Professional portrait of Yash Mathur"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhAV0qRp1xTJ_49Y6KxUIbZrBatddc2K_hU0HpFBAt1QABx9m9qY2tYxJzz0NSHXqyNBlPO_OpQGDc7tJmyQXmB1bHApXZPOMoUATJApEla-ek_Xh_42qbrss0vv9yrKqvwec-GRqum5kUN-YFodL3rDSh19Nqb9VYGXFeGRpa7c_bLRkdbeuhrfdiyQr_wlR9M_LTkpqf_2KPctd0zomnX_40b01q-6zmI16oOUgJyGZ_Zsexln9Vm4C4IWDYsaiiCpQp583tX5Y" />
+                            </div>
+                            <div>
+                                <p class="text-white font-bold">Yash Mathur</p>
+                                <p class="text-slate-500 text-xs">AI Solutions Architect</p>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full py-3 rounded-lg border border-white/10 hover:bg-white/5 transition-all text-xs font-bold text-slate-300 uppercase tracking-widest">
+                            Follow Yash
+                        </button>
+                    </div>
+                    <div class="glass-slab p-8 rounded-2xl border border-white/5">
+                        <h4 class="text-white text-xs font-black uppercase tracking-widest mb-6">Trending in Tech</h4>
+                        <div class="space-y-6">
+                            <a class="group block" href="#">
+                                <p class="text-xs text-primary font-bold mb-1">01</p>
+                                <h5 class="text-slate-200 font-medium group-hover:text-primary transition-colors">The
+                                    ethics of Generative AI in Creative Workflows</h5>
+                            </a>
+                            <a class="group block" href="#">
+                                <p class="text-xs text-primary font-bold mb-1">02</p>
+                                <h5 class="text-slate-200 font-medium group-hover:text-primary transition-colors">
+                                    Real-time Data Streaming with Apache Kafka</h5>
+                            </a>
+                            <a class="group block" href="#">
+                                <p class="text-xs text-primary font-bold mb-1">03</p>
+                                <h5 class="text-slate-200 font-medium group-hover:text-primary transition-colors">Rust
+                                    vs Python for Machine Learning Microservices</h5>
+                            </a>
+                        </div>
+                    </div>
+                    <div
+                        class="rounded-2xl bg-gradient-to-br from-primary/20 to-purple-900/20 p-8 border border-white/10">
+                        <h4 class="text-white text-lg font-bold mb-4">Join the Newsletter</h4>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">Get the latest insights on LLMs and AI
+                            architecture delivered to your inbox.</p>
+                        <div class="space-y-3">
+                            <input
+                                class="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-primary transition-all"
+                                placeholder="email@address.com" type="email" />
+                            <button
+                                class="w-full bg-primary py-3 rounded-lg text-white text-sm font-bold hover:bg-primary/80 transition-all">Subscribe
+                                Now</button>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </main>
+        <footer class="w-full border-t border-white/10 py-12 px-6 lg:px-20 mt-20">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary">verified_user</span>
+                    <p class="text-slate-500 text-sm">© 2024 Yash Mathur. Crafted with precision.</p>
+                </div>
+                <div class="flex gap-8">
+                    <a class="text-slate-500 hover:text-white transition-colors text-sm" href="#">Twitter</a>
+                    <a class="text-slate-500 hover:text-white transition-colors text-sm" href="#">LinkedIn</a>
+                    <a class="text-slate-500 hover:text-white transition-colors text-sm" href="#">Medium</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
