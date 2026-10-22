@@ -73,6 +73,7 @@ export interface ProjectDetail {
   image: string;
   liveUrl?: string;
   repoUrl?: string;
+  privacyPolicyUrl?: string;
   learnMoreLink: string;
   videoUrl: string | null;
   overview: string;
@@ -202,6 +203,7 @@ export const projects: ProjectDetail[] = [
     "liveUrl": "",
     "repoUrl": "",
     "learnMoreLink": "/projects/garden-maze",
+    "privacyPolicyUrl": "/garden-maze/privacy",
     "videoUrl": null,
     "videos": [
       {

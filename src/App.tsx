@@ -3,6 +3,7 @@ import { AnimatePresence } from 'framer-motion';
 import HomePage from './pages/HomePage';
 import ProjectDetailPage from './pages/ProjectDetailPage';
 import IncrezioHabitTrackerPrivacyPage from './pages/IncrezioHabitTrackerPrivacyPage';
+import GardenMazePrivacyPage from './pages/GardenMazePrivacyPage';
 import Footer from './components/Footer/Footer';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/projects/:slug" element={<ProjectDetailPage />} />
           <Route path="/increzio-habit-tracker/privacy" element={<IncrezioHabitTrackerPrivacyPage />} />
+          <Route path="/garden-maze/privacy" element={<GardenMazePrivacyPage />} />
           <Route path="*" element={<HomePage />} />
         </Routes>
       </AnimatePresence>

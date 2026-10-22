@@ -29,6 +29,12 @@ const DownloadIcon = () => (
   </svg>
 );
 
+const ShieldIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4Zm0 2.18 7 3.12V11c0 4.38-2.9 8.4-7 9.74-4.1-1.34-7-5.36-7-9.74V6.3l7-3.12Z" fill="currentColor" />
+  </svg>
+);
+
 const ProjectDetailPage: React.FC = () => {
   const { slug = '' } = useParams();
   const project = getProjectBySlug(slug);
@@ -133,6 +139,15 @@ const ProjectDetailPage: React.FC = () => {
                     <GitHubIcon />
                     <span>View GitHub repo</span>
                   </a>
+                )}
+                {project.privacyPolicyUrl && (
+                  <Link
+                    to={project.privacyPolicyUrl}
+                    className="button-secondary project-detail-button"
+                  >
+                    <ShieldIcon />
+                    <span>Privacy Policy</span>
+                  </Link>
                 )}
               </div>
 
