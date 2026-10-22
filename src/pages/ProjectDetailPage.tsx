@@ -23,6 +23,12 @@ const GitHubIcon = () => (
   </svg>
 );
 
+const DownloadIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path d="M12 3a1 1 0 0 1 1 1v9.59l3.3-3.3 1.4 1.42L12 17.41l-5.7-5.7 1.4-1.42 3.3 3.3V4a1 1 0 0 1 1-1ZM5 19h14v2H5v-2Z" fill="currentColor" />
+  </svg>
+);
+
 const ProjectDetailPage: React.FC = () => {
   const { slug = '' } = useParams();
   const project = getProjectBySlug(slug);
@@ -45,6 +51,10 @@ const ProjectDetailPage: React.FC = () => {
     );
   }
 
+  const localVideos = project.videos ?? [];
+  const heroVideo = project.videoUrl ? undefined : localVideos[0];
+  const moreVideos = project.videoUrl ? localVideos : localVideos.slice(1);
+
   return (
     <div className="project-detail-page">
       <header className="project-detail-header">
@@ -59,7 +69,7 @@ const ProjectDetailPage: React.FC = () => {
       <main className="project-detail-main">
         <section className="project-detail-hero">
           <div className="container project-detail-hero__content">
-            {project.videoUrl && (
+            {project.videoUrl ? (
               <div className="project-video-wrapper">
                 <iframe
                   src={project.videoUrl}
@@ -69,7 +79,18 @@ const ProjectDetailPage: React.FC = () => {
                   loading="lazy"
                 />
               </div>
-            )}
+            ) : heroVideo ? (
+              <div className="project-video-wrapper">
+                <video
+                  src={heroVideo.src}
+                  poster={heroVideo.poster}
+                  title={heroVideo.title}
+                  controls
+                  playsInline
+                  preload="metadata"
+                />
+              </div>
+            ) : null}
             <div className="project-overview">
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
@@ -81,6 +102,16 @@ const ProjectDetailPage: React.FC = () => {
               <p>{project.overview}</p>
 
               <div className="project-detail-actions">
+                {project.download && (
+                  <a
+                    href={project.download.url}
+                    download
+                    className="button-primary project-detail-button"
+                  >
+                    <DownloadIcon />
+                    <span>{project.download.label}</span>
+                  </a>
+                )}
                 {project.liveUrl && (
                   <a
                     href={project.liveUrl}
@@ -104,6 +135,13 @@ const ProjectDetailPage: React.FC = () => {
                   </a>
                 )}
               </div>
+
+              {project.download && (
+                <p className="project-detail-download-note">
+                  {project.download.note}. Not yet notarized by Apple: if macOS blocks the first launch,
+                  right-click the app and choose Open.
+                </p>
+              )}
 
               <ul className="project-detail-tags" aria-label="Key technologies">
                 {project.skills.map((skill) => (
@@ -138,6 +176,31 @@ const ProjectDetailPage: React.FC = () => {
             </div>
           </div>
         </section>
+
+        {moreVideos.length > 0 && (
+          <section className="project-detail-section project-detail-videos">
+            <div className="container project-detail-section__content">
+              <h2>Videos</h2>
+              <div className="project-detail-videos__grid">
+                {moreVideos.map((video) => (
+                  <figure key={video.src} className="project-detail-videos__item">
+                    <div className="project-video-wrapper">
+                      <video
+                        src={video.src}
+                        poster={video.poster}
+                        title={video.title}
+                        controls
+                        playsInline
+                        preload="none"
+                      />
+                    </div>
+                    <figcaption>{video.title}</figcaption>
+                  </figure>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         <section className="project-detail-section project-detail-gallery">
           <div className="container project-detail-section__content">

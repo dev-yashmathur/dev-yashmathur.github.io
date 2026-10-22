@@ -72,6 +72,38 @@
   border-radius: inherit;
 }
 
+.project-video-wrapper video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #000;
+  border-radius: inherit;
+}
+
+.project-detail-download-note {
+  margin: 0.75rem 0 0;
+  font-size: 0.875rem;
+  opacity: 0.75;
+}
+
+.project-detail-videos__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: var(--space-lg, 2rem);
+}
+
+.project-detail-videos__item {
+  margin: 0;
+}
+
+.project-detail-videos__item figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
 .project-overview h1 {
   font-size: clamp(2.25rem, 3.5vw, 3.25rem);
   margin-bottom: var(--space-md);
