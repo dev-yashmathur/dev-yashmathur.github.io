@@ -11,7 +11,10 @@ const commit = (() => {
 export default defineConfig({
   plugins: [react()],
   base: '/',
-  define: { __COMMIT__: JSON.stringify(commit) },
+  define: {
+    __COMMIT__: JSON.stringify(commit),
+    __BUILD_TIME__: JSON.stringify(new Date().toISOString()),
+  },
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),

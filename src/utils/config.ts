@@ -3,6 +3,7 @@
 export const config = {
   domain: 'yashmathur.com',
   name: 'Yash Mathur',
+  email: 'your.email@example.com', // TODO: real address
   social: {
     linkedin: 'https://www.linkedin.com/in/dev-yashmathur/',
     github: 'https://github.com/dev-yashmathur',

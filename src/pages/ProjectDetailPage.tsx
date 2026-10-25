@@ -4,6 +4,7 @@ import SiteShell from '../components/SiteShell/SiteShell';
 import TagIcon from '../components/SiteShell/TagIcon';
 import { getProjectBySlug } from '../data/projects';
 import { usePageMeta } from '../utils/usePageMeta';
+import NotFoundPage from './NotFoundPage';
 import './ProjectDetailPage.css';
 
 const ExternalIcon = () => (
@@ -46,22 +47,7 @@ const ProjectDetailPage: React.FC = () => {
 
   usePageMeta(project?.title ?? 'Project not found', project?.summary);
 
-  if (!project) {
-    return (
-      <SiteShell>
-        <main className="project-detail-not-found">
-          <div className="project-detail-not-found__body">
-            <div className="eyebrow">404 / not found</div>
-            <h1>Project not found</h1>
-            <p>We couldn&apos;t find the project you were looking for. It might have a new name or be in the works.</p>
-            <Link to="/" className="button primary project-detail-back-button">
-              Back to home
-            </Link>
-          </div>
-        </main>
-      </SiteShell>
-    );
-  }
+  if (!project) return <NotFoundPage />;
 
   const localVideos = project.videos ?? [];
   const heroVideo = project.videoUrl ? undefined : localVideos[0];

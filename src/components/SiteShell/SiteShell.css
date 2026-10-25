@@ -11,6 +11,7 @@
   --serif: Georgia, "Times New Roman", serif;
   --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --hand: Caveat, "Bradley Hand", "Segoe Print", cursive;
 
   min-height: 100vh;
   background: var(--bg);
@@ -117,4 +118,75 @@
 .pf .to-top:hover { background: var(--text); color: var(--bg); }
 @media (pointer: coarse) {
   .pf .menu-toggle { min-height: 44px; padding: 0 14px; }
+}
+
+/* ---------- Motion & delight ---------- */
+
+/* Theme switch: the new theme spreads out in a circle from the toggle (see SiteShell.tsx) */
+::view-transition-old(root), ::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+
+/* Scroll reveals: fade up once, optionally staggered with --d */
+@media (prefers-reduced-motion: no-preference) {
+  .pf [data-reveal="fade"] {
+    opacity: 0; transform: translateY(8px);
+    transition: opacity .6s ease var(--d, 0ms), transform .6s cubic-bezier(.2, .7, .2, 1) var(--d, 0ms);
+  }
+  .pf [data-reveal="fade"][data-shown] { opacity: 1; transform: none; }
+}
+
+/* Presses give a little */
+.pf .button, .pf .release, .pf .to-top, .pf .theme-toggle, .pf .menu-toggle { transition: transform .12s ease, background .15s ease, color .15s ease; }
+.pf .button:active, .pf .release:active, .pf .to-top:active, .pf .menu-toggle:active { transform: scale(.98); }
+.pf .theme-toggle:active { transform: scale(.94); }
+
+/* Underlines redraw from the left on hover */
+.pf .u-draw, .pf .site-footer-links a, .pf .build-hash {
+  text-decoration: none;
+  background: linear-gradient(currentColor, currentColor) no-repeat 0 100% / 100% 1px;
+  padding-bottom: 1px;
+}
+.pf .u-draw:hover, .pf .site-footer-links a:hover, .pf .build-hash:hover { animation: pf-underline .35s cubic-bezier(.2, .7, .2, 1); }
+@keyframes pf-underline { from { background-size: 0 1px; } to { background-size: 100% 1px; } }
+.pf .header-nav a {
+  background: linear-gradient(currentColor, currentColor) no-repeat 0 calc(100% - 10px) / 0 1px;
+  transition: background-size .3s cubic-bezier(.2, .7, .2, 1), color .15s ease;
+}
+.pf .header-nav a:hover { background-size: 100% 1px; }
+@media (max-width: 600px) { .pf .header-nav a, .pf .header-nav a:hover { background-size: 0 0; } }
+
+/* Status dot breathes */
+.pf .status-dot { animation: pf-breathe 2.8s ease-in-out infinite; }
+@keyframes pf-breathe {
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--live) 45%, transparent); }
+  50% { box-shadow: 0 0 0 5px transparent; }
+}
+
+/* Footer build hash: tooltip with deploy age */
+.pf .build-hash { position: relative; color: var(--text); }
+.pf .build-hash::after {
+  content: attr(data-tip); position: absolute; right: 0; bottom: calc(100% + 8px); white-space: nowrap;
+  padding: 5px 8px; background: var(--text); color: var(--bg); font-size: 11px; text-transform: none;
+  opacity: 0; transform: translateY(4px); pointer-events: none; transition: opacity .15s ease, transform .15s ease;
+}
+.pf .build-hash:hover::after, .pf .build-hash:focus-visible::after { opacity: 1; transform: none; }
+
+/* Terminal-style toast */
+.pf .term-toast-region { position: fixed; left: 24px; bottom: 24px; z-index: 30; pointer-events: none; }
+.pf .term-toast {
+  display: flex; flex-direction: column; gap: 2px; padding: 10px 14px; min-width: 240px;
+  background: var(--text); color: var(--bg); font-family: var(--mono); font-size: 12px; line-height: 1.5;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .18);
+  animation: pf-toast 2.4s cubic-bezier(.2, .7, .2, 1) both;
+}
+.pf .term-toast .cmd { opacity: .6; }
+@keyframes pf-toast {
+  0% { opacity: 0; transform: translateY(10px); }
+  8%, 85% { opacity: 1; transform: none; }
+  100% { opacity: 0; transform: translateY(4px); }
+}
+@media (max-width: 600px) { .pf .term-toast-region { left: 16px; right: 76px; bottom: 16px; } .pf .term-toast { min-width: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .pf *, .pf *::before, .pf *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .pf .term-toast { animation: none; }
 }

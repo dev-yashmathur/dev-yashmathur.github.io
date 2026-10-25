@@ -1,4 +1,12 @@
 .pf .not-found { padding: 96px 0 120px; }
-.pf .not-found h1 { font-size: clamp(48px, 8vw, 96px); line-height: 1; letter-spacing: -.045em; margin-bottom: 24px; }
-.pf .not-found p { max-width: 520px; margin-bottom: 32px; font-size: 18px; color: var(--body); overflow-wrap: anywhere; }
-.pf .not-found code { font-family: var(--mono); font-size: .9em; padding: 2px 6px; border: 1px solid var(--line); }
+.pf .not-found h1 { font-size: clamp(48px, 8vw, 96px); line-height: 1; letter-spacing: -.045em; margin-bottom: 32px; }
+.pf .not-found .terminal {
+  max-width: 680px; margin: 0 0 32px; padding: 20px 22px; overflow-x: auto;
+  border: 1px solid var(--line); background: var(--soft);
+  font: 13px/1.6 var(--mono); color: var(--body); white-space: pre-wrap; overflow-wrap: anywhere;
+}
+.pf .not-found .terminal .prompt { color: var(--muted); }
+.pf .not-found .terminal .fatal { color: #cf222e; font-weight: 700; }
+.pf[data-theme="dark"] .not-found .terminal .fatal { color: #ff7b72; }
+.pf .not-found .terminal a { color: var(--live); text-decoration: underline; text-underline-offset: 3px; }
+.pf .not-found-actions { display: flex; flex-wrap: wrap; gap: 12px; }
