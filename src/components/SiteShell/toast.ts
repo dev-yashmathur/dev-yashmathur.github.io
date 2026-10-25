@@ -7,5 +7,6 @@ export const ToastContext = createContext<Toast>(() => {});
 
 export const useToast = () => useContext(ToastContext);
 
+/** Safe to call while prerendering, where there is no window. */
 export const prefersReducedMotion = () =>
-  window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
+  typeof window !== 'undefined' && (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false);

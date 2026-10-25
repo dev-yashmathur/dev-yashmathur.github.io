@@ -2,12 +2,18 @@ import { useEffect, useRef, useState } from 'react';
 import { prefersReducedMotion } from '../SiteShell/toast';
 
 const HEADLINE = 'I turn vague requirements into reliable production software.';
-const rand = (min: number, max: number) => min + Math.random() * (max - min);
+// Seeded so the prerendered HTML and the browser render the same jitter.
+let seed = 11;
+const rand = (min: number, max: number) => {
+  seed = (seed * 16807) % 2147483647;
+  return min + ((seed - 1) / 2147483646) * (max - min);
+};
 
 /** "vague requirements" jitters in blurry and settles; "reliable production software" snaps into focus. */
 export const SettleHeadline: React.FC = () => {
-  const [vague] = useState(() =>
-    'vague requirements'.split(' ').map((word, w) =>
+  const [vague] = useState(() => {
+    seed = 11;
+    return 'vague requirements'.split(' ').map((word, w) =>
       word.split('').map((char, i) => ({
         char,
         style: {
@@ -18,8 +24,8 @@ export const SettleHeadline: React.FC = () => {
           '--d': `${(w * 6 + i) * 22}ms`,
         } as React.CSSProperties,
       })),
-    ),
-  );
+    );
+  });
   return (
     <h1 className="settle" aria-label={HEADLINE}>
       <span aria-hidden="true">
@@ -45,7 +51,7 @@ export const DitherPortrait: React.FC<{ src: string; alt: string }> = ({ src, al
   const wrap = useRef<HTMLDivElement>(null);
   const canvas = useRef<HTMLCanvasElement>(null);
   const replay = useRef<() => void>(() => {});
-  const [revealed, setRevealed] = useState(prefersReducedMotion);
+  const [revealed, setRevealed] = useState(false);
 
   useEffect(() => {
     const el = wrap.current;

@@ -1,0 +1,37 @@
+<!doctype html>
+<!-- Social preview card for /garden-maze. Render: node scripts/og/render.mjs garden-maze -->
+<html><head><meta charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@600;700&display=swap" />
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    width: 1200px; height: 630px; overflow: hidden; position: relative; color: #f5ede0; font-family: Figtree, sans-serif;
+    background: radial-gradient(700px 420px at 20% 0%, rgba(242,184,75,.16), transparent 65%), linear-gradient(#0e1a12, #0a130d);
+  }
+  .copy { position: absolute; left: 68px; top: 64px; width: 500px; }
+  .brand { display: flex; align-items: center; gap: 16px; font: 400 32px/1 "Young Serif", serif; }
+  .brand img { width: 60px; height: 60px; border-radius: 14px; }
+  h1 { margin-top: 46px; font: 400 54px/1.08 "Young Serif", serif; letter-spacing: -.01em; }
+  h1 em { font-style: normal; color: #f2b84b; }
+  .meta { position: absolute; left: 68px; bottom: 60px; font: 700 18px/1.7 Figtree, sans-serif; letter-spacing: .04em; color: #b8c2ab; }
+  .meta b { color: #f2b84b; font-weight: 700; }
+  .stage {
+    position: absolute; left: 610px; top: 64px; width: 660px; height: 502px; border-radius: 28px; overflow: hidden;
+    border: 1px solid rgba(245,237,224,.14); box-shadow: 0 0 120px -20px rgba(242,184,75,.45), 0 30px 60px -30px #000;
+  }
+  .stage img { display: block; width: 893px; height: 502px; object-fit: cover; margin-left: -120px; }
+  .stage::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 45% 55%, transparent 45%, rgba(10,19,13,.6)); }
+  .fly { position: absolute; width: 6px; height: 6px; border-radius: 50%; background: #ffd15c; box-shadow: 0 0 12px 4px rgba(255,209,92,.5); }
+</style></head>
+<body>
+  <i class="fly" style="left:540px;top:90px;opacity:.7"></i>
+  <i class="fly" style="left:470px;top:330px;opacity:.5"></i>
+  <i class="fly" style="left:120px;top:200px;opacity:.35"></i>
+  <i class="fly" style="left:560px;top:560px;opacity:.6"></i>
+  <div class="copy">
+    <div class="brand"><img src="../../src/assets/images/GardenMaze/icon.png" />The Garden Maze</div>
+    <h1>A maze game you play <em>from the inside.</em></h1>
+  </div>
+  <div class="meta">100 LEVELS · <b>MIRROR MAZES</b> · HAUNTED LEVELS<br />macOS · Windows · iPad · Android — VR soon</div>
+  <div class="stage"><img src="../../src/assets/images/GardenMaze/gate_unlock.webp" /></div>
+</body></html>

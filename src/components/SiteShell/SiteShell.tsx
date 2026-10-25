@@ -3,6 +3,7 @@ import { flushSync } from 'react-dom';
 import { Link, useLocation } from 'react-router-dom';
 import { config } from '../../utils/config';
 import { ToastContext, prefersReducedMotion } from './toast';
+import { useReveal } from '../../utils/useReveal';
 import '../Wow/Wow.css';
 import './SiteShell.css';
 
@@ -12,6 +13,7 @@ const THEME_KEY = 'pf-theme';
 const REPO = 'https://github.com/dev-yashmathur/dev-yashmathur.github.io';
 
 const readTheme = (): Theme => {
+  if (typeof window === 'undefined') return 'light';
   try {
     const saved = localStorage.getItem(THEME_KEY);
     if (saved === 'light' || saved === 'dark') return saved;
@@ -72,21 +74,7 @@ const SiteShell: React.FC<SiteShellProps> = ({ children }) => {
     return () => window.clearTimeout(id);
   }, [pathname, hash]);
 
-  // Reveal [data-reveal] elements once as they enter the viewport. A data attribute
-  // (not a class) so React re-renders don't wipe it.
-  useEffect(() => {
-    const els = rootRef.current?.querySelectorAll<HTMLElement>('[data-reveal]:not([data-shown])');
-    if (!els?.length) return;
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (!e.isIntersecting) return;
-        e.target.setAttribute('data-shown', '');
-        io.unobserve(e.target);
-      });
-    }, { rootMargin: '0px 0px -8% 0px' });
-    els.forEach(el => io.observe(el));
-    return () => io.disconnect();
-  }, [pathname]);
+  useReveal(rootRef, pathname);
 
   useEffect(() => {
     if (!toast) return;

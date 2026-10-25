@@ -34,10 +34,14 @@ const Progress: React.FC<{ label: string; total: number }> = ({ label, total }) 
 /** Types out a `git push` of "your hard problem" when the contact section comes into view. */
 export const PushTerminal: React.FC = () => {
   const ref = useRef<HTMLPreElement>(null);
-  const reduce = prefersReducedMotion();
-  const [typed, setTyped] = useState(reduce ? COMMAND.length : 0);
-  const [lines, setLines] = useState(reduce ? OUTPUT.length : 0);
-  const [started, setStarted] = useState(reduce);
+  const [typed, setTyped] = useState(0);
+  const [lines, setLines] = useState(0);
+  const [started, setStarted] = useState(false);
+
+  useEffect(() => {
+    if (!prefersReducedMotion()) return;
+    setTyped(COMMAND.length); setLines(OUTPUT.length); setStarted(true);
+  }, []);
 
   useEffect(() => {
     const el = ref.current;

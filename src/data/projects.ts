@@ -100,7 +100,7 @@ export const projects: ProjectDetail[] = [
     "image": porteeStorage,
     "liveUrl": "",
     "repoUrl": "",
-    "learnMoreLink": "/projects/portee",
+    "learnMoreLink": "/portee",
     "download": {
       "url": "/downloads/Portee-0.1.0.dmg",
       "label": "Download for macOS",
@@ -163,7 +163,7 @@ export const projects: ProjectDetail[] = [
     "image": benchCompare,
     "liveUrl": "",
     "repoUrl": "",
-    "learnMoreLink": "/projects/benchtest",
+    "learnMoreLink": "/bench",
     "download": {
       "url": "/downloads/Bench-1.0.dmg",
       "label": "Download for macOS",
@@ -223,7 +223,7 @@ export const projects: ProjectDetail[] = [
     "image": mazeGate,
     "liveUrl": "",
     "repoUrl": "",
-    "learnMoreLink": "/projects/garden-maze",
+    "learnMoreLink": "/garden-maze",
     "privacyPolicyUrl": "/garden-maze/privacy",
     "videoUrl": null,
     "videos": [
@@ -285,7 +285,7 @@ export const projects: ProjectDetail[] = [
     "image": classicGamesHomePage,
     "liveUrl": "https://classicgameshub.com",
     // "repoUrl": "https://github.com/dev-yashmathur/classic-games-hub",
-    "learnMoreLink": "/projects/classic-games-hub",
+    "learnMoreLink": "/classic-games-hub",
     "videoUrl": "https://www.youtube.com/embed/9GX9BBpR5Qo",
     "overview": "Classic Games Hub reimagines nostalgic childhood board games into playful, modern web experiences. It lets players compete online, challenge the computer, or enjoy reimagined versions of old favorites—all within a sleek, warm, 3D-inspired interface.",
     "motivation": [
@@ -340,7 +340,7 @@ export const projects: ProjectDetail[] = [
     "image": increzioLightHomeScreen,
     "liveUrl": "https://play.google.com/store/apps/details?id=com.yashmathur.habit_tracker",
     // "repoUrl": "https://github.com/dev-yashmathur/increase-your-habit-tracker",
-    "learnMoreLink": "/projects/increzio-habit-tracker",
+    "learnMoreLink": "/increzio",
     "videoUrl": null,
     "videos": [
       {
@@ -451,7 +451,7 @@ export const projects: ProjectDetail[] = [
     "image": tambolaAppImg,
     "liveUrl": "",
     "repoUrl": "https://github.com/dev-yashmathur/TamboloFinal",
-    "learnMoreLink": "/projects/tambola-desktop-app",
+    "learnMoreLink": "/tambola",
     "videoUrl": null,
     "overview": "The Tambola Desktop App was my first real-world project—built to solve a problem my friends and family faced during covid lockdown game nights. It automated ticket generation, number calling, and win verification so that no one had to sit out to manage the game. Note: As this was my first project, the UI/UX does leave a lot to be desired, which would have been done differently, had I approached it now.",
     "motivation": [

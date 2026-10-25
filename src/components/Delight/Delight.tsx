@@ -2,10 +2,10 @@ import { useEffect, useRef, useState } from 'react';
 import { prefersReducedMotion } from '../SiteShell/toast';
 import './Delight.css';
 
-/** Counts up from 0 the first time it scrolls into view. */
+/** Counts up from 0 the first time it scrolls into view. Renders the final value first, so prerendered HTML has the real number. */
 export const CountUp: React.FC<{ to: number; duration?: number }> = ({ to, duration = 900 }) => {
   const ref = useRef<HTMLSpanElement>(null);
-  const [n, setN] = useState(() => (prefersReducedMotion() ? to : 0));
+  const [n, setN] = useState(to);
 
   useEffect(() => {
     const el = ref.current;
@@ -54,6 +54,7 @@ const readClock = () => {
 /** "Bengaluru · 11:42 PM · probably still debugging" */
 export const LocalTime: React.FC = () => {
   const [clock, setClock] = useState(readClock);
+  useEffect(() => setClock(readClock()), []);
   useEffect(() => {
     const id = window.setInterval(() => setClock(readClock()), 30_000);
     return () => window.clearInterval(id);
@@ -61,8 +62,8 @@ export const LocalTime: React.FC = () => {
   return (
     <div className="local-time">
       <span className="local-dot" aria-hidden="true" />
-      <span>{CITY} · {clock.time}</span>
-      <span className="local-mood">{clock.mood}</span>
+      <span suppressHydrationWarning>{CITY} · {clock.time}</span>
+      <span className="local-mood" suppressHydrationWarning>{clock.mood}</span>
     </div>
   );
 };
@@ -79,7 +80,9 @@ const nowLines: [string, string][] = [
 
 /** A different line on every visit; click for another. */
 export const NowLine: React.FC = () => {
-  const [i, setI] = useState(() => Math.floor(Math.random() * nowLines.length));
+  // Same first line on the server and in the browser; a random one is picked after hydration.
+  const [i, setI] = useState(0);
+  useEffect(() => setI(Math.floor(Math.random() * nowLines.length)), []);
   const [label, text] = nowLines[i];
   return (
     <button type="button" className="now-line" onClick={() => setI(v => (v + 1) % nowLines.length)} title="Another one">
@@ -93,12 +96,13 @@ export const NowLine: React.FC = () => {
 /** Draws a fresh Tambola number whenever its card is hovered. */
 export const TambolaBall: React.FC = () => {
   const ref = useRef<HTMLSpanElement>(null);
-  const [n, setN] = useState(() => 1 + Math.floor(Math.random() * 90));
+  const [n, setN] = useState(42);
   const [draw, setDraw] = useState(0);
   useEffect(() => {
     const card = ref.current?.closest('.work-card');
     if (!card) return;
     const roll = () => { setN(1 + Math.floor(Math.random() * 90)); setDraw(d => d + 1); };
+    setN(1 + Math.floor(Math.random() * 90));
     card.addEventListener('mouseenter', roll);
     return () => card.removeEventListener('mouseenter', roll);
   }, []);

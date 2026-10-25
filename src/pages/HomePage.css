@@ -138,10 +138,10 @@
 
 /* Git-flavoured details */
 .pf .section-number .hash {
-  display: block; margin-top: 6px; padding: 0; border: 0; background: none; opacity: .55;
-  font: inherit; color: inherit; cursor: copy; transition: opacity .15s ease;
+  display: block; margin-top: 6px; padding: 0; border: 0; background: none;
+  font: inherit; color: var(--muted); cursor: copy; transition: color .15s ease;
 }
-.pf .section-number .hash:hover, .pf .section-number .hash:focus-visible { opacity: 1; }
+.pf .section-number .hash:hover, .pf .section-number .hash:focus-visible { color: var(--text); }
 .pf .head-pill {
   display: inline-block; margin-left: 10px; padding: 1px 6px; border: 1px solid var(--live);
   color: var(--live); font-size: 10px; letter-spacing: .06em; vertical-align: 1px;

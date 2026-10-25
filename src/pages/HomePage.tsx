@@ -100,7 +100,8 @@ const workItems: WorkItem[] = [
     meta: <>Independent</>,
     moment: <ShortsGone />,
     image: shortsGoneShot,
-    release: { label: 'Chrome Web Store', href: 'https://chromewebstore.google.com/detail/shortsgone-youtube-shorts/jhekgeokmjokkoefepkealbikbmdcebj' },
+    release: { label: 'Case study', to: '/shorts-gone' },
+    links: [{ label: 'Chrome Web Store', href: 'https://chromewebstore.google.com/detail/shortsgone-youtube-shorts/jhekgeokmjokkoefepkealbikbmdcebj' }],
   },
   {
     type: 'Professional / Product',

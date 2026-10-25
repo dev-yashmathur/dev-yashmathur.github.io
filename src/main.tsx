@@ -1,5 +1,5 @@
 import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { createRoot, hydrateRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import './index.css'
 import './styles/globalStyles.css'
@@ -8,10 +8,15 @@ import { printConsoleEgg } from './utils/consoleEgg'
 
 printConsoleEgg()
 
-createRoot(document.getElementById('root')!).render(
+const root = document.getElementById('root')!
+const app = (
   <StrictMode>
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </StrictMode>,
+  </StrictMode>
 )
+
+// Prerendered pages arrive with their HTML in place; the SPA fallback (404.html) arrives empty.
+if (root.hasChildNodes()) hydrateRoot(root, app)
+else createRoot(root).render(app)

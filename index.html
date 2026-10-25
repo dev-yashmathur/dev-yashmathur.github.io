@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/YMLogoBlack.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--seo-->
   <title>Yash Mathur — Product Engineer, AI &amp; Systems</title>
   <meta name="description" content="Yash Mathur is a product engineer specializing in production AI and AI infrastructure: agents, pipelines, deployment and interfaces." />
   <meta name="theme-color" content="#f7f7f5" media="(prefers-color-scheme: light)" />
@@ -20,9 +21,11 @@
   <meta property="og:url" content="https://yashmathur.com/" />
   <meta property="og:image" content="https://yashmathur.com/YMLogoBlack.png" />
   <meta name="twitter:card" content="summary" />
+  <!--/seo-->
 </head>
 
 <body>
+  <!--theme-->
   <script>
     // Paint the right background before React loads, so dark mode doesn't flash white.
     (function () {
@@ -35,7 +38,21 @@
       } catch (e) { /* ignore */ }
     })();
   </script>
+  <!--/theme-->
   <div id="root"></div>
+  <!--theme-->
+  <script>
+    // Prerendered markup is built in light mode; switch it before first paint if the visitor prefers dark.
+    (function () {
+      try {
+        var t = localStorage.getItem('pf-theme');
+        var dark = t ? t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var el = document.querySelector('#root .pf');
+        if (el) el.setAttribute('data-theme', dark ? 'dark' : 'light');
+      } catch (e) { /* ignore */ }
+    })();
+  </script>
+  <!--/theme-->
   <script type="module" src="/src/main.tsx"></script>
 </body>
 
