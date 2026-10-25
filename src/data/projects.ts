@@ -27,8 +27,14 @@ import porteePermissions from '../assets/images/Portee/permissions.webp';
 import porteeStorage from '../assets/images/Portee/storage-review.webp';
 import porteeSessionsRecent from '../assets/images/Portee/sessions-recent.webp';
 import porteeSessionsSearch from '../assets/images/Portee/sessions-search.webp';
+import porteeStorageOverview from '../assets/images/Portee/storage-overview.webp';
 
 import benchTechStack from '../assets/images/Benchtest/tech-stack.webp';
+import benchCompare from '../assets/images/Benchtest/compare.webp';
+import benchChoices from '../assets/images/Benchtest/choices.webp';
+import benchBatch from '../assets/images/Benchtest/batch.webp';
+import benchHistory from '../assets/images/Benchtest/history.webp';
+import benchDataset from '../assets/images/Benchtest/dataset.webp';
 
 import mazeGate from '../assets/images/GardenMaze/gate_unlock.webp';
 import mazeAerial from '../assets/images/GardenMaze/aerial_hedge.webp';
@@ -54,6 +60,8 @@ export interface ProjectVideo {
   src: string;
   poster?: string;
   title: string;
+  /** Vertical (9:16) video, shown narrower instead of pillarboxed. */
+  portrait?: boolean;
 }
 
 export interface ProjectDownload {
@@ -137,6 +145,7 @@ export const projects: ProjectDetail[] = [
     ],
     "gallery": [
       { "src": porteeStorage, "alt": "Portée's Storage view showing RAM, disk use and cleanable groups for each coding agent" },
+      { "src": porteeStorageOverview, "alt": "Portée's Storage overview: active processes, memory, disk use and what can be reclaimed per agent" },
       { "src": porteeLibrary, "alt": "Portée's This Mac page listing the four detected coding agents and their locations" },
       { "src": porteeCatalog, "alt": "The catalog of MCP servers, skills, tools and hooks shared across agents" },
       { "src": porteeCatalogAdd, "alt": "Adding a server or skill once and choosing which agents to sync it to" },
@@ -151,7 +160,7 @@ export const projects: ProjectDetail[] = [
     "timeline": "2026",
     "summary": "A native macOS app for evaluating LLMs and decision models, optimized for decision models today with generation-model improvements coming soon. Test models and prompts, and build the datasets you need to fine-tune.",
     "skills": ["Swift", "SwiftUI", "SQLite", "Local REST API", "Evals", "macOS"],
-    "image": benchTechStack,
+    "image": benchCompare,
     "liveUrl": "",
     "repoUrl": "",
     "learnMoreLink": "/projects/benchtest",
@@ -161,6 +170,13 @@ export const projects: ProjectDetail[] = [
       "note": "Version 1.0 · 2.8 MB · macOS 14+, Apple Silicon & Intel"
     },
     "videoUrl": null,
+    "videos": [
+      {
+        "src": "/videos/bench-how-it-works.mp4",
+        "poster": "/videos/bench-how-it-works.jpg",
+        "title": "How Bench works"
+      }
+    ],
     "overview": "Bench is my tool for evaluating LLMs and decision models. It is out in its first phase, which is optimized for decision models, because that is where much of the momentum is right now; further improvements for generation models are coming soon. It gives you an inviting interface for running evaluations and an API to do the same programmatically, so you can see how a model performs on your own options and prompts - and turn the results into the dataset you need to fine-tune it.",
     "motivation": [
       "Decision models are zero-shot. Anyone with a traditional machine-learning background knows zero-shot rarely works as well as a classifier that has been fine-tuned.",
@@ -190,6 +206,11 @@ export const projects: ProjectDetail[] = [
       }
     ],
     "gallery": [
+      { "src": benchCompare, "alt": "Four decision models answering the same support ticket, with Jev's choice probabilities open" },
+      { "src": benchChoices, "alt": "Describing a choice so every model knows what it covers" },
+      { "src": benchBatch, "alt": "Running a batch of yes/no questions against shared context" },
+      { "src": benchHistory, "alt": "History of past comparisons and batch runs" },
+      { "src": benchDataset, "alt": "The training set of approved answers, ready to export as JSONL" },
       { "src": benchTechStack, "alt": "Bench evaluation stack: inputs, core, model adapters, evaluation and data" }
     ]
   },
@@ -321,6 +342,14 @@ export const projects: ProjectDetail[] = [
     // "repoUrl": "https://github.com/dev-yashmathur/increase-your-habit-tracker",
     "learnMoreLink": "/projects/increzio-habit-tracker",
     "videoUrl": null,
+    "videos": [
+      {
+        "src": "/videos/increzio-store-preview.mp4",
+        "poster": "/videos/increzio-store-preview.jpg",
+        "title": "Increzio store preview",
+        "portrait": true
+      }
+    ],
     "overview": "Increzio Habit Tracker is a mobile app designed to make habit building more engaging through home screen widgets and a flexible, hand-drawn interface. It encourages users to improve incrementally and lets them customize when their habit day resets.",
     "motivation": [
       "I loved the idea of habit streaks and wanted an app that would place those streaks right on the home screen as widgets for extra motivation.",

@@ -79,7 +79,7 @@ const ProjectDetailPage: React.FC = () => {
                 />
               </div>
             ) : heroVideo ? (
-              <div className="project-video-wrapper">
+              <div className={`project-video-wrapper${heroVideo.portrait ? ' vertical' : ''}`}>
                 <video
                   src={heroVideo.src}
                   poster={heroVideo.poster}
@@ -187,7 +187,7 @@ const ProjectDetailPage: React.FC = () => {
               <div className="project-detail-videos__grid">
                 {moreVideos.map((video) => (
                   <figure key={video.src} className="project-detail-videos__item">
-                    <div className="project-video-wrapper">
+                    <div className={`project-video-wrapper${video.portrait ? ' vertical' : ''}`}>
                       <video
                         src={video.src}
                         poster={video.poster}

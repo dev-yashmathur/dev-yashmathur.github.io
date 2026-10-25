@@ -4,6 +4,7 @@ import { config } from '../utils/config';
 import { projects } from '../data/projects';
 import { demoArticles } from '../components/Articles/ArticleMagazineStand';
 import portrait from '../assets/images/portrait.webp';
+import shortsGoneShot from '../assets/images/ShortsGone/after.webp';
 import TagIcon from '../components/SiteShell/TagIcon';
 import Hash from '../components/SiteShell/Hash';
 import { CountUp, LocalTime, MarginNote, NowLine, ShortsGone, TambolaBall } from '../components/Delight/Delight';
@@ -98,6 +99,7 @@ const workItems: WorkItem[] = [
     tags: ['Chrome extension', 'UX', 'JavaScript'],
     meta: <>Independent</>,
     moment: <ShortsGone />,
+    image: shortsGoneShot,
     release: { label: 'Chrome Web Store', href: 'https://chromewebstore.google.com/detail/shortsgone-youtube-shorts/jhekgeokmjokkoefepkealbikbmdcebj' },
   },
   {
