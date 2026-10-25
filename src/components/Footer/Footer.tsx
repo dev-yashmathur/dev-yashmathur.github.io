@@ -96,9 +96,9 @@ const Footer: React.FC = () => {
                         >
                             Connect on LinkedIn
                         </a>
-                        {config.social.calendly && (
+                        {config.social.booking && (
                             <a
-                                href={config.social.calendly}
+                                href={config.social.booking}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="button-secondary footer-schedule-button"

@@ -136,7 +136,8 @@
 
 /* Presses give a little */
 .pf .button, .pf .release, .pf .to-top, .pf .theme-toggle, .pf .menu-toggle { transition: transform .12s ease, background .15s ease, color .15s ease; }
-.pf .button:active, .pf .release:active, .pf .to-top:active, .pf .menu-toggle:active { transform: scale(.98); }
+/* Not stretched release links: a transform would shrink their card-wide ::after hit area mid-click. */
+.pf .button:active, .pf .release:not(.stretch):active, .pf .to-top:active, .pf .menu-toggle:active { transform: scale(.98); }
 .pf .theme-toggle:active { transform: scale(.94); }
 
 /* Underlines redraw from the left on hover */

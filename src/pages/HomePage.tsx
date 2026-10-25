@@ -1,13 +1,19 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { config } from '../utils/config';
 import { projects } from '../data/projects';
 import { demoArticles } from '../components/Articles/ArticleMagazineStand';
+import portrait from '../assets/images/portrait.webp';
 import TagIcon from '../components/SiteShell/TagIcon';
 import Hash from '../components/SiteShell/Hash';
 import { CountUp, LocalTime, MarginNote, NowLine, ShortsGone, TambolaBall } from '../components/Delight/Delight';
 import SiteShell from '../components/SiteShell/SiteShell';
 import { usePageMeta } from '../utils/usePageMeta';
+import { branchColors } from '../utils/branchColors';
+import { DitherPortrait, SettleHeadline } from '../components/Wow/Hero';
+import { WorkPeek } from '../components/Wow/Work';
+import { useSpotlight } from '../components/Wow/useSpotlight';
+import { PushTerminal } from '../components/Wow/Finale';
 import './HomePage.css';
 
 const EMAIL = config.email;
@@ -24,6 +30,7 @@ interface WorkItem {
   branch: boolean;
   moment?: React.ReactNode;
   note?: string;
+  image?: string;
 }
 
 const highlights = [
@@ -52,6 +59,7 @@ const projectWork = projects.map(p => ({
     ...(p.repoUrl ? [{ label: 'GitHub', href: p.repoUrl }] : []),
   ],
   branch: true,
+  image: p.image,
   moment: p.title.startsWith('Tambola') ? <TambolaBall /> : undefined,
 }));
 
@@ -121,7 +129,6 @@ const rank = (title: string) => {
   return i === -1 ? workOrder.length : i;
 };
 const work = [...workItems].sort((a, b) => rank(a.title) - rank(b.title));
-const branchColors = ['#8250df', '#0969da', '#bf8700', '#cf222e', '#1a7f37', '#bc4c00', '#0a7ea4'];
 let branchIndex = 0;
 const workColors = work.map(w => (w.branch ? branchColors[branchIndex++ % branchColors.length] : undefined));
 
@@ -216,19 +223,22 @@ const countUpValue = (value: string) => {
 const HomePage: React.FC = () => {
   usePageMeta(undefined, 'Yash Mathur is a product engineer specializing in production AI and AI infrastructure: agents, pipelines, deployment and interfaces.');
   const [showAllWork, setShowAllWork] = useState(false);
+  const workListRef = useRef<HTMLDivElement>(null);
+  const highlightsRef = useSpotlight<HTMLDivElement>();
+  const principlesRef = useSpotlight<HTMLDivElement>();
   return (
     <SiteShell>
         <main>
           <section className="hero">
             <div>
               <div className="eyebrow">Product Engineer · AI · Systems</div>
-              <h1>I turn vague requirements into reliable production software.</h1>
+              <SettleHeadline />
               <p className="hero-sub">
                 A product engineer specializing in <strong>production AI and AI infrastructure</strong> —
                 from agents and pipelines to deployment, interfaces, and systems that scale.
               </p>
               <div className="hero-actions">
-                <a className="button primary" href={config.social.calendly} {...external}>Schedule a conversation →</a>
+                <a className="button primary" href={config.social.booking} {...external}>Schedule a conversation →</a>
                 <a className="button secondary" href="#work">View selected work</a>
               </div>
               <div className="hero-quote">
@@ -237,7 +247,7 @@ const HomePage: React.FC = () => {
               <NowLine />
             </div>
             <aside className="portrait-panel">
-              <div className="portrait">Your photo</div>
+              <DitherPortrait src={portrait} alt="Yash Mathur" />
               <div className="portrait-label"><span>YASH_MATHUR</span><span>PRODUCT / AI</span></div>
               <LocalTime />
             </aside>
@@ -251,7 +261,7 @@ const HomePage: React.FC = () => {
                 <p className="section-intro">A quick read on the scale and trajectory behind the work.</p>
               </div>
             </div>
-            <div className="highlight-grid">
+            <div className="highlight-grid spotlight" ref={highlightsRef}>
               {highlights.map((h, i) => (
                 <div className="highlight" key={h.value} data-reveal="fade" style={stagger(i)}>
                   <strong>{countUpValue(h.value)}</strong>
@@ -277,7 +287,7 @@ const HomePage: React.FC = () => {
                   {approachCopy.slice(1).map(p => <p key={p}>{p}</p>)}
                 </details>
               </div>
-              <div className="principles">
+              <div className="principles spotlight" ref={principlesRef}>
                 {principles.map((p, i) => (
                   <div className="principle" key={p.title} data-reveal="fade" style={stagger(i)}>
                     <div className="principle-no">{String(i + 1).padStart(2, '0')}</div>
@@ -299,9 +309,9 @@ const HomePage: React.FC = () => {
                 <p className="section-intro">Professional systems are shown at a high level where client work is private. Independent products show the work directly.</p>
               </div>
             </div>
-            <div className="work-list" data-reveal="line">
+            <div className="work-list" data-reveal="line" ref={workListRef}>
               {work.map((w, i) => (
-                <article className={`work-card${w.release ? ' linked' : ''}${w.branch ? ' branch' : ' trunk'}${isFeatured(w.title) || showAllWork ? '' : ' compact'}`} key={w.title} data-reveal="graph" style={workColors[i] ? ({ '--c': workColors[i] } as React.CSSProperties) : undefined}>
+                <article className={`work-card${w.release ? ' linked' : ''}${w.branch ? ' branch' : ' trunk'}${isFeatured(w.title) || showAllWork ? '' : ' compact'}`} key={w.title} data-reveal="graph" data-peek={w.image} style={workColors[i] ? ({ '--c': workColors[i] } as React.CSSProperties) : undefined}>
                   <span className="graph" aria-hidden="true"><i className="fork" /><i className="lane" /><i className="node" /></span>
                   <div className="work-type">{w.type}{w.note && <MarginNote>{w.note}</MarginNote>}</div>
                   <div>
@@ -331,6 +341,7 @@ const HomePage: React.FC = () => {
                 {showAllWork ? 'Show fewer' : `Show details for all ${work.length}`}
               </button>
             </div>
+            <WorkPeek listRef={workListRef} />
           </section>
 
           <section id="experience">
@@ -400,18 +411,21 @@ const HomePage: React.FC = () => {
           </section>
 
           <section id="contact" className="contact">
-            <div className="contact-inner">
+            <div className="contact-inner has-push">
               <div>
                 <div className="eyebrow">07 / CONTACT</div>
                 <h2>Have a difficult problem worth solving?</h2>
                 <div className="contact-links">
                   <a className="u-draw" href={`mailto:${EMAIL}`}>{EMAIL}</a>
                   <a className="u-draw" href={config.social.linkedin} {...external}>LinkedIn ↗</a>
-                  <a className="u-draw" href={config.social.calendly} {...external}>Schedule a meeting ↗</a>
+                  <a className="u-draw" href={config.social.booking} {...external}>Schedule a meeting ↗</a>
                   <a className="u-draw" href={config.social.github} {...external}>GitHub ↗</a>
                 </div>
               </div>
-              <a className="button primary" href={`mailto:${EMAIL}`}>Get in touch →</a>
+              <div className="push-side">
+                <PushTerminal />
+                <a className="button primary" href={`mailto:${EMAIL}`}>Get in touch →</a>
+              </div>
             </div>
           </section>
         </main>

@@ -3,6 +3,7 @@ import { flushSync } from 'react-dom';
 import { Link, useLocation } from 'react-router-dom';
 import { config } from '../../utils/config';
 import { ToastContext, prefersReducedMotion } from './toast';
+import '../Wow/Wow.css';
 import './SiteShell.css';
 
 type Theme = 'light' | 'dark';

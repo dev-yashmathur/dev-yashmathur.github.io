@@ -256,7 +256,9 @@
   .pf .work-card:not([data-shown]) .fork,
   .pf .work-card:not([data-shown]) .lane,
   .pf .work-card:not([data-shown]) .node { opacity: 0; }
-  .pf .work-card[data-shown] > :not(.graph) { animation: pf-rise .55s cubic-bezier(.2, .7, .2, 1) .12s backwards; }
+  .pf .work-card[data-shown] > :not(.graph, .work-meta) { animation: pf-rise .55s cubic-bezier(.2, .7, .2, 1) .12s backwards; }
+  /* Fade only: transforming .work-meta would shrink the stretched link's hit area while it animates */
+  .pf .work-card[data-shown] > .work-meta { animation: pf-fade .55s ease .12s backwards; }
   .pf .work-card[data-shown] .fork { animation: pf-wipe .3s ease-out backwards; }
   .pf .work-card[data-shown] .lane { transform-origin: top; animation: pf-grow .2s linear .28s backwards; }
   .pf .work-card[data-shown] .node { animation: pf-pop .45s cubic-bezier(.3, 1.6, .5, 1) .45s backwards; }
@@ -266,6 +268,7 @@
 @keyframes pf-wipe { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0); } }
 @keyframes pf-pop { from { transform: scale(0); } }
 @keyframes pf-rise { from { opacity: 0; transform: translateY(8px); } }
+@keyframes pf-fade { from { opacity: 0; } }
 
 /* Hovering a card lights up its branch and lets the others recede */
 .pf .work-card .graph { transition: opacity .2s ease, filter .2s ease; }
