@@ -16,8 +16,8 @@ export const GMAZE = {
   path: '/garden-maze',
   privacy: '/garden-maze/privacy',
   platforms: ['macOS', 'Windows', 'iPad', 'Android'],
-  trailer: { src: '/videos/garden-maze-promo-30s.mp4', poster: '/videos/garden-maze-promo-30s.jpg', title: 'The Garden Maze — 30 second trailer' },
-  cutdown: { src: '/videos/garden-maze-promo-15s.mp4', poster: '/videos/garden-maze-promo-15s.jpg', title: 'The Garden Maze — 15 second cut' },
+  trailer: { youtube: 'rREQ5s5Oakk', poster: '/videos/garden-maze-promo-30s.webp', title: 'The Garden Maze — 30 second trailer' },
+  cutdown: { youtube: '7r52fZo1jtM', poster: '/videos/garden-maze-promo-15s.webp', title: 'The Garden Maze — 15 second cut' },
   notify: 'mailto:me@yashmathur.com?subject=The%20Garden%20Maze%20%E2%80%94%20tell%20me%20when%20it%20launches',
 };
 
@@ -94,8 +94,9 @@ export const META: ProductMeta = {
         name: GMAZE.trailer.title,
         description: 'Thirty seconds inside The Garden Maze: hedge, brick and mirror mazes, a portal arch and a haunted level.',
         thumbnailUrl: abs(GMAZE.trailer.poster),
-        contentUrl: abs(GMAZE.trailer.src),
-        uploadDate: '2026-10-22T11:44:44+05:30',
+        embedUrl: `https://www.youtube.com/embed/${GMAZE.trailer.youtube}`,
+        url: `https://www.youtube.com/watch?v=${GMAZE.trailer.youtube}`,
+        uploadDate: '2026-10-25T06:29:40-07:00',
         duration: 'PT30S',
       },
     },

@@ -6,7 +6,7 @@ export const PORTEE = {
   download: '/downloads/Portee-0.1.0.dmg',
   fileSize: '3.4 MB',
   requirements: 'macOS 12 or later · Apple Silicon',
-  film: { src: '/videos/portee-launch.mp4', poster: '/videos/portee-launch.jpg' },
+  film: { youtube: 'qA5W90pmUHw', poster: '/videos/portee-launch.webp' },
   title: 'Portée — Manage Claude Code, Codex & Cursor on your Mac',
   description:
     'See the disk and memory Claude Code, Codex, Cursor and OpenCode use, clean up safely, sync MCP servers and skills across agents, and search every past session. Free for macOS.',

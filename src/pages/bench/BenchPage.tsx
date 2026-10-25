@@ -10,6 +10,7 @@ import choicesShot from '../../assets/images/Benchtest/choices.webp';
 import batchShot from '../../assets/images/Benchtest/batch.webp';
 import historyShot from '../../assets/images/Benchtest/history.webp';
 import datasetShot from '../../assets/images/Benchtest/dataset.webp';
+import YouTube from '../../components/YouTube/YouTube';
 import './BenchPage.css';
 
 const SHOT = { width: 1440, height: 900 };
@@ -334,7 +335,7 @@ const BenchPage: React.FC = () => {
             <h2>How Bench works, in 60 seconds</h2>
           </div>
           <div className="bn-film-frame" data-reveal="scale">
-            <video src={BENCH.film.src} poster={BENCH.film.poster} controls playsInline preload="none" title="How Bench works" />
+            <YouTube id={BENCH.film.youtube} poster={BENCH.film.poster} title="How Bench works" />
           </div>
         </section>
 

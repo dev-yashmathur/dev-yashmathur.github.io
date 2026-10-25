@@ -5,9 +5,9 @@ import { useReveal } from '../../utils/useReveal';
 import { config } from '../../utils/config';
 import { PORTEE, PORTEE_FONTS, porteeFaq } from './content';
 import icon from '../../assets/images/Portee/portee-icon.svg';
-import claudeLogo from '../../assets/images/Portee/agents/claude.png';
+import claudeLogo from '../../assets/images/Portee/agents/claude.webp';
 import codexLogo from '../../assets/images/Portee/agents/codex.svg';
-import cursorLogo from '../../assets/images/Portee/agents/cursor.png';
+import cursorLogo from '../../assets/images/Portee/agents/cursor.webp';
 import opencodeLogo from '../../assets/images/Portee/agents/opencode.svg';
 import storageShot from '../../assets/images/Portee/storage-review.webp';
 import catalogAddShot from '../../assets/images/Portee/catalog-add.webp';
@@ -15,6 +15,7 @@ import sessionsShot from '../../assets/images/Portee/sessions-search.webp';
 import permissionsShot from '../../assets/images/Portee/permissions.webp';
 import libraryShot from '../../assets/images/Portee/library.webp';
 import { Moss, MossGuide } from './Moss';
+import YouTube from '../../components/YouTube/YouTube';
 import './PorteePage.css';
 
 const SHOT = { width: 1600, height: 1045 };
@@ -197,7 +198,7 @@ const PorteePage: React.FC = () => {
             <h2>Portée in 45 seconds</h2>
           </div>
           <div className="pt-film-frame" data-reveal="scale">
-            <video src={PORTEE.film.src} poster={PORTEE.film.poster} controls playsInline preload="none" title="Portée launch film" />
+            <YouTube id={PORTEE.film.youtube} poster={PORTEE.film.poster} title="Portée launch film" />
           </div>
         </section>
 

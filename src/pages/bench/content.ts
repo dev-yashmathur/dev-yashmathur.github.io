@@ -12,7 +12,7 @@ export const BENCH = {
   download: '/downloads/Bench-1.0.dmg',
   fileSize: '2.8 MB',
   requirements: 'macOS 14+ · Apple Silicon & Intel',
-  film: { src: '/videos/bench-how-it-works.mp4', poster: '/videos/bench-how-it-works.jpg' },
+  film: { youtube: 'Bb0-lkG6ZcU', poster: '/videos/bench-how-it-works.webp' },
   title: 'Bench — LLM & Decision Model Evaluation App for Mac',
   description:
     'Compare LLM and decision model answers side by side on your Mac. Run batches, mark the right answers and build a fine-tuning dataset with Bench. Free for macOS.',

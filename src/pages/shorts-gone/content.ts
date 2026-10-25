@@ -9,7 +9,7 @@ export const SHORTS_GONE = {
   path: '/shorts-gone',
   version: '1.0.0',
   store: 'https://chromewebstore.google.com/detail/shortsgone-youtube-shorts/jhekgeokmjokkoefepkealbikbmdcebj',
-  demo: { src: '/videos/shorts-gone-demo.mp4', poster: '/videos/shorts-gone-demo.jpg', width: 1280, height: 800 },
+  demo: { youtube: 'Tng6zFo21II', poster: '/videos/shorts-gone-demo.webp', width: 1280, height: 800 },
   title: 'ShortsGone — Block YouTube Shorts with a Free Chrome Extension',
   description:
     'Remove YouTube Shorts from your home feed, sidebar, search results and subscriptions, and block /shorts/ links. A free Chrome extension that runs in your browser.',

@@ -9,6 +9,7 @@ import mark from '../../assets/images/ShortsGone/mark.webp';
 import banner from '../../assets/images/ShortsGone/banner.webp';
 import beforeShot from '../../assets/images/ShortsGone/before.webp';
 import afterShot from '../../assets/images/ShortsGone/after.webp';
+import YouTube from '../../components/YouTube/YouTube';
 import './ShortsGonePage.css';
 
 const BG = '#090B10';
@@ -311,15 +312,10 @@ const ShortsGonePage: React.FC = () => {
             <h2>One click, Shorts gone</h2>
           </div>
           <div className="sg-film" data-reveal="scale">
-            <video
-              src={SHORTS_GONE.demo.src}
+            <YouTube
+              id={SHORTS_GONE.demo.youtube}
               poster={SHORTS_GONE.demo.poster}
-              width={SHORTS_GONE.demo.width}
-              height={SHORTS_GONE.demo.height}
-              controls
-              muted
-              playsInline
-              preload="none"
+              aspect={`${SHORTS_GONE.demo.width} / ${SHORTS_GONE.demo.height}`}
               title="ShortsGone turning on and removing the Shorts shelf from the YouTube home page"
             />
           </div>

@@ -182,7 +182,7 @@
 .bench .bn-film { padding: clamp(96px, 12vw, 150px) 0 0; text-align: center; }
 .bench .bn-film h2 { font-size: clamp(32px, 4vw, 52px); letter-spacing: -.02em; margin-bottom: 36px; }
 .bench .bn-film-frame { overflow: hidden; border-radius: 26px; background: var(--ink); box-shadow: var(--shadow); aspect-ratio: 16 / 9; }
-.bench .bn-film-frame video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.bench .bn-film-frame .yt { height: 100%; }
 
 /* Promises */
 .bench .bn-promises { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: clamp(72px, 9vw, 112px) 0 0; }

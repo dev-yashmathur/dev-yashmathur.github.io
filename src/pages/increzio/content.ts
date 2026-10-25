@@ -18,27 +18,27 @@ export const INCREZIO = {
 
 export const INCREZIO_FONTS = 'https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap';
 
-/** Promo films, all vertical. Width and height are the files' own, so frames keep their aspect ratio. */
+/** Promo films on YouTube (Shorts), all vertical. Width and height keep each frame's aspect ratio. */
 export const INCREZIO_FILMS = [
   {
-    src: '/videos/increzio-store-preview.mp4',
-    poster: '/videos/increzio-store-preview.jpg',
+    youtube: 'BoPAxtIUCcs',
+    poster: '/videos/increzio-store-preview.webp',
     width: 540,
     height: 1170,
     title: 'Increzio in 30 seconds',
     caption: 'The whole app, start to finish. Music only.',
   },
   {
-    src: '/videos/increzio-night-owl.mp4',
-    poster: '/videos/increzio-night-owl.jpg',
+    youtube: '_8oY0LBNYQE',
+    poster: '/videos/increzio-night-owl.webp',
     width: 540,
     height: 960,
     title: 'It’s 1:47 AM',
     caption: 'Why your day should reset when you sleep, not at midnight.',
   },
   {
-    src: '/videos/increzio-compound.mp4',
-    poster: '/videos/increzio-compound.jpg',
+    youtube: 'vvs4PAv3UoE',
+    poster: '/videos/increzio-compound.webp',
     width: 540,
     height: 960,
     title: 'Compound habits',

@@ -5,6 +5,7 @@ import { useReveal } from '../../utils/useReveal';
 import { config } from '../../utils/config';
 import { GMAZE, GMAZE_FONTS, META, SHOTS, gmazeFaq } from './content';
 import icon from '../../assets/images/GardenMaze/icon-128.webp';
+import YouTube from '../../components/YouTube/YouTube';
 import './GardenMazePage.css';
 
 const SHOT = { width: 1600, height: 900 };
@@ -368,11 +369,11 @@ const GardenMazePage: React.FC = () => {
             <h2>Thirty seconds inside the maze</h2>
           </div>
           <div className="gm-film" data-reveal="scale">
-            <video src={GMAZE.trailer.src} poster={GMAZE.trailer.poster} controls playsInline preload="none" title={GMAZE.trailer.title} width="1920" height="1080" />
+            <YouTube id={GMAZE.trailer.youtube} poster={GMAZE.trailer.poster} title={GMAZE.trailer.title} />
           </div>
           <div className="gm-film-small" data-reveal>
             <div className="gm-film">
-              <video src={GMAZE.cutdown.src} poster={GMAZE.cutdown.poster} controls playsInline preload="none" title={GMAZE.cutdown.title} width="1920" height="1080" />
+              <YouTube id={GMAZE.cutdown.youtube} poster={GMAZE.cutdown.poster} title={GMAZE.cutdown.title} />
             </div>
             <p>Short on time? The 15-second cut.</p>
           </div>

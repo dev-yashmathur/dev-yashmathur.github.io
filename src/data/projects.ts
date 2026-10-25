@@ -107,13 +107,6 @@ export const projects: ProjectDetail[] = [
       "note": "Version 0.1.0 · 3.4 MB · macOS 12+, Apple Silicon"
     },
     "videoUrl": null,
-    "videos": [
-      {
-        "src": "/videos/portee-launch.mp4",
-        "poster": "/videos/portee-launch.jpg",
-        "title": "Portée launch film"
-      }
-    ],
     "overview": "Everyone uses AI coding agents now, and almost no one knows what they are doing to their machine. People watch RAM and GPU, but the silent cost is storage: sessions, caches and app data pile up across every agent. Portée puts that in one view, then goes further - add an MCP server or skill once and sync it to every agent, and search every past session to pick up where you left off, all locally and without spending a single token.",
     "motivation": [
       "Everyone thinks about RAM and GPUs when they think about the cost of AI. The silent cost to your storage is the one that gets missed.",
@@ -170,13 +163,6 @@ export const projects: ProjectDetail[] = [
       "note": "Version 1.0 · 2.8 MB · macOS 14+, Apple Silicon & Intel"
     },
     "videoUrl": null,
-    "videos": [
-      {
-        "src": "/videos/bench-how-it-works.mp4",
-        "poster": "/videos/bench-how-it-works.jpg",
-        "title": "How Bench works"
-      }
-    ],
     "overview": "Bench is my tool for evaluating LLMs and decision models. It is out in its first phase, which is optimized for decision models, because that is where much of the momentum is right now; further improvements for generation models are coming soon. It gives you an inviting interface for running evaluations and an API to do the same programmatically, so you can see how a model performs on your own options and prompts - and turn the results into the dataset you need to fine-tune it.",
     "motivation": [
       "Decision models are zero-shot. Anyone with a traditional machine-learning background knows zero-shot rarely works as well as a classifier that has been fine-tuned.",
@@ -226,18 +212,6 @@ export const projects: ProjectDetail[] = [
     "learnMoreLink": "/garden-maze",
     "privacyPolicyUrl": "/garden-maze/privacy",
     "videoUrl": null,
-    "videos": [
-      {
-        "src": "/videos/garden-maze-promo-30s.mp4",
-        "poster": "/videos/garden-maze-promo-30s.jpg",
-        "title": "The Garden Maze - 30s trailer"
-      },
-      {
-        "src": "/videos/garden-maze-promo-15s.mp4",
-        "poster": "/videos/garden-maze-promo-15s.jpg",
-        "title": "The Garden Maze - 15s cut-down"
-      }
-    ],
     "overview": "The Garden Maze is a passion project. Most maze games are played from above, in third person, and feel more like puzzles. This one puts you inside the maze, in first person, for a far more immersive feel. It has over 100 levels with well-designed assets, different visual styles, real mirror mazes, a few spooky levels, and coins to collect. It runs on all major operating systems, and it will shine most in virtual reality, which is coming soon.",
     "motivation": [
       "I have always wondered why mazes can't be as complex as the ones in movies.",
@@ -342,14 +316,6 @@ export const projects: ProjectDetail[] = [
     // "repoUrl": "https://github.com/dev-yashmathur/increase-your-habit-tracker",
     "learnMoreLink": "/increzio",
     "videoUrl": null,
-    "videos": [
-      {
-        "src": "/videos/increzio-store-preview.mp4",
-        "poster": "/videos/increzio-store-preview.jpg",
-        "title": "Increzio store preview",
-        "portrait": true
-      }
-    ],
     "overview": "Increzio Habit Tracker is a mobile app designed to make habit building more engaging through home screen widgets and a flexible, hand-drawn interface. It encourages users to improve incrementally and lets them customize when their habit day resets.",
     "motivation": [
       "I loved the idea of habit streaks and wanted an app that would place those streaks right on the home screen as widgets for extra motivation.",

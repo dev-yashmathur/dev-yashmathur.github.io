@@ -14,6 +14,7 @@ import centuryShot from '../../assets/images/IncrezioHabitTracker/lp-century.web
 import weekShot from '../../assets/images/IncrezioHabitTracker/lp-week.webp';
 import homeShot from '../../assets/images/IncrezioHabitTracker/lp-home.webp';
 import habitsShot from '../../assets/images/IncrezioHabitTracker/lp-habits.webp';
+import YouTube from '../../components/YouTube/YouTube';
 import './IncrezioPage.css';
 
 const SHOT = { width: 720, height: 1600 };
@@ -335,9 +336,9 @@ const IncrezioPage: React.FC = () => {
           </div>
           <div className="iz-films-row">
             {INCREZIO_FILMS.map((film, i) => (
-              <figure className="iz-film" key={film.src} data-reveal="scale" style={{ '--d': `${i * 90}ms` } as React.CSSProperties}>
+              <figure className="iz-film" key={film.youtube} data-reveal="scale" style={{ '--d': `${i * 90}ms` } as React.CSSProperties}>
                 <div className="iz-phone iz-phone-video">
-                  <video src={film.src} poster={film.poster} width={film.width} height={film.height} controls playsInline preload="none" title={film.title} />
+                  <YouTube id={film.youtube} poster={film.poster} title={film.title} aspect={`${film.width} / ${film.height}`} />
                 </div>
                 <figcaption>
                   <strong>{film.title}</strong>
