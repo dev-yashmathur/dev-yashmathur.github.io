@@ -38,6 +38,19 @@ const deployedAgo = () => {
   return rtf.format(-Math.round(mins / 1440), 'day');
 };
 
+const SunIcon = () => (
+  <svg className="tt-sun" viewBox="0 0 24 24" width="14" height="14">
+    <circle cx="12" cy="12" r="4.2" fill="currentColor" />
+    <path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+  </svg>
+);
+
+const MoonIcon = () => (
+  <svg className="tt-moon" viewBox="0 0 24 24" width="14" height="14">
+    <path d="M20.5 14.6A8.6 8.6 0 0 1 9.4 3.5a8.6 8.6 0 1 0 11.1 11.1Z" fill="currentColor" />
+  </svg>
+);
+
 interface SiteShellProps {
   children: React.ReactNode;
 }
@@ -125,7 +138,11 @@ const SiteShell: React.FC<SiteShellProps> = ({ children }) => {
                 className="theme-toggle"
                 onClick={toggleTheme}
                 aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-              />
+              >
+                {/* Both icons render; CSS shows the one for the current theme, so prerendered HTML matches. */}
+                <span className="tt-track" aria-hidden="true"><SunIcon /><MoonIcon /></span>
+                <span className="tt-knob" aria-hidden="true"><SunIcon /><MoonIcon /></span>
+              </button>
               <button
                 type="button"
                 className="menu-toggle"
