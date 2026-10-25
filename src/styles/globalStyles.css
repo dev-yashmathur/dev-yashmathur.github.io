@@ -72,7 +72,6 @@ h6 {
 
 p {
   margin-bottom: var(--space-md);
-  color: var(--secondary-text);
 }
 
 a {
@@ -104,8 +103,11 @@ button,
 }
 
 .button-primary:hover,
-.button-primary:focus-visible {
+.button-primary:focus,
+.button-primary:focus-visible,
+.button-primary:active {
   background-color: var(--primary-cta-hover);
+  color: white;
 }
 
 .button-secondary {
@@ -115,8 +117,11 @@ button,
 }
 
 .button-secondary:hover,
-.button-secondary:focus-visible {
+.button-secondary:focus,
+.button-secondary:focus-visible,
+.button-secondary:active {
   background-color: var(--secondary-action-hover);
+  color: white;
 }
 
 section {

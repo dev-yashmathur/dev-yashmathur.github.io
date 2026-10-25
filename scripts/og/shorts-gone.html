@@ -1,0 +1,30 @@
+<!doctype html>
+<!-- Social preview card for /shorts-gone. Render: node scripts/og/render.mjs shorts-gone, then convert to public/og/shorts-gone.jpg (PNG is over 250 KB) -->
+<html><head><meta charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Nunito:wght@800;900&display=swap" />
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  body { width: 1200px; height: 630px; overflow: hidden; background: #090b10; color: #f8fafc; font-family: Nunito, sans-serif; position: relative; }
+  body::before { content: ""; position: absolute; left: -200px; top: -260px; width: 900px; height: 800px; background: radial-gradient(closest-side, rgba(22,104,254,.28), transparent 70%); }
+  .copy { position: absolute; left: 72px; top: 64px; width: 600px; }
+  .brand { display: flex; align-items: center; gap: 14px; font: 900 34px/1 Nunito, sans-serif; letter-spacing: -.01em; }
+  .brand img { width: 56px; height: 56px; }
+  .b { color: #2f75ff; } .c { color: #00c2ff; }
+  .tag { margin-top: 14px; font: 800 14px/1 Nunito, sans-serif; letter-spacing: .4em; color: #64748b; }
+  .tag b { color: #00c2ff; letter-spacing: 0; }
+  h1 { margin-top: 48px; font: 900 56px/1.04 Nunito, sans-serif; letter-spacing: -.03em; }
+  h1 span { display: block; color: #94a3b8; }
+  .meta { position: absolute; left: 72px; bottom: 60px; font: 500 18px/1.6 "JetBrains Mono", monospace; color: #94a3b8; }
+  .stage { position: absolute; left: 670px; top: 92px; width: 600px; height: 560px; padding: 28px 0 0 28px; border-radius: 30px 0 0 0; background: #11151f; border: 1px solid #1e2638; }
+  .win { width: 720px; height: 540px; border-radius: 14px 0 0 0; overflow: hidden; border: 1px solid #1e2638; box-shadow: 0 30px 60px -20px rgba(0,0,0,.9); }
+  .win img { display: block; width: 1050px; max-width: none; margin: -172px 0 0 -470px; }
+</style></head>
+<body>
+  <div class="copy">
+    <div class="brand"><img src="../../src/assets/images/ShortsGone/icon-128.webp" /><span><span class="b">Shorts</span><span class="c">Gone</span></span></div>
+    <p class="tag">FOCUS <b>&gt;</b> SCROLL</p>
+    <h1>Block YouTube Shorts.<span>Keep the rest of YouTube.</span></h1>
+  </div>
+  <div class="meta">Free Chrome extension · v1.0.0<br />Home · Sidebar · Search · Subscriptions</div>
+  <div class="stage"><div class="win"><img src="../../src/assets/images/ShortsGone/after.webp" /></div></div>
+</body></html>

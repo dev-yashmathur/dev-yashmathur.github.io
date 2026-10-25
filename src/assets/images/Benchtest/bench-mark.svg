@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Bench comparison mark</title>
+  <desc id="desc">Three model responses resting on one benchmark, with the selected response marked above.</desc>
+
+  <!-- App-icon field -->
+  <rect width="512" height="512" rx="116" fill="#3368A0"/>
+
+  <!-- Candidate responses: the same question, evaluated side by side. -->
+  <rect x="104" y="230" width="84" height="116" rx="24" fill="#F2EFE7"/>
+  <rect x="214" y="190" width="84" height="156" rx="24" fill="#C8DFDB"/>
+  <rect x="324" y="230" width="84" height="116" rx="24" fill="#F2EFE7"/>
+
+  <!-- The shared benchmark / workbench. -->
+  <rect x="88" y="370" width="336" height="28" rx="14" fill="#F2EFE7"/>
+  <rect x="128" y="398" width="28" height="54" rx="14" fill="#C8DFDB"/>
+  <rect x="356" y="398" width="28" height="54" rx="14" fill="#C8DFDB"/>
+
+  <!-- A quiet selection cue, deliberately only on the strongest candidate. -->
+  <path d="M236 132l17 17 33-37" fill="none" stroke="#F2EFE7" stroke-linecap="round" stroke-linejoin="round" stroke-width="18"/>
+</svg>

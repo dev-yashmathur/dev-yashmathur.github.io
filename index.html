@@ -5,11 +5,54 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/YMLogoBlack.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yash Mathur</title>
+  <!--seo-->
+  <title>Yash Mathur — Product Engineer, AI &amp; Systems</title>
+  <meta name="description" content="Yash Mathur is a product engineer specializing in production AI and AI infrastructure: agents, pipelines, deployment and interfaces." />
+  <meta name="theme-color" content="#f7f7f5" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#121211" media="(prefers-color-scheme: dark)" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&display=swap" />
+  <link rel="canonical" href="https://yashmathur.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Yash Mathur" />
+  <meta property="og:title" content="Yash Mathur — Product Engineer, AI &amp; Systems" />
+  <meta property="og:description" content="I turn vague requirements into reliable production software. Production AI, AI infrastructure and the products around them." />
+  <meta property="og:url" content="https://yashmathur.com/" />
+  <meta property="og:image" content="https://yashmathur.com/YMLogoBlack.png" />
+  <meta name="twitter:card" content="summary" />
+  <!--/seo-->
 </head>
 
 <body>
+  <!--theme-->
+  <script>
+    // Paint the right background before React loads, so dark mode doesn't flash white.
+    (function () {
+      try {
+        var t = localStorage.getItem('pf-theme');
+        var dark = t ? t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var c = dark ? '#121211' : '#f7f7f5';
+        document.documentElement.style.backgroundColor = c;
+        document.body.style.background = c;
+      } catch (e) { /* ignore */ }
+    })();
+  </script>
+  <!--/theme-->
   <div id="root"></div>
+  <!--theme-->
+  <script>
+    // Prerendered markup is built in light mode; switch it before first paint if the visitor prefers dark.
+    (function () {
+      try {
+        var t = localStorage.getItem('pf-theme');
+        var dark = t ? t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var el = document.querySelector('#root .pf');
+        if (el) el.setAttribute('data-theme', dark ? 'dark' : 'light');
+      } catch (e) { /* ignore */ }
+    })();
+  </script>
+  <!--/theme-->
   <script type="module" src="/src/main.tsx"></script>
 </body>
 

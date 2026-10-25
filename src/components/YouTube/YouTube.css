@@ -1,0 +1,17 @@
+/* Neutral player shell; each page's frame supplies radius, shadow and colour around it. */
+.yt { position: relative; width: 100%; overflow: hidden; background: #000; }
+.yt iframe, .yt .yt-facade { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.yt .yt-facade { display: block; padding: 0; margin: 0; background: none; cursor: pointer; }
+.yt .yt-facade img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .9s cubic-bezier(.16, 1, .3, 1), filter .4s ease; }
+.yt .yt-facade:hover img { transform: scale(1.02); filter: brightness(.92); }
+.yt .yt-play {
+  position: absolute; left: 50%; top: 50%; display: grid; place-items: center; width: 72px; height: 72px;
+  border-radius: 50%; background: rgba(0, 0, 0, .62); color: #fff; transform: translate(-50%, -50%);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, .6); transition: transform .5s cubic-bezier(.16, 1, .3, 1), background-color .2s;
+}
+.yt .yt-play svg { margin-left: 4px; }
+.yt .yt-facade:hover .yt-play { transform: translate(-50%, -50%) scale(1.08); background: rgba(0, 0, 0, .78); }
+.yt .yt-facade:focus-visible { outline: 3px solid #fff; outline-offset: -6px; }
+@media (prefers-reduced-motion: reduce) {
+  .yt .yt-facade img, .yt .yt-play { transition: none; }
+}

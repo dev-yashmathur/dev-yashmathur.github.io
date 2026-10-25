@@ -1,11 +1,20 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { resolve } from 'path'
+import { execSync } from 'child_process'
+
+const commit = (() => {
+  try { return execSync('git rev-parse --short=7 HEAD').toString().trim() } catch { return '0000000' }
+})()
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
   base: '/',
+  define: {
+    __COMMIT__: JSON.stringify(commit),
+    __BUILD_TIME__: JSON.stringify(new Date().toISOString()),
+  },
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
@@ -15,6 +24,7 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     emptyOutDir: true,
+    manifest: true,
     sourcemap: false,
   },
 })

@@ -1,0 +1,30 @@
+<!doctype html>
+<!-- Social preview card for /classic-games-hub. Render: node scripts/og/render.mjs classic-games-hub -->
+<html><head><meta charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&family=Roboto+Mono:wght@500&display=swap" />
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  body { width: 1200px; height: 630px; overflow: hidden; background: #f2f3da; color: #2b1b10; font-family: Inter, sans-serif; position: relative; }
+  .copy { position: absolute; left: 72px; top: 70px; width: 560px; }
+  .brand { display: flex; align-items: center; gap: 14px; font: 800 30px/1 Inter, sans-serif; letter-spacing: -.02em; color: #8b4513; }
+  .brand img { width: 58px; height: 58px; }
+  h1 { margin-top: 46px; font: 800 62px/1.04 Inter, sans-serif; letter-spacing: -.04em; }
+  .meta { position: absolute; left: 72px; bottom: 64px; font: 500 19px/1.6 "Roboto Mono", monospace; letter-spacing: .02em; color: #66553f; }
+  .meta b { color: #8b4513; font-weight: 500; }
+  .stage { position: absolute; left: 690px; top: 0; width: 510px; height: 630px; background: #e9e8c6; }
+  .tile { position: absolute; border-radius: 22px; }
+  .t1 { left: 748px; top: 52px; width: 120px; height: 120px; background: #efa95b; border-radius: 22px 40px 22px 22px; }
+  .t2 { left: 1080px; top: 470px; width: 140px; height: 140px; background: #a5c3a9; border-radius: 22px 22px 22px 40px; }
+  .t3 { left: 1100px; top: 40px; width: 90px; height: 90px; background: #8fb3bf; }
+  .board { position: absolute; left: 790px; top: 118px; width: 380px; height: 380px; border-radius: 22px; transform: rotate(-4deg); box-shadow: 0 40px 70px -30px rgba(101, 67, 33, .7); }
+</style></head>
+<body>
+  <div class="copy">
+    <div class="brand"><img src="../../src/assets/images/ClassicGamesHub/cgh-logo.webp" />Classic Games Hub</div>
+    <h1>Old games, new twists, someone to play with.</h1>
+  </div>
+  <div class="meta"><b>classicgameshub.com</b><br />Built by Yash Mathur</div>
+  <div class="stage"></div>
+  <div class="tile t1"></div><div class="tile t3"></div><div class="tile t2"></div>
+  <img class="board" src="../../src/assets/images/ClassicGamesHub/VanishingTicTacToe.webp" />
+</body></html>

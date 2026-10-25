@@ -1,0 +1,308 @@
+/* Hero */
+.pf section.hero {
+  min-height: 660px; display: grid; border-top: 0;
+  grid-template-columns: minmax(0, 1.35fr) minmax(300px, .65fr);
+  gap: 80px; align-items: center; padding: 72px 0 46px;
+}
+.pf .hero h1 {
+  font-size: clamp(54px, 7vw, 94px); line-height: .94; letter-spacing: -.045em; word-spacing: .06em;
+  max-width: 800px;
+}
+.pf .hero-sub { margin-top: 30px; max-width: 690px; font-size: 20px; line-height: 1.45; color: var(--body); }
+.pf .hero-sub strong { color: var(--text); }
+.pf .hero-actions { display: flex; gap: 12px; margin-top: 34px; flex-wrap: wrap; }
+.pf .hero-quote {
+  margin-top: 34px; padding-left: 16px; border-left: 2px solid var(--text); max-width: 620px;
+  font-family: var(--serif); font-size: 18px; font-style: italic;
+}
+.pf .portrait-panel { align-self: stretch; display: flex; flex-direction: column; justify-content: center; }
+.pf .portrait {
+  aspect-ratio: 4 / 5; border: 1px solid var(--line);
+  background:
+    linear-gradient(135deg, transparent 49.7%, var(--line) 50%, transparent 50.3%),
+    linear-gradient(45deg, transparent 49.7%, var(--line) 50%, transparent 50.3%),
+    var(--soft);
+  display: grid; place-items: center; color: var(--muted);
+  font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
+}
+.pf .portrait-label {
+  border: 1px solid var(--line); border-top: 0; padding: 13px 14px; display: flex;
+  justify-content: space-between; font-family: var(--mono); font-size: 11px; color: var(--muted);
+}
+
+/* Section framework */
+.pf .section-head { display: grid; grid-template-columns: 220px 1fr; gap: 50px; margin-bottom: 56px; }
+.pf .section-number { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+.pf h2 { font-size: clamp(38px, 5vw, 62px); line-height: 1; letter-spacing: -.035em; word-spacing: .05em; }
+.pf .section-intro { max-width: 720px; color: var(--muted); font-size: 18px; margin-top: 18px; }
+
+/* Highlights */
+.pf .highlight-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--line); border-left: 1px solid var(--line);
+}
+.pf .highlight { min-height: 150px; padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.pf .highlight strong { display: block; font-size: 30px; letter-spacing: -.04em; line-height: 1.1; margin-bottom: 12px; }
+.pf .highlight > span { color: var(--muted); font-size: 13px; }
+
+/* Approach */
+.pf .approach-grid { display: grid; gap: 56px; }
+.pf .approach-copy { max-width: 720px; margin-left: 270px; }
+.pf .approach-copy { font-size: 21px; line-height: 1.42; letter-spacing: -.02em; }
+.pf .approach-copy p { margin-bottom: 1em; }
+.pf .principles { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.pf .principle { display: grid; grid-template-columns: 48px 1fr; gap: 18px; padding: 28px 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.pf .principle-no { font-family: var(--mono); color: var(--muted); font-size: 12px; }
+.pf .principle h3 { margin: 0 0 6px; font-size: 17px; }
+.pf .principle p { color: var(--muted); font-size: 14px; max-width: 420px; }
+
+/* Work */
+.pf .work-list { border-top: 1px solid var(--line); }
+.pf .work-card { display: grid; grid-template-columns: 180px 1fr 180px; gap: 35px; padding: 34px 0; border-bottom: 1px solid var(--line); }
+.pf .work-type { font-family: var(--mono); text-transform: uppercase; letter-spacing: .08em; font-size: 12px; color: var(--muted); }
+.pf .work-card h3 { font-size: 30px; line-height: 1.15; letter-spacing: -.04em; }
+.pf .work-card p { margin-top: 10px; max-width: 650px; color: var(--muted); }
+.pf .work-meta { text-align: right; color: var(--muted); font-size: 13px; }
+.pf .work-card { position: relative; }
+.pf .work-card.linked:hover h3 { text-decoration: underline; text-underline-offset: 5px; }
+.pf .card-link::after { content: ""; position: absolute; inset: 0; }
+
+.pf .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 18px; }
+.pf .tag { border: 1px solid var(--line); padding: 4px 8px; font-family: var(--mono); font-size: 12px; }
+
+/* Experience */
+.pf .timeline { border-top: 1px solid var(--line); }
+.pf .role { display: grid; grid-template-columns: 180px 1fr; gap: 35px; padding: 36px 0; border-bottom: 1px solid var(--line); }
+.pf .role-date { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+.pf .role h3 { font-size: 27px; letter-spacing: -.03em; }
+.pf .role-title { color: var(--muted); margin: 4px 0 20px; }
+.pf .role ul { padding-left: 20px; list-style: disc; }
+.pf .role li { margin: 8px 0; color: var(--body); }
+
+/* Writing */
+.pf .writing-grid, .pf .testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.pf .writing-card {
+  border: 1px solid var(--line); padding: 24px; min-height: 210px;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.pf .writing-card .type { font-family: var(--mono); color: var(--muted); font-size: 12px; text-transform: uppercase; }
+.pf .writing-card h3 { font-size: 21px; line-height: 1.15; letter-spacing: -.03em; margin: 12px 0; }
+.pf .writing-card .read { font-size: 12px; }
+.pf .writing-card:hover .read .u-draw { animation: pf-underline .35s cubic-bezier(.2, .7, .2, 1); }
+.pf .writing-more { margin-top: 24px; font-family: var(--mono); font-size: 13px; color: var(--muted); }
+.pf .writing-more a:hover { color: var(--text); }
+
+/* Testimonials */
+.pf blockquote {
+  margin: 0; border: 1px solid var(--line); padding: 26px; min-height: 250px;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.pf blockquote p { font-family: var(--serif); font-size: 18px; line-height: 1.5; }
+.pf blockquote footer { font-size: 12px; color: var(--muted); margin: 20px 0 0; padding: 0; background: none; border: 0; }
+.pf blockquote footer { display: flex; flex-direction: column; gap: 2px; }
+.pf blockquote footer strong { color: var(--text); font-size: 14px; }
+.pf blockquote footer a { align-self: flex-start; margin-top: 6px; }
+
+/* Contact */
+.pf section.contact { padding-bottom: 80px; }
+.pf .contact-inner { display: grid; grid-template-columns: 1fr auto; gap: 60px; align-items: end; }
+.pf .contact h2 { max-width: 760px; }
+.pf .contact-links { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 30px; }
+.pf .contact-links a { font-size: 14px; }
+
+
+@media (max-width: 900px) {
+  .pf section.hero { grid-template-columns: 1fr; gap: 44px; padding-top: 58px; }
+  .pf .portrait-panel { max-width: 420px; }
+  .pf .highlight-grid { grid-template-columns: repeat(2, 1fr); }
+  .pf .section-head { grid-template-columns: 1fr; gap: 14px; }
+  .pf .approach-copy { margin-left: 0; }
+  .pf .work-card { grid-template-columns: 120px 1fr; }
+  .pf .work-meta { grid-column: 2; text-align: left; }
+  .pf .writing-grid, .pf .testimonial-grid { grid-template-columns: 1fr; }
+  .pf .role { grid-template-columns: 120px 1fr; }
+  .pf .contact-inner { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .pf section.hero { min-height: auto; padding: 52px 0 45px; }
+  .pf .hero h1 { font-size: clamp(48px, 16vw, 74px); }
+  .pf .hero-sub { font-size: 17px; }
+  .pf .highlight-grid { grid-template-columns: 1fr; }
+  .pf .highlight { min-height: auto; }
+  .pf .work-card, .pf .role { grid-template-columns: 1fr; gap: 12px; }
+  .pf .work-meta { grid-column: auto; }
+  .pf .approach-copy { font-size: 19px; }
+  .pf .principles { grid-template-columns: 1fr; }
+  .pf .principle { padding: 22px 18px; }
+}
+
+/* Git-flavoured details */
+.pf .section-number .hash {
+  display: block; margin-top: 6px; padding: 0; border: 0; background: none;
+  font: inherit; color: var(--muted); cursor: copy; transition: color .15s ease;
+}
+.pf .section-number .hash:hover, .pf .section-number .hash:focus-visible { color: var(--text); }
+.pf .head-pill {
+  display: inline-block; margin-left: 10px; padding: 1px 6px; border: 1px solid var(--live);
+  color: var(--live); font-size: 10px; letter-spacing: .06em; vertical-align: 1px;
+}
+.pf .timeline { position: relative; padding-left: 30px; }
+.pf .timeline::before {
+  content: ""; position: absolute; left: 5px; top: 0; bottom: 0; width: 2px;
+  background: linear-gradient(var(--line) 85%, transparent);
+}
+.pf .role { position: relative; }
+.pf .role::before {
+  content: ""; position: absolute; left: -30px; top: 41px; width: 12px; height: 12px;
+  border-radius: 50%; background: var(--bg); border: 2px solid var(--muted); box-sizing: border-box;
+}
+.pf .role:first-child::before { background: var(--live); border-color: var(--live); }
+@media (max-width: 600px) {
+  .pf .timeline { padding-left: 24px; }
+  .pf .role::before { left: -24px; top: 38px; }
+}
+
+/* Work as a branch graph: professional work is the trunk, each product its own branch */
+.pf .work-list {
+  --graph: color-mix(in srgb, var(--muted) 45%, transparent);
+  --pl: 64px; --main-x: 6px; --lane-x: 36px; --r: 22px;
+  position: relative; padding-left: var(--pl);
+}
+.pf .work-list::before {
+  content: ""; position: absolute; left: calc(var(--main-x) - 1px); top: 0; bottom: -48px; width: 2px;
+  background: linear-gradient(var(--graph) calc(100% - 96px), transparent);
+}
+.pf section#work { padding-bottom: 88px; }
+.pf .work-card .graph, .pf .work-card .graph i { position: absolute; display: block; pointer-events: none; }
+.pf .work-card .graph { inset: 0; }
+.pf .work-card .node {
+  top: calc(var(--ny, 41px) - 6px); width: 12px; height: 12px; border-radius: 50%; box-sizing: border-box;
+  background: var(--bg); border: 2px solid var(--muted);
+}
+.pf .work-card.trunk .node { left: calc(var(--main-x) - var(--pl) - 6px); background: var(--text); border-color: var(--text); }
+.pf .work-card.branch .node { left: calc(var(--lane-x) - var(--pl) - 6px); border-color: var(--c); background: var(--c); }
+.pf .work-card.trunk .fork, .pf .work-card.trunk .lane { display: none; }
+.pf .work-card .fork {
+  left: calc(var(--main-x) - var(--pl)); top: 0; width: calc(var(--lane-x) - var(--main-x)); height: var(--r);
+  border-top: 2px solid var(--c); border-right: 2px solid var(--c); border-top-right-radius: var(--r);
+}
+.pf .work-card .lane {
+  left: calc(var(--lane-x) - var(--pl) - 1px); top: calc(var(--r) - 1px); height: calc(var(--ny, 41px) - var(--r)); width: 2px; background: var(--c);
+}
+@media (max-width: 600px) {
+  .pf .work-list { --pl: 46px; --lane-x: 26px; --r: 18px; }
+  .pf .work-card { --ny: 37px; }
+  .pf .work-card.compact { --ny: 30px; }
+}
+
+/* Linked work reads like a tagged release */
+.pf .work-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+.pf .release, .pf .release:hover, .pf .release:focus {
+  position: relative; z-index: 1; display: inline-flex; align-items: center; gap: 7px;
+  padding: 4px 9px; border: 1px solid var(--muted); border-radius: 999px;
+  font-family: var(--mono); font-size: 12px; color: var(--text); white-space: nowrap;
+}
+.pf .release svg { color: var(--live); }
+.pf .work-card.linked:hover .release, .pf .release:hover { background: var(--text); border-color: var(--text); color: var(--bg); }
+.pf .work-card.linked:hover .release svg { color: inherit; }
+.pf .release.stretch, .pf .release.stretch:hover { position: static; }
+.pf .release.stretch::after { content: ""; position: absolute; inset: 0; }
+.pf .work-card.linked { transition: background .15s ease; }
+.pf .work-card.linked:hover { background: color-mix(in srgb, var(--text) 3.5%, transparent); }
+@media (max-width: 900px) { .pf .work-meta { align-items: flex-start; } }
+
+/* Compact work rows + toggle */
+.pf .work-card.compact { --ny: 35px; padding: 20px 0; align-items: baseline; }
+.pf .work-card.compact h3 { font-size: 21px; }
+.pf .work-card.compact p { display: none; }
+.pf .work-card.compact .tags { margin-top: 8px; }
+.pf .work-card.compact .tag:nth-child(n+4) { display: none; }
+.pf .work-card.compact .work-meta { flex-direction: row; align-items: center; justify-content: flex-end; gap: 14px; }
+.pf .work-toggle { margin-top: 28px; }
+
+/* Approach: principles first, the full essay on demand */
+.pf .approach-more summary {
+  display: inline-flex; align-items: center; gap: 8px; margin: 4px 0 20px; cursor: pointer;
+  font-family: var(--mono); font-size: 13px; letter-spacing: 0; color: var(--text);
+  list-style: none; border-bottom: 1px solid var(--text); padding-bottom: 2px;
+}
+.pf .approach-more summary::-webkit-details-marker { display: none; }
+.pf .approach-more summary::before { content: "+"; }
+.pf .approach-more[open] summary::before { content: "−"; }
+.pf .approach-more[open] summary { margin-bottom: 24px; }
+@media (max-width: 900px) {
+  .pf .work-card.compact .work-meta { justify-content: flex-start; }
+}
+@media (max-width: 600px) {
+  .pf .work-card.compact { --ny: 30px; }
+}
+
+.pf .work-link, .pf .work-link:hover { position: relative; z-index: 1; font-family: var(--mono); font-size: 12px; color: var(--muted); }
+.pf .work-link:hover { color: var(--text); }
+.pf .work-card.compact .work-link { display: none; }
+@media (pointer: coarse) {
+  .pf .release { min-height: 40px; }
+  .pf .work-link { padding: 10px 0; }
+}
+
+/* Branch graph draws itself: trunk grows, each fork curves out, then its node pops.
+   Animations (not transitions) with backwards fill, so hover transitions stay instant. */
+@media (prefers-reduced-motion: no-preference) {
+  .pf .work-list::before { transform-origin: top; }
+  .pf .work-list:not([data-shown])::before { transform: scaleY(0); }
+  .pf .work-list[data-shown]::before { animation: pf-grow 1.6s cubic-bezier(.4, 0, .2, 1) backwards; }
+
+  .pf .work-card:not([data-shown]) > :not(.graph),
+  .pf .work-card:not([data-shown]) .fork,
+  .pf .work-card:not([data-shown]) .lane,
+  .pf .work-card:not([data-shown]) .node { opacity: 0; }
+  .pf .work-card[data-shown] > :not(.graph, .work-meta) { animation: pf-rise .55s cubic-bezier(.2, .7, .2, 1) .12s backwards; }
+  /* Fade only: transforming .work-meta would shrink the stretched link's hit area while it animates */
+  .pf .work-card[data-shown] > .work-meta { animation: pf-fade .55s ease .12s backwards; }
+  .pf .work-card[data-shown] .fork { animation: pf-wipe .3s ease-out backwards; }
+  .pf .work-card[data-shown] .lane { transform-origin: top; animation: pf-grow .2s linear .28s backwards; }
+  .pf .work-card[data-shown] .node { animation: pf-pop .45s cubic-bezier(.3, 1.6, .5, 1) .45s backwards; }
+  .pf .work-card.trunk[data-shown] .node { animation-delay: .1s; }
+}
+@keyframes pf-grow { from { transform: scaleY(0); } }
+@keyframes pf-wipe { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0); } }
+@keyframes pf-pop { from { transform: scale(0); } }
+@keyframes pf-rise { from { opacity: 0; transform: translateY(8px); } }
+@keyframes pf-fade { from { opacity: 0; } }
+
+/* Hovering a card lights up its branch and lets the others recede */
+.pf .work-card .graph { transition: opacity .2s ease, filter .2s ease; }
+.pf .work-card .node { transition: transform .2s cubic-bezier(.3, 1.6, .5, 1), box-shadow .2s ease; }
+@media (hover: hover) {
+  .pf .work-list:has(.work-card:hover) .work-card:not(:hover) .graph { opacity: .3; }
+  .pf .work-card.branch:hover .graph { filter: drop-shadow(0 0 3px color-mix(in srgb, var(--c) 70%, transparent)); }
+  .pf .work-card:hover .node { transform: scale(1.3); }
+  .pf .work-card.branch:hover .node { box-shadow: 0 0 0 4px color-mix(in srgb, var(--c) 22%, transparent); }
+}
+
+/* HEAD pill breathes, like the status dot */
+.pf .head-pill { animation: pf-head 3.2s ease-in-out infinite; }
+@keyframes pf-head {
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--live) 35%, transparent); }
+  50% { box-shadow: 0 0 0 4px transparent; }
+}
+
+/* Testimonials read like approving code reviews */
+.pf blockquote.review { padding: 0; }
+.pf .review-head {
+  display: flex; align-items: center; gap: 10px; min-height: 58px; padding: 10px 18px;
+  border-bottom: 1px solid var(--line); background: var(--soft);
+  font-size: 13px; color: var(--muted);
+}
+.pf .review-head strong { color: var(--text); }
+.pf .avatar {
+  position: relative; flex: none; display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%;
+  background: var(--text); color: var(--bg); font: 700 10px/1 var(--mono); letter-spacing: .02em;
+}
+.pf .avatar::after {
+  content: "✓"; position: absolute; right: -5px; bottom: -4px; display: grid; place-items: center;
+  width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--soft);
+  background: var(--live); color: #fff; font: 700 8px/1 var(--sans);
+}
+.pf blockquote.review p { padding: 22px 24px 0; }
+.pf blockquote.review footer { padding: 0 24px 24px; }

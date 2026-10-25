@@ -1,0 +1,56 @@
+<!doctype html>
+<!-- Social preview card for /tambola. Render: node scripts/og/render.mjs tambola -->
+<html><head><meta charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Space+Mono:ital,wght@0,700;1,700&family=Figtree:wght@600&display=swap" />
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  body { width: 1200px; height: 630px; overflow: hidden; background: #fff4de; color: #0f1a2b; font-family: Figtree, sans-serif; position: relative; }
+  .toran { position: absolute; left: 0; top: 0; width: 1200px; height: 34px;
+    background: repeating-linear-gradient(90deg, #ffb627 0 40px, #e94f37 40px 80px, #ff8fe3 80px 120px, #6fdc8c 120px 160px, #3fa9f5 160px 200px);
+    -webkit-mask: conic-gradient(from -30deg at 50% 100%, #000 60deg, transparent 0) 0 0 / 40px 100%; }
+  .copy { position: absolute; left: 72px; top: 92px; width: 500px; }
+  .brand { display: flex; align-items: center; gap: 14px; font: 800 34px/1 "Bricolage Grotesque", sans-serif; }
+  h1 { margin-top: 40px; font: 800 62px/1.02 "Bricolage Grotesque", sans-serif; letter-spacing: -.03em; }
+  .meta { position: absolute; left: 72px; bottom: 60px; font: 700 18px/1.6 "Space Mono", monospace; color: #4d5868; }
+  .stage { position: absolute; left: 620px; top: 96px; width: 540px; height: 460px; background: #6ecaff; border-radius: 34px; padding: 34px 30px; }
+  .ticket { background: #c4d6e8; border: 3px solid #0f1a2b; border-radius: 8px; padding: 10px 12px 14px; box-shadow: 0 0 0 5px #fff, 0 30px 50px -28px rgba(15,26,43,.6); }
+  .name { text-align: center; font: 700 22px/1.2 "Space Mono", monospace; margin-bottom: 8px; }
+  .grid { display: grid; grid-template-columns: repeat(9, 1fr); gap: 1px; background: #fff; border: 3px solid #0f1a2b; }
+  .grid span { height: 50px; display: grid; place-items: center; background: #ccffcc; font: 700 19px/1 "Space Mono", monospace; }
+  .grid span.h { background: #ffccff; }
+  .balls { display: flex; align-items: center; gap: 14px; margin-top: 34px; }
+  .ball { display: grid; place-items: center; width: 62px; height: 62px; border-radius: 50%; background: radial-gradient(circle at 32% 26%, rgba(255,255,255,.75), transparent 38%), var(--c); box-shadow: inset 0 -5px 0 rgba(15,26,43,.18), 0 8px 16px -8px rgba(15,26,43,.6); }
+  .ball b { display: grid; place-items: center; width: 64%; height: 64%; border-radius: 50%; background: #fff; font: 700 19px/1 "Space Mono", monospace; }
+  .ball.big { width: 104px; height: 104px; }
+  .ball.big b { font-size: 34px; }
+  .next { margin-left: auto; padding: 12px 16px; background: #fff; border: 3px solid #0f1a2b; border-radius: 10px; box-shadow: 4px 4px 0 #0f1a2b; font: italic 700 20px/1 "Space Mono", monospace; white-space: nowrap; }
+</style></head>
+<body>
+  <div class="toran"></div>
+  <div class="copy">
+    <div class="brand">
+      <svg viewBox="0 0 36 24" width="54" height="36"><rect x="1" y="1" width="34" height="22" rx="4" fill="#C4D6E8" stroke="#0F1A2B" stroke-width="2"/><g id="cells"></g></svg>
+      Tambola
+    </div>
+    <h1>Host Tambola at home, and play along too.</h1>
+  </div>
+  <div class="meta">Housie ticket generator · number caller<br />Java desktop app by Yash Mathur</div>
+  <div class="stage">
+    <div class="ticket">
+      <div class="name">Player 1 :: 1</div>
+      <div class="grid" id="grid"></div>
+    </div>
+    <div class="balls">
+      <span class="ball big" style="--c:#e94f37"><b>16</b></span>
+      <span class="ball" style="--c:#ffb627"><b>3</b></span>
+      <span class="ball" style="--c:#6fdc8c"><b>32</b></span>
+      <span class="next">Next number</span>
+    </div>
+  </div>
+  <script>
+    const t = [[3,11,24,32,0,50,0,0,0],[0,16,0,33,43,55,68,0,0],[8,0,25,0,44,57,0,0,87]];
+    const hit = new Set([3,11,24,32,50,16,43,44]);
+    document.getElementById('grid').innerHTML = t.flat().map(n => `<span class="${hit.has(n) ? 'h' : ''}">${n || ''}</span>`).join('');
+    document.getElementById('cells').innerHTML = [0,1,2].flatMap(r => [0,1,2,3,4].map(c => `<rect x="${5 + c * 5.4}" y="${5 + r * 5}" width="4.2" height="3.6" rx="1" fill="${(r + c) % 3 === 0 ? '#FF9EEA' : '#CCFFCC'}"/>`)).join('');
+  </script>
+</body></html>

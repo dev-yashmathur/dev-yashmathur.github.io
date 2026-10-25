@@ -5,7 +5,7 @@ import ArticleModal from './ArticleModal';
 import './ArticleMagazineStand.css';
 
 // This would typically come from a data file or API
-const demoArticles = [
+export const demoArticles = [
   {
     title: 'Getting Started with application building using LLMs| Rapid Prototyping for GenAI Applications',
     image: 'https://miro.medium.com/v2/resize:fit:720/format:webp/1*3fzbDFqywsYg6Kk1gAReyw.png',

@@ -1,0 +1,62 @@
+.pf .count-up { font-variant-numeric: tabular-nums; }
+
+/* Local time under the portrait */
+.pf .local-time {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; margin-top: 14px;
+  font-family: var(--mono); font-size: 11px; color: var(--muted);
+}
+.pf .local-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--live); animation: pf-breathe 2.8s ease-in-out infinite; }
+.pf .local-mood { font-family: var(--hand); font-size: 17px; line-height: 1; color: var(--text); }
+
+/* Rotating "now" line in the hero */
+.pf .now-line {
+  display: flex; align-items: center; gap: 12px; margin-top: 20px; padding: 4px 0; border: 0; background: none;
+  font: 12px/1.5 var(--mono); color: var(--muted); text-align: left; cursor: pointer;
+}
+.pf .now-rule { flex: 0 0 54px; height: 1px; background: var(--line); }
+.pf .now-label { color: var(--text); }
+.pf .now-text { animation: pf-now-in .35s cubic-bezier(.2, .7, .2, 1); }
+.pf .now-cycle { opacity: 0; transition: opacity .15s ease, transform .3s ease; }
+.pf .now-line:hover .now-cycle, .pf .now-line:focus-visible .now-cycle { opacity: 1; }
+.pf .now-line:active .now-cycle { transform: rotate(180deg); }
+@keyframes pf-now-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+/* Product moments that sit beside a work title */
+.pf .moment { display: inline-flex; align-items: center; margin-left: 12px; vertical-align: middle; }
+.pf .tambola-ball {
+  width: 28px; height: 28px; justify-content: center; border-radius: 50%;
+  border: 2px solid var(--c, var(--text)); font: 700 12px/1 var(--mono); letter-spacing: 0; color: var(--text);
+  animation: pf-ball .5s cubic-bezier(.3, 1.6, .5, 1);
+}
+@keyframes pf-ball { from { transform: rotate(-200deg) scale(.4); opacity: 0; } to { transform: none; opacity: 1; } }
+
+.pf .shorts-moment { position: relative; width: 48px; height: 24px; }
+.pf .shorts-moment svg, .pf .shorts-moment em { position: absolute; left: 0; transition: transform .35s cubic-bezier(.4, 0, .2, 1), opacity .3s ease, filter .3s ease; }
+.pf .shorts-moment em {
+  font: italic 400 19px/1 var(--hand); letter-spacing: 0; color: var(--muted);
+  opacity: 0; transform: translateY(4px);
+}
+.pf .work-card:hover .shorts-moment svg { transform: scale(.2) rotate(40deg); opacity: 0; filter: blur(2px); }
+.pf .work-card:hover .shorts-moment em { opacity: 1; transform: none; transition-delay: .15s; }
+
+/* Handwritten margin note */
+.pf .margin-note {
+  position: relative; display: block; width: max-content; margin-top: 28px;
+  transform: rotate(-4deg); transform-origin: left;
+  font: 400 23px/1.05 var(--hand); letter-spacing: 0; text-transform: none; color: var(--live);
+}
+.pf .margin-note-arrow {
+  position: absolute; left: calc(100% - 4px); top: -30px;
+  fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .pf .margin-note-text { opacity: 0; transition: opacity .5s ease .5s; }
+  .pf .margin-note-arrow path { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset .6s ease .9s; }
+  .pf .margin-note-arrow path + path { transition-delay: 1.4s; transition-duration: .25s; }
+  .pf [data-shown] .margin-note-text { opacity: 1; }
+  .pf [data-shown] .margin-note-arrow path { stroke-dashoffset: 0; }
+}
+@media (max-width: 600px) {
+  .pf .margin-note { margin-top: 10px; }
+  .pf .margin-note-arrow { transform: rotate(105deg) scale(.7); top: 0; left: calc(100% - 8px); }
+}

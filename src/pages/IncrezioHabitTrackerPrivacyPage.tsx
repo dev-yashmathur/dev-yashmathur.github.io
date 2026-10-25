@@ -1,19 +1,22 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import ScrollToTop from '../components/ScrollToTop/ScrollToTop';
+import SiteShell from '../components/SiteShell/SiteShell';
+import { usePageMeta } from '../utils/usePageMeta';
 import './IncrezioHabitTrackerPrivacyPage.css';
 
 const IncrezioHabitTrackerPrivacyPage: React.FC = () => {
+  usePageMeta('Increzio Habit Tracker privacy policy', 'Increzio Habit Tracker privacy policy.');
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'auto' });
   }, []);
 
   const lastUpdated = 'January 27, 2025';
 
   return (
+    <SiteShell>
     <div className="privacy-page">
       <header className="privacy-header">
-        <div className="container privacy-header__content">
+        <div className="privacy-header__content">
           <Link to="/projects/increzio-habit-tracker" className="privacy-back-link">
             ← Back to Increzio project
           </Link>
@@ -23,7 +26,7 @@ const IncrezioHabitTrackerPrivacyPage: React.FC = () => {
 
       <main className="privacy-main" id="main-content">
         <section className="privacy-hero">
-          <div className="container privacy-hero__content">
+          <div className="privacy-hero__content">
             <h1>Privacy Policy</h1>
             <p className="privacy-last-updated">Last updated: {lastUpdated}</p>
             <p className="privacy-intro">
@@ -35,7 +38,7 @@ const IncrezioHabitTrackerPrivacyPage: React.FC = () => {
         </section>
 
         <section className="privacy-section">
-          <div className="container privacy-card">
+          <div className="privacy-card">
             <h2>Data Collection & Storage</h2>
             <p>
               We strongly believe your habit data belongs to you. That&apos;s why Increzio Habit Tracker:
@@ -53,7 +56,7 @@ const IncrezioHabitTrackerPrivacyPage: React.FC = () => {
         </section>
 
         <section className="privacy-section">
-          <div className="container privacy-card">
+          <div className="privacy-card">
             <h2>Third-Party Services</h2>
             <p>
               The app does not integrate analytics, advertising networks, or any third-party tracking tools.
@@ -63,7 +66,7 @@ const IncrezioHabitTrackerPrivacyPage: React.FC = () => {
         </section>
 
         <section className="privacy-section">
-          <div className="container privacy-card">
+          <div className="privacy-card">
             <h2>Your Control</h2>
             <p>
               You have full control over your habit data. If you uninstall the app, all locally stored information
@@ -74,7 +77,7 @@ const IncrezioHabitTrackerPrivacyPage: React.FC = () => {
         </section>
 
         <section className="privacy-section">
-          <div className="container privacy-card">
+          <div className="privacy-card">
             <h2>Questions</h2>
             <p>
               If you have any questions about this privacy policy or suggestions for how we can make privacy even
@@ -84,17 +87,9 @@ const IncrezioHabitTrackerPrivacyPage: React.FC = () => {
         </section>
       </main>
 
-      <footer className="privacy-footer">
-        <div className="container privacy-footer__content">
-          <p>Made with care to protect your progress.</p>
-          <Link to="/" className="privacy-footer__link">
-            Visit the portfolio →
-          </Link>
-        </div>
-      </footer>
 
-      <ScrollToTop />
     </div>
+    </SiteShell>
   );
 };
 
