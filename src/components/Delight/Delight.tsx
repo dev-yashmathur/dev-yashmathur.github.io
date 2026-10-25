@@ -29,7 +29,7 @@ export const CountUp: React.FC<{ to: number; duration?: number }> = ({ to, durat
   return <span ref={ref} className="count-up">{n}</span>;
 };
 
-const CITY = 'Bengaluru';
+const CITY = 'Hyderabad';
 const TIME_ZONE = 'Asia/Kolkata';
 // [from hour, what I'm probably doing]
 const moods: [number, string][] = [
@@ -51,7 +51,7 @@ const readClock = () => {
   return { time, mood };
 };
 
-/** "Bengaluru · 11:42 PM · probably still debugging" */
+/** "Hyderabad · 11:42 PM · probably still debugging" */
 export const LocalTime: React.FC = () => {
   const [clock, setClock] = useState(readClock);
   useEffect(() => setClock(readClock()), []);
