@@ -1,0 +1,4 @@
+.pf .not-found { padding: 96px 0 120px; }
+.pf .not-found h1 { font-size: clamp(48px, 8vw, 96px); line-height: 1; letter-spacing: -.045em; margin-bottom: 24px; }
+.pf .not-found p { max-width: 520px; margin-bottom: 32px; font-size: 18px; color: var(--body); overflow-wrap: anywhere; }
+.pf .not-found code { font-family: var(--mono); font-size: .9em; padding: 2px 6px; border: 1px solid var(--line); }

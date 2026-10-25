@@ -1,27 +1,23 @@
-import { Route, Routes, useLocation } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
+import { lazy, Suspense } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage';
-import ProjectDetailPage from './pages/ProjectDetailPage';
-import IncrezioHabitTrackerPrivacyPage from './pages/IncrezioHabitTrackerPrivacyPage';
-import GardenMazePrivacyPage from './pages/GardenMazePrivacyPage';
-import Footer from './components/Footer/Footer';
+
+const ProjectDetailPage = lazy(() => import('./pages/ProjectDetailPage'));
+const IncrezioHabitTrackerPrivacyPage = lazy(() => import('./pages/IncrezioHabitTrackerPrivacyPage'));
+const GardenMazePrivacyPage = lazy(() => import('./pages/GardenMazePrivacyPage'));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
 function App() {
-  const location = useLocation();
-
   return (
-    <>
-      <AnimatePresence mode='wait'>
-        <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/projects/:slug" element={<ProjectDetailPage />} />
-          <Route path="/increzio-habit-tracker/privacy" element={<IncrezioHabitTrackerPrivacyPage />} />
-          <Route path="/garden-maze/privacy" element={<GardenMazePrivacyPage />} />
-          <Route path="*" element={<HomePage />} />
-        </Routes>
-      </AnimatePresence>
-      <Footer />
-    </>
+    <Suspense fallback={null}>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/projects/:slug" element={<ProjectDetailPage />} />
+        <Route path="/increzio-habit-tracker/privacy" element={<IncrezioHabitTrackerPrivacyPage />} />
+        <Route path="/garden-maze/privacy" element={<GardenMazePrivacyPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </Suspense>
   );
 }
 

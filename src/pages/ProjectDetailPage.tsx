@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import ScrollToTop from '../components/ScrollToTop/ScrollToTop';
+import SiteShell from '../components/SiteShell/SiteShell';
+import TagIcon from '../components/SiteShell/TagIcon';
 import { getProjectBySlug } from '../data/projects';
+import { usePageMeta } from '../utils/usePageMeta';
 import './ProjectDetailPage.css';
 
 const ExternalIcon = () => (
@@ -40,20 +41,25 @@ const ProjectDetailPage: React.FC = () => {
   const project = getProjectBySlug(slug);
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'auto' });
   }, [slug]);
+
+  usePageMeta(project?.title ?? 'Project not found', project?.summary);
 
   if (!project) {
     return (
-      <main className="project-detail-not-found">
-        <div className="container project-detail-not-found__body">
-          <h1>Project not found</h1>
-          <p>We couldn&apos;t find the project you were looking for. It might have a new name or be in the works.</p>
-          <Link to="/" className="button-primary project-detail-back-button">
-            Back to home
-          </Link>
-        </div>
-      </main>
+      <SiteShell>
+        <main className="project-detail-not-found">
+          <div className="project-detail-not-found__body">
+            <div className="eyebrow">404 / not found</div>
+            <h1>Project not found</h1>
+            <p>We couldn&apos;t find the project you were looking for. It might have a new name or be in the works.</p>
+            <Link to="/" className="button primary project-detail-back-button">
+              Back to home
+            </Link>
+          </div>
+        </main>
+      </SiteShell>
     );
   }
 
@@ -62,19 +68,20 @@ const ProjectDetailPage: React.FC = () => {
   const moreVideos = project.videoUrl ? localVideos : localVideos.slice(1);
 
   return (
+    <SiteShell>
     <div className="project-detail-page">
       <header className="project-detail-header">
-        <div className="container project-detail-header__content">
+        <div className="project-detail-header__content">
           <Link to="/" className="project-detail-back-link">
             ← Back to home
           </Link>
-          <span className="project-detail-year">{project.timeline}</span>
+          <span className="project-detail-year"><TagIcon />{project.timeline}</span>
         </div>
       </header>
 
       <main className="project-detail-main">
         <section className="project-detail-hero">
-          <div className="container project-detail-hero__content">
+          <div className="project-detail-hero__content">
             {project.videoUrl ? (
               <div className="project-video-wrapper">
                 <iframe
@@ -98,21 +105,22 @@ const ProjectDetailPage: React.FC = () => {
               </div>
             ) : null}
             <div className="project-overview">
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4 }}
-              >
-                {project.title}
-              </motion.h1>
+              <h1>{project.title}</h1>
               <p>{project.overview}</p>
+
+              {project.download && (
+                <p className="project-detail-download-note">
+                  {project.download.note}. Not yet notarized by Apple, so on first launch right-click the app and
+                  choose Open.
+                </p>
+              )}
 
               <div className="project-detail-actions">
                 {project.download && (
                   <a
                     href={project.download.url}
                     download
-                    className="button-primary project-detail-button"
+                    className="button primary project-detail-button"
                   >
                     <DownloadIcon />
                     <span>{project.download.label}</span>
@@ -123,7 +131,7 @@ const ProjectDetailPage: React.FC = () => {
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="button-primary project-detail-button"
+                    className="button primary project-detail-button"
                   >
                     <ExternalIcon />
                     <span>Open live project</span>
@@ -134,7 +142,7 @@ const ProjectDetailPage: React.FC = () => {
                     href={project.repoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="button-secondary project-detail-button"
+                    className="button project-detail-button"
                   >
                     <GitHubIcon />
                     <span>View GitHub repo</span>
@@ -143,7 +151,7 @@ const ProjectDetailPage: React.FC = () => {
                 {project.privacyPolicyUrl && (
                   <Link
                     to={project.privacyPolicyUrl}
-                    className="button-secondary project-detail-button"
+                    className="button project-detail-button"
                   >
                     <ShieldIcon />
                     <span>Privacy Policy</span>
@@ -151,12 +159,6 @@ const ProjectDetailPage: React.FC = () => {
                 )}
               </div>
 
-              {project.download && (
-                <p className="project-detail-download-note">
-                  {project.download.note}. Not yet notarized by Apple: if macOS blocks the first launch,
-                  right-click the app and choose Open.
-                </p>
-              )}
 
               <ul className="project-detail-tags" aria-label="Key technologies">
                 {project.skills.map((skill) => (
@@ -168,19 +170,19 @@ const ProjectDetailPage: React.FC = () => {
         </section>
 
         <section className="project-detail-section">
-          <div className="container project-detail-section__content">
-            <h2>Motivation</h2>
+          <div className="project-detail-section__content">
+            <h2 data-label="MOTIVATION">Motivation</h2>
             <div className="project-detail-text-stack">
               {project.motivation.map((paragraph, index) => (
-                <li key={index}>{paragraph}</li>
+                <p key={index}>{paragraph}</p>
               ))}
             </div>
           </div>
         </section>
 
         <section className="project-detail-section project-detail-process">
-          <div className="container project-detail-section__content">
-            <h2>The process</h2>
+          <div className="project-detail-section__content">
+            <h2 data-label="THE PROCESS">The process</h2>
             <div className="project-detail-process__grid">
               {project.process.map((step) => (
                 <article key={step.title} className="project-detail-process__card">
@@ -194,8 +196,8 @@ const ProjectDetailPage: React.FC = () => {
 
         {moreVideos.length > 0 && (
           <section className="project-detail-section project-detail-videos">
-            <div className="container project-detail-section__content">
-              <h2>Videos</h2>
+            <div className="project-detail-section__content">
+              <h2 data-label="VIDEOS">Videos</h2>
               <div className="project-detail-videos__grid">
                 {moreVideos.map((video) => (
                   <figure key={video.src} className="project-detail-videos__item">
@@ -218,8 +220,8 @@ const ProjectDetailPage: React.FC = () => {
         )}
 
         <section className="project-detail-section project-detail-gallery">
-          <div className="container project-detail-section__content">
-            <h2>Gallery</h2>
+          <div className="project-detail-section__content">
+            <h2 data-label="GALLERY">Gallery</h2>
             <div className="project-detail-gallery__grid">
               {project.gallery.map((item) => (
                 <figure key={item.src} className="project-detail-gallery__item">
@@ -231,8 +233,8 @@ const ProjectDetailPage: React.FC = () => {
         </section>
       </main>
 
-      <ScrollToTop />
     </div>
+    </SiteShell>
   );
 };
 

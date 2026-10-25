@@ -1,43 +1,43 @@
-import classicGamesHomePage from '../assets/images/ClassicGamesHub/ClassicGamesHub.png';
-import stackTicTacToeImg from '../assets/images/ClassicGamesHub/StackTicTacToe.png';
-import normalTicTacToeImg from '../assets/images/ClassicGamesHub/TicTacToe.png';
-import ultimateTicTacToeImg from '../assets/images/ClassicGamesHub/UltimateTicTacToe.png';
-import vanishingTicTacToeImg from '../assets/images/ClassicGamesHub/VanishingTicTacToe.png';
+import classicGamesHomePage from '../assets/images/ClassicGamesHub/ClassicGamesHub.webp';
+import stackTicTacToeImg from '../assets/images/ClassicGamesHub/StackTicTacToe.webp';
+import normalTicTacToeImg from '../assets/images/ClassicGamesHub/TicTacToe.webp';
+import ultimateTicTacToeImg from '../assets/images/ClassicGamesHub/UltimateTicTacToe.webp';
+import vanishingTicTacToeImg from '../assets/images/ClassicGamesHub/VanishingTicTacToe.webp';
 
 
-import increzioLightHomeScreen from '../assets/images/IncrezioHabitTracker/Increzio_light.png';
-import increzioDarkHomeScreen from '../assets/images/IncrezioHabitTracker/Increzio_dark.png';
-import increzioAnalyticsPage from '../assets/images/IncrezioHabitTracker/AnalyticsPage.png';
-import increzioHabitListScreen from '../assets/images/IncrezioHabitTracker/HabitList.png';
-import increzioChangeThemeDialog from '../assets/images/IncrezioHabitTracker/ChangeTheme.png';
-import increzioWidget from '../assets/images/IncrezioHabitTracker/Widget.png';
+import increzioLightHomeScreen from '../assets/images/IncrezioHabitTracker/Increzio_light.webp';
+import increzioDarkHomeScreen from '../assets/images/IncrezioHabitTracker/Increzio_dark.webp';
+import increzioAnalyticsPage from '../assets/images/IncrezioHabitTracker/AnalyticsPage.webp';
+import increzioHabitListScreen from '../assets/images/IncrezioHabitTracker/HabitList.webp';
+import increzioChangeThemeDialog from '../assets/images/IncrezioHabitTracker/ChangeTheme.webp';
+import increzioWidget from '../assets/images/IncrezioHabitTracker/Widget.webp';
 
-import tambolaAppImg from '../assets/images/TamboloApp/Tambolo.png';
-import tamboloTicketHighliting from '../assets/images/TamboloApp/Automatic Ticket Highlighting.png';
-import tamboloRandomTicketGeneration from '../assets/images/TamboloApp/Generated Randomized Tickets.png';
-import tamboloInitialization from '../assets/images/TamboloApp/Player initialization.png';
-import tamboloPrizeInit from '../assets/images/TamboloApp/Prize Selection.png';
-import tamboloPrizeClaim from '../assets/images/TamboloApp/prize claim.png';
+import tambolaAppImg from '../assets/images/TamboloApp/Tambolo.webp';
+import tamboloTicketHighliting from '../assets/images/TamboloApp/Automatic Ticket Highlighting.webp';
+import tamboloRandomTicketGeneration from '../assets/images/TamboloApp/Generated Randomized Tickets.webp';
+import tamboloInitialization from '../assets/images/TamboloApp/Player initialization.webp';
+import tamboloPrizeInit from '../assets/images/TamboloApp/Prize Selection.webp';
+import tamboloPrizeClaim from '../assets/images/TamboloApp/prize claim.webp';
 
 
-import porteeLibrary from '../assets/images/Portee/library.png';
-import porteeCatalog from '../assets/images/Portee/catalog.png';
-import porteeCatalogAdd from '../assets/images/Portee/catalog-add.png';
-import porteePermissions from '../assets/images/Portee/permissions.png';
-import porteeStorage from '../assets/images/Portee/storage-review.png';
-import porteeSessionsRecent from '../assets/images/Portee/sessions-recent.png';
-import porteeSessionsSearch from '../assets/images/Portee/sessions-search.png';
+import porteeLibrary from '../assets/images/Portee/library.webp';
+import porteeCatalog from '../assets/images/Portee/catalog.webp';
+import porteeCatalogAdd from '../assets/images/Portee/catalog-add.webp';
+import porteePermissions from '../assets/images/Portee/permissions.webp';
+import porteeStorage from '../assets/images/Portee/storage-review.webp';
+import porteeSessionsRecent from '../assets/images/Portee/sessions-recent.webp';
+import porteeSessionsSearch from '../assets/images/Portee/sessions-search.webp';
 
-import benchTechStack from '../assets/images/Benchtest/tech-stack.jpg';
+import benchTechStack from '../assets/images/Benchtest/tech-stack.webp';
 
-import mazeGate from '../assets/images/GardenMaze/gate_unlock.jpg';
-import mazeAerial from '../assets/images/GardenMaze/aerial_hedge.jpg';
-import mazeBrick from '../assets/images/GardenMaze/walk_brick.jpg';
-import mazePortalMirror from '../assets/images/GardenMaze/portal_mirror.jpg';
-import mazeHaunted from '../assets/images/GardenMaze/haunted_walk.jpg';
-import mazeWatcher from '../assets/images/GardenMaze/watcher.jpg';
+import mazeGate from '../assets/images/GardenMaze/gate_unlock.webp';
+import mazeAerial from '../assets/images/GardenMaze/aerial_hedge.webp';
+import mazeBrick from '../assets/images/GardenMaze/walk_brick.webp';
+import mazePortalMirror from '../assets/images/GardenMaze/portal_mirror.webp';
+import mazeHaunted from '../assets/images/GardenMaze/haunted_walk.webp';
+import mazeWatcher from '../assets/images/GardenMaze/watcher.webp';
 
-// import rlSolverImg from '../assets/images/RLTicTacToe.jpg';
+// import rlSolverImg from '../assets/images/RLTicTacToe.webp';
 
 
 export interface ProjectProcessStep {

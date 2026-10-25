@@ -1,19 +1,22 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import ScrollToTop from '../components/ScrollToTop/ScrollToTop';
+import SiteShell from '../components/SiteShell/SiteShell';
+import { usePageMeta } from '../utils/usePageMeta';
 import './IncrezioHabitTrackerPrivacyPage.css';
 
 const GardenMazePrivacyPage: React.FC = () => {
+  usePageMeta('The Garden Maze privacy policy', 'The Garden Maze privacy policy.');
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'auto' });
   }, []);
 
   const lastUpdated = 'October 22, 2026';
 
   return (
+    <SiteShell>
     <div className="privacy-page">
       <header className="privacy-header">
-        <div className="container privacy-header__content">
+        <div className="privacy-header__content">
           <Link to="/projects/garden-maze" className="privacy-back-link">
             ← Back to The Garden Maze project
           </Link>
@@ -23,7 +26,7 @@ const GardenMazePrivacyPage: React.FC = () => {
 
       <main className="privacy-main" id="main-content">
         <section className="privacy-hero">
-          <div className="container privacy-hero__content">
+          <div className="privacy-hero__content">
             <h1>Privacy Policy</h1>
             <p className="privacy-last-updated">Last updated: {lastUpdated}</p>
             <p className="privacy-intro">
@@ -35,7 +38,7 @@ const GardenMazePrivacyPage: React.FC = () => {
         </section>
 
         <section className="privacy-section">
-          <div className="container privacy-card">
+          <div className="privacy-card">
             <h2>Data We Collect</h2>
             <p>None. Specifically, The Garden Maze:</p>
             <ul className="privacy-list">
@@ -49,7 +52,7 @@ const GardenMazePrivacyPage: React.FC = () => {
         </section>
 
         <section className="privacy-section">
-          <div className="container privacy-card">
+          <div className="privacy-card">
             <h2>What Stays on Your Device</h2>
             <p>
               To remember your progress between sessions, the game saves a small amount of information locally
@@ -61,7 +64,7 @@ const GardenMazePrivacyPage: React.FC = () => {
         </section>
 
         <section className="privacy-section">
-          <div className="container privacy-card">
+          <div className="privacy-card">
             <h2>Third-Party Services</h2>
             <p>
               The game does not include analytics, crash reporting, advertising networks, social sign-in or any
@@ -72,7 +75,7 @@ const GardenMazePrivacyPage: React.FC = () => {
         </section>
 
         <section className="privacy-section">
-          <div className="container privacy-card">
+          <div className="privacy-card">
             <h2>Children</h2>
             <p>
               Because the game collects no data from anyone, it does not knowingly collect personal information
@@ -82,7 +85,7 @@ const GardenMazePrivacyPage: React.FC = () => {
         </section>
 
         <section className="privacy-section">
-          <div className="container privacy-card">
+          <div className="privacy-card">
             <h2>Changes to This Policy</h2>
             <p>
               If a future version adds anything that changes this, such as online features, this policy will be
@@ -92,7 +95,7 @@ const GardenMazePrivacyPage: React.FC = () => {
         </section>
 
         <section className="privacy-section">
-          <div className="container privacy-card">
+          <div className="privacy-card">
             <h2>Questions</h2>
             <p>
               If you have any questions about this privacy policy, please reach out through the contact links
@@ -102,17 +105,9 @@ const GardenMazePrivacyPage: React.FC = () => {
         </section>
       </main>
 
-      <footer className="privacy-footer">
-        <div className="container privacy-footer__content">
-          <p>No accounts. No tracking. Just the maze.</p>
-          <Link to="/" className="privacy-footer__link">
-            Visit the portfolio →
-          </Link>
-        </div>
-      </footer>
 
-      <ScrollToTop />
     </div>
+    </SiteShell>
   );
 };
 
