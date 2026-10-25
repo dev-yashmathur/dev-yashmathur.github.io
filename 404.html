@@ -5,13 +5,51 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/YMLogoBlack.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yash Mathur</title>
-  <script type="module" crossorigin src="/assets/index-DugpKeLQ.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-CtILuMOX.css">
+  <title>Page not found · Yash Mathur</title>
+  <meta name="description" content="This page does not exist." />
+  <link rel="canonical" href="https://yashmathur.com/404" />
+  <meta name="robots" content="noindex" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Yash Mathur" />
+  <meta property="og:title" content="Page not found · Yash Mathur" />
+  <meta property="og:description" content="This page does not exist." />
+  <meta property="og:url" content="https://yashmathur.com/404" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Page not found · Yash Mathur" />
+  <meta name="twitter:description" content="This page does not exist." />
+  <script type="module" crossorigin src="/assets/index-CHfMKMhC.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-P6ihRJso.css">
 </head>
 
 <body>
+  <!--theme-->
+  <script>
+    // Paint the right background before React loads, so dark mode doesn't flash white.
+    (function () {
+      try {
+        var t = localStorage.getItem('pf-theme');
+        var dark = t ? t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var c = dark ? '#121211' : '#f7f7f5';
+        document.documentElement.style.backgroundColor = c;
+        document.body.style.background = c;
+      } catch (e) { /* ignore */ }
+    })();
+  </script>
+  <!--/theme-->
   <div id="root"></div>
+  <!--theme-->
+  <script>
+    // Prerendered markup is built in light mode; switch it before first paint if the visitor prefers dark.
+    (function () {
+      try {
+        var t = localStorage.getItem('pf-theme');
+        var dark = t ? t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var el = document.querySelector('#root .pf');
+        if (el) el.setAttribute('data-theme', dark ? 'dark' : 'light');
+      } catch (e) { /* ignore */ }
+    })();
+  </script>
+  <!--/theme-->
 </body>
 
 </html>
